@@ -108,6 +108,32 @@ function GamesPage() {
           </div>
         </article>
 
+        {/* CHARACTERS */}
+        <div className="mt-16">
+          <div className="ornament-divider mb-3 text-xs tracking-[0.4em] uppercase">Meet the characters</div>
+          <p className="text-center text-sm text-muted-foreground mb-8 font-serif-italic">
+            From the first chapter — and many more to come in next chapters.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {characters.map((c) => (
+              <figure
+                key={c.name}
+                className="relative aspect-[3/4] overflow-hidden rounded-sm border border-border/60 bg-card group"
+              >
+                <img
+                  src={c.img}
+                  alt={c.name}
+                  loading="lazy"
+                  className="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                />
+                <figcaption className="absolute bottom-0 inset-x-0 p-3 text-xs uppercase tracking-[0.3em] text-rose-glow/90 bg-gradient-to-t from-ink/95 to-transparent text-center">
+                  {c.name}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+
         {/* SCREENSHOTS */}
         <div className="mt-16">
           <div className="ornament-divider mb-8 text-xs tracking-[0.4em] uppercase">Screenshots</div>
