@@ -33,15 +33,15 @@ function Index() {
           alt="Sweet Sin of Tuscany — cast under a Tuscan moon"
           width={1920}
           height={900}
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
+          className="absolute inset-0 w-full h-full object-cover object-left opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-background/20" />
+        <div className="absolute inset-0 bg-gradient-to-l from-background via-background/50 to-background/10" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/60" />
         <div className="absolute inset-0 bg-vignette" />
         <Embers />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid lg:grid-cols-[1fr_auto] gap-10 items-center animate-fade-up">
-          <div className="text-center lg:text-left max-w-2xl">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid lg:grid-cols-[1fr_1fr] gap-10 items-center animate-fade-up">
+          <div className="text-center lg:text-right lg:col-start-2 max-w-2xl lg:ml-auto">
             <p className="font-display tracking-[0.4em] uppercase text-xs sm:text-sm text-rose-glow/80 mb-6">
               Vows &amp; Vices Studio Presents
             </p>
@@ -52,7 +52,7 @@ function Index() {
               A story of long lost, forbidden love — and the consequences of years of forced separation.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-end gap-4">
               <Link
                 to="/story"
                 className="group relative inline-flex items-center justify-center px-8 py-4 font-display tracking-[0.2em] uppercase text-sm text-foreground bg-romance rounded-sm shadow-[0_0_60px_oklch(0.52_0.20_18/0.35)] hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 border border-crimson/40"
@@ -79,16 +79,16 @@ function Index() {
             <p className="mt-12 text-xs uppercase tracking-[0.3em] text-muted-foreground">
               Coming Soon · Mature Romance · 18+
             </p>
-          </div>
 
-          <div className="hidden lg:flex justify-end">
-            <img
-              src={logo}
-              alt="Sweet Sin of Tuscany logo"
-              width={420}
-              height={420}
-              className="w-64 xl:w-80 drop-shadow-[0_0_60px_rgba(180,30,50,0.5)]"
-            />
+            <div className="mt-10 flex justify-center lg:justify-end">
+              <img
+                src={logo}
+                alt="Sweet Sin of Tuscany logo"
+                width={420}
+                height={420}
+                className="w-48 sm:w-56 lg:w-64 xl:w-72 drop-shadow-[0_0_60px_rgba(180,30,50,0.5)]"
+              />
+            </div>
           </div>
         </div>
       </section>
