@@ -34,7 +34,7 @@ function Index() {
       <SiteHeader />
 
       {/* HERO */}
-      <section className="relative min-h-screen flex flex-col mt-50 pt-20 pb-12">
+      <section className="relative min-h-screen flex flex-col mt-20 pt-20 pb-12">
         <img
           src={cover}
           alt="Sweet Sin of Tuscany — cast under a Tuscan moon"
