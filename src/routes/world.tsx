@@ -5,7 +5,7 @@ import sweetSinLogo from "@/assets/sweet-sin-logo.png";
 import coverBeach from "@/assets/cover-beach-1.webp";
 import tuscanHills from "@/assets/a08.webp";
 import villa from "@/assets/g09.webp";
-import sofiaSwing from "@/assets/cover-sofia-swing.webp";
+import sofiaSwing from "@/assets/cover-no1-big-moon.webp";
 
 export const Route = createFileRoute("/world")({
   head: () => ({
