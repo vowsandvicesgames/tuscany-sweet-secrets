@@ -70,7 +70,7 @@ function Index() {
                 to="/world"
                 className="inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-rose-glow/30 hover:border-rose-glow/70 hover:bg-rose-glow/5 transition-all duration-500 rounded-sm"
               >
-                Explore the World
+                Explore the Game
               </Link>
               <a
                 href={PATREON_URL}
@@ -137,7 +137,7 @@ function Index() {
                   loading="lazy"
                   width={1024}
                   height={1024}
-                  className="absolute inset-0 w-full h-full object-contain opacity-65 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000"
+                  className="absolute inset-0 w-full h-100 opacity-65 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000"
                 />
                 <div className="absolute inset-0 from-card via-card/80 to-transparent" />
                 <div className="relative z-10">
