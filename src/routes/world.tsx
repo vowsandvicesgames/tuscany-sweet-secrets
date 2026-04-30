@@ -6,6 +6,12 @@ import coverBeach from "@/assets/cover-beach-1.webp";
 import tuscanHills from "@/assets/a08.webp";
 import villa from "@/assets/g09.webp";
 import sofiaSwing from "@/assets/cover-no1-big-moon.webp";
+import characterSofia from "@/assets/character-sofia.webp";
+import characterEmily from "@/assets/character-emily.webp";
+import characterGloria from "@/assets/character-gloria.webp";
+import characterLuca from "@/assets/character-luca.webp";
+import characterBianca from "@/assets/character-bianca.webp";
+import characterMia from "@/assets/character-mia.webp";
 
 export const Route = createFileRoute("/world")({
   head: () => ({
@@ -27,6 +33,15 @@ export const Route = createFileRoute("/world")({
   }),
   component: GamesPage,
 });
+
+const characters = [
+  { img: characterSofia, name: "Sofia" },
+  { img: characterEmily, name: "Emily" },
+  { img: characterGloria, name: "Gloria" },
+  { img: characterLuca, name: "Luca" },
+  { img: characterBianca, name: "Bianca" },
+  { img: characterMia, name: "Mia" },
+];
 
 const screenshots = [
   { img: villa, caption: "Inside the villa" },
