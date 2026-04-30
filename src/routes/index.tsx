@@ -33,15 +33,15 @@ function Index() {
           alt="Sweet Sin of Tuscany — cast under a Tuscan moon"
           width={1920}
           height={900}
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
+          className="absolute inset-0 w-full h-full object-cover object-left opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-background/20" />
+        <div className="absolute inset-0 bg-gradient-to-l from-background via-background/50 to-background/10" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/60" />
         <div className="absolute inset-0 bg-vignette" />
         <Embers />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid lg:grid-cols-[1fr_auto] gap-10 items-center animate-fade-up">
-          <div className="text-center lg:text-left max-w-2xl">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid lg:grid-cols-[1fr_1fr] gap-10 items-center animate-fade-up">
+          <div className="text-center lg:text-right lg:col-start-2 max-w-2xl lg:ml-auto">
             <p className="font-display tracking-[0.4em] uppercase text-xs sm:text-sm text-rose-glow/80 mb-6">
               Vows &amp; Vices Studio Presents
             </p>
