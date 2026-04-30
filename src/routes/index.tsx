@@ -27,42 +27,41 @@ function Index() {
       <SiteHeader />
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 pb-24">
+      <section className="relative min-h-screen flex flex-col pt-20 pb-12">
         <img
           src={cover}
           alt="Sweet Sin of Tuscany — cast under a Tuscan moon"
           width={1920}
           height={900}
-          className="absolute inset-0 w-full h-full object-cover object-left opacity-70"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-95"
         />
-        <div className="absolute inset-0 bg-gradient-to-l from-background via-background/50 to-background/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
         <div className="absolute inset-0 bg-vignette" />
         <Embers />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid lg:grid-cols-[1fr_1fr] gap-10 items-center animate-fade-up">
-          <div className="text-center lg:text-right lg:col-start-2 max-w-2xl lg:ml-auto">
-            <p className="font-display tracking-[0.4em] uppercase text-xs sm:text-sm text-rose-glow/80 mb-6">
+        <div className="relative z-10 mt-auto w-full max-w-7xl mx-auto px-6 animate-fade-up">
+          <div className="text-left max-w-3xl">
+            <p className="font-display tracking-[0.4em] uppercase text-xs sm:text-sm text-rose-glow/80 mb-4">
               Vows &amp; Vices Studio Presents
             </p>
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl text-rose-glow glow-text text-balance">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-rose-glow glow-text text-balance">
               Sweet Sin <span className="font-serif-italic text-crimson">of Tuscany</span>
             </h1>
-            <p className="mt-8 font-serif-italic text-xl sm:text-2xl text-rose-glow/90 text-balance">
+            <p className="mt-5 font-serif-italic text-lg sm:text-xl text-rose-glow/90 text-balance">
               A story of long lost, forbidden love — and the consequences of years of forced separation.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-end gap-4">
+            <div className="mt-6 flex flex-wrap items-center justify-start gap-3">
               <Link
                 to="/story"
-                className="group relative inline-flex items-center justify-center px-8 py-4 font-display tracking-[0.2em] uppercase text-sm text-foreground bg-romance rounded-sm shadow-[0_0_60px_oklch(0.52_0.20_18/0.35)] hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 border border-crimson/40"
+                className="group relative inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-foreground bg-romance rounded-sm shadow-[0_0_60px_oklch(0.52_0.20_18/0.35)] hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 border border-crimson/40"
               >
                 <span>Enter the Story</span>
                 <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
               </Link>
               <Link
                 to="/world"
-                className="inline-flex items-center justify-center px-8 py-4 font-display tracking-[0.2em] uppercase text-sm text-rose-glow border border-rose-glow/30 hover:border-rose-glow/70 hover:bg-rose-glow/5 transition-all duration-500 rounded-sm"
+                className="inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-rose-glow/30 hover:border-rose-glow/70 hover:bg-rose-glow/5 transition-all duration-500 rounded-sm"
               >
                 Explore the World
               </Link>
@@ -70,13 +69,13 @@ function Index() {
                 href={PATREON_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 font-display tracking-[0.2em] uppercase text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
+                className="inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
               >
                 Support on Patreon
               </a>
             </div>
 
-            <p className="mt-12 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            <p className="mt-6 text-xs uppercase tracking-[0.3em] text-muted-foreground">
               Coming Soon · Mature Romance · 18+
             </p>
           </div>
