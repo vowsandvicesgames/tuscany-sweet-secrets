@@ -40,7 +40,7 @@ function Index() {
           alt="Sweet Sin of Tuscany — cast under a Tuscan moon"
           width={1920}
           height={900}
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-95"
+          className="absolute inset-0 w-full h-full object-contain object-top opacity-95"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
         <div className="absolute inset-0 bg-vignette" />
