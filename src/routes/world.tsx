@@ -30,9 +30,9 @@ export const Route = createFileRoute("/world")({
 
 const screenshots = [
   { img: villa, caption: "Inside the villa" },
-  { img: sofiaSwing, caption: "The old vineyard" },
-  { img: tuscanHills, caption: "Tuscan hills at dusk" },
-  { img: coverBeach, caption: "Cast under the moon" },
+  { img: sofiaSwing, caption: "Moon called" },
+  { img: tuscanHills, caption: "Tuscan hills" },
+  { img: coverBeach, caption: "Under the Tuscan sun" },
 ];
 
 function GamesPage() {
