@@ -42,11 +42,6 @@ function GamesPage() {
 
       {/* INTRO */}
       <section className="relative pt-40 pb-16 px-6 text-center">
-        <img
-          src={sweetSinLogo}
-          alt="Sweet Sin of Tuscany"
-          className="relative z-10 max-w-[40%] max-h-[40%] object-contain drop-shadow-[0_0_40px_oklch(0.52_0.20_18/0.5)]"
-        />
         <p className="mt-6 max-w-2xl mx-auto font-serif-italic text-rose-glow/80 text-lg">
           Discover the games of Vows & Vices Studio. Sweet Sin of Tuscany — our first 18+ visual novel of forbidden love
           and family secrets.
@@ -60,7 +55,7 @@ function GamesPage() {
             {/* Logo / Cover */}
             <div className="relative aspect-square lg:aspect-auto bg-ink flex items-center justify-center p-10 border-b lg:border-b-0 lg:border-r border-border/60">
               <img
-                src={cover}
+                src={sweetSinLogo}
                 alt=""
                 aria-hidden="true"
                 className="absolute inset-0 w-full h-full object-cover opacity-30"
