@@ -79,16 +79,6 @@ function Index() {
             <p className="mt-12 text-xs uppercase tracking-[0.3em] text-muted-foreground">
               Coming Soon · Mature Romance · 18+
             </p>
-
-            <div className="mt-10 flex justify-center lg:justify-end">
-              <img
-                src={logo}
-                alt="Sweet Sin of Tuscany logo"
-                width={420}
-                height={420}
-                className="w-48 sm:w-56 lg:w-64 xl:w-72 drop-shadow-[0_0_60px_rgba(180,30,50,0.5)]"
-              />
-            </div>
           </div>
         </div>
       </section>
