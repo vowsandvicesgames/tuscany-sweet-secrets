@@ -42,17 +42,14 @@ function GamesPage() {
 
       {/* INTRO */}
       <section className="relative pt-40 pb-16 px-6 text-center">
-        <p className="text-xs uppercase tracking-[0.4em] text-rose-glow/70">
-          Discover the games of Vows & Vices Studio. Sweet Sin of Tuscany — our first 18+ visual novel of forbidden love
-          and family secrets.
-        </p>
         <img
           src={sweetSinLogo}
           alt="Sweet Sin of Tuscany"
-          className="relative z-10 max-w-[80%] max-h-[80%] object-contain drop-shadow-[0_0_40px_oklch(0.52_0.20_18/0.5)]"
+          className="relative z-10 max-w-[40%] max-h-[40%] object-contain drop-shadow-[0_0_40px_oklch(0.52_0.20_18/0.5)]"
         />
         <p className="mt-6 max-w-2xl mx-auto font-serif-italic text-rose-glow/80 text-lg">
-          Stories made to be felt. Romance you choose, and consequences you carry.
+          Discover the games of Vows & Vices Studio. Sweet Sin of Tuscany — our first 18+ visual novel of forbidden love
+          and family secrets.
         </p>
       </section>
 
