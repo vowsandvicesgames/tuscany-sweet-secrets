@@ -5,7 +5,7 @@ import { Embers } from "@/components/Embers";
 import logo from "@/assets/sweet-sin-logo.png";
 import hero from "@/assets/tuscany-hero.jpg";
 import cover from "@/assets/cover-moon.webp";
-import vineyard from "@/assets/vineyard.jpg";
+import emili from "@/assets/character-emily.webp";
 import villa from "@/assets/villa-interior.jpg";
 import { PATREON_URL } from "@/lib/links";
 
@@ -117,7 +117,7 @@ function Index() {
               {
                 q: "Reconnect, or remain?",
                 a: "Will you reconnect with people you once loved, or will you remain in the past mistakes…",
-                img: vineyard,
+                img: emili,
               },
               {
                 q: "Defend, or burn it all?",
