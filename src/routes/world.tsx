@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { PATREON_URL } from "@/lib/links";
 import sweetSinLogo from "@/assets/sweet-sin-logo.png";
 import coverBeach from "@/assets/cover-beach-1.webp";
 import tuscanHills from "@/assets/a08.webp";
