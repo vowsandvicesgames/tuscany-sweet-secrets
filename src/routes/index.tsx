@@ -34,13 +34,13 @@ function Index() {
       <SiteHeader />
 
       {/* HERO */}
-      <section className="relative min-h-screen flex flex-col pt-20 pb-12">
+      <section className="relative min-h-screen flex flex-col pt-24 sm:pt-28 pb-12">
         <img
           src={cover}
           alt="Sweet Sin of Tuscany — cast under a Tuscan moon"
           width={1920}
           height={900}
-          className="absolute inset-0 w-full h-full object-contain object-top opacity-95"
+          className="absolute inset-x-0 top-24 sm:top-28 bottom-0 w-full h-[calc(100%-6rem)] sm:h-[calc(100%-7rem)] object-contain object-top opacity-95"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
         <div className="absolute inset-0 bg-vignette" />
