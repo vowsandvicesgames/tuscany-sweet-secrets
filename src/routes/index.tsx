@@ -3,10 +3,10 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Embers } from "@/components/Embers";
 import logo from "@/assets/sweet-sin-logo.png";
-import hero from "@/assets/tuscany-hero.jpg";
+import gloria from "@/assets/character-gloria.webp";
 import cover from "@/assets/cover-moon.webp";
 import emili from "@/assets/character-emily.webp";
-import villa from "@/assets/villa-interior.jpg";
+import sofia from "@/assets/character-sofia.webp";
 import { PATREON_URL } from "@/lib/links";
 
 export const Route = createFileRoute("/")({
@@ -122,12 +122,12 @@ function Index() {
               {
                 q: "Defend, or burn it all?",
                 a: "Will you defend your family's legacy, or will you let it all burn…",
-                img: villa,
+                img: sofia,
               },
               {
                 q: "Old life, or sweet sin?",
                 a: "Will you go back to your old life, or will you taste the Sweet Sin of Tuscany?",
-                img: hero,
+                img: gloria,
               },
             ].map((c, i) => (
               <article
@@ -140,7 +140,7 @@ function Index() {
                   loading="lazy"
                   width={1024}
                   height={1024}
-                  className="absolute inset-0 w-full h-full object-cover opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000"
+                  className="absolute inset-0 w-full h-full object-cover opacity-15 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-transparent" />
                 <div className="relative z-10">
