@@ -1,8 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import vvLogo from "@/assets/vows-vices-logo.png";
 import { PATREON_URL } from "@/lib/links";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
+import { z } from "zod";
 
 export const Route = createFileRoute("/studio")({
   head: () => ({
@@ -15,6 +19,8 @@ export const Route = createFileRoute("/studio")({
   }),
   component: StudioPage,
 });
+
+const emailSchema = z.string().trim().email({ message: "Please enter a valid email address" }).max(255);
 
 function StudioPage() {
   return (
