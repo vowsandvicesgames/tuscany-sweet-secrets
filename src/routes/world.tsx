@@ -96,9 +96,6 @@ function GamesPage() {
         {/* SCREENSHOTS */}
         <div className="mt-16">
           <div className="ornament-divider mb-8 text-xs tracking-[0.4em] uppercase">Screenshots</div>
-          <p className="text-center text-sm text-muted-foreground mb-10">
-            Placeholder gallery — replace with in-game screenshots.
-          </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {screenshots.map((s, i) => (
               <figure
@@ -126,7 +123,7 @@ function GamesPage() {
             New stories are being whispered in the studio.
           </h3>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            Vows &amp; Vices Studio is just getting started. Future titles will be announced here.
+            Vows &amp; Vices Studio is just getting started. Future chapters will be announced here.
           </p>
         </div>
       </section>
