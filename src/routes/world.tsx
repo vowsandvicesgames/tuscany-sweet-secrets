@@ -58,7 +58,7 @@ function GamesPage() {
                 src={sweetSinLogo}
                 alt=""
                 aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover opacity-30"
+                className="absolute inset-0 w-full h-full object-cover opacity-80"
               />
               <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-transparent to-background/60" />
             </div>
