@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import vvLogo from "@/assets/vows-vices-logo.png";
+import { PATREON_URL } from "@/lib/links";
 
 export function SiteFooter() {
   return (
@@ -16,6 +17,7 @@ export function SiteFooter() {
           <Link to="/story" className="hover:text-rose-glow transition-colors">The Story</Link>
           <Link to="/world" className="hover:text-rose-glow transition-colors">The World</Link>
           <Link to="/studio" className="hover:text-rose-glow transition-colors">The Studio</Link>
+          <a href={PATREON_URL} target="_blank" rel="noopener noreferrer" className="hover:text-rose-glow transition-colors">Support on Patreon ↗</a>
         </nav>
         <div className="text-sm text-muted-foreground">
           <p className="font-serif-italic text-rose-glow/80 mb-2">"Will you taste the Sweet Sin of Tuscany?"</p>
