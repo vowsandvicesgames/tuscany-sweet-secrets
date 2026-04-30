@@ -6,6 +6,7 @@ import logo from "@/assets/sweet-sin-logo.png";
 import hero from "@/assets/tuscany-hero.jpg";
 import vineyard from "@/assets/vineyard.jpg";
 import villa from "@/assets/villa-interior.jpg";
+import { PATREON_URL } from "@/lib/links";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -66,6 +67,14 @@ function Index() {
             >
               Explore the World
             </Link>
+            <a
+              href={PATREON_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 font-display tracking-[0.2em] uppercase text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
+            >
+              Support on Patreon
+            </a>
           </div>
 
           <p className="mt-16 text-xs uppercase tracking-[0.3em] text-muted-foreground">

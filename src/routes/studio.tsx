@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import vvLogo from "@/assets/vows-vices-logo.png";
+import { PATREON_URL } from "@/lib/links";
 
 export const Route = createFileRoute("/studio")({
   head: () => ({
@@ -36,6 +37,27 @@ function StudioPage() {
         <p>
           <span className="text-rose-glow">Sweet Sin of Tuscany</span> is our second chapter — a sun-drenched, dark-hearted novel about the people you can't unlove and the families that won't let you.
         </p>
+      </section>
+
+      <section className="px-6 pb-16 max-w-3xl mx-auto">
+        <div className="ornament-divider text-xs tracking-[0.3em] uppercase mb-10">Become a Patron</div>
+        <div className="relative overflow-hidden rounded-sm border border-crimson/40 bg-card/60 p-8 sm:p-10 text-center backdrop-blur">
+          <div className="absolute inset-0 bg-ember opacity-40 pointer-events-none" />
+          <div className="relative">
+            <h2 className="font-display text-3xl sm:text-4xl text-rose-glow glow-text">Step behind the velvet curtain.</h2>
+            <p className="mt-4 font-serif text-foreground/80 max-w-xl mx-auto">
+              Patrons receive early chapter previews, character sketches, behind-the-scenes notes, and a vote on what happens next at the Villa Bellini.
+            </p>
+            <a
+              href={PATREON_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center px-10 py-4 font-display tracking-[0.25em] uppercase text-sm bg-romance border border-crimson/40 hover:shadow-[0_0_60px_oklch(0.52_0.20_18/0.6)] transition-all rounded-sm"
+            >
+              Join us on Patreon ↗
+            </a>
+          </div>
+        </div>
       </section>
 
       <section className="px-6 pb-24 max-w-3xl mx-auto">
