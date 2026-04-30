@@ -166,6 +166,26 @@ function GamesPage() {
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
             Vows &amp; Vices Studio is just getting started. Future chapters will be announced here.
           </p>
+          <p className="mt-6 font-serif-italic text-rose-glow/85 text-lg max-w-2xl mx-auto">
+            Every whisper, every reveal, and every new chapter is first shared with our Patreon family — join us there
+            for sneak peeks, behind-the-scenes stories, and announcements before anyone else.
+          </p>
+
+          <div className="mt-8 flex justify-center">
+            <a
+              href={PATREON_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs bg-romance border border-crimson/40 rounded-sm hover:shadow-[0_0_60px_oklch(0.52_0.20_18/0.5)] transition-all"
+            >
+              Join us on Patreon
+            </a>
+          </div>
+
+          <p className="mt-6 text-sm text-muted-foreground max-w-xl mx-auto">
+            If our story and characters have stirred something in you, consider supporting the studio — your patronage
+            fuels richer worlds, deeper romance, and the quality this craft deserves.
+          </p>
         </div>
       </section>
 
