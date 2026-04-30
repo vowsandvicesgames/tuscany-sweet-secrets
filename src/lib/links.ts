@@ -1,1 +1,1 @@
-export const PATREON_URL = "https://patreon.com/vowsandvices";
+export const PATREON_URL = "https://www.patreon.com/cw/VowsandVicesStudio";
