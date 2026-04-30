@@ -137,7 +137,7 @@ function Index() {
                   loading="lazy"
                   width={1024}
                   height={1024}
-                  className="absolute inset-0 w-full h-100 opacity-65 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000"
+                  className="absolute inset-0 w-full h-full opacity-65 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000"
                 />
                 <div className="absolute inset-0 from-card via-card/80 to-transparent" />
                 <div className="relative z-10">
