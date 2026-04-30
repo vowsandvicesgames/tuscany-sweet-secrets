@@ -2,10 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import sweetSinLogo from "@/assets/sweet-sin-logo.png";
-import cover from "@/assets/cover-moon.webp";
-import vineyard from "@/assets/vineyard.jpg";
-import villa from "@/assets/villa-interior.jpg";
-import hero from "@/assets/tuscany-hero.jpg";
+import coverBeach from "@/assets/cover-beach-1.webp";
+import tuscanHills from "@/assets/a08.webp";
+import villa from "@/assets/g09.webp";
+import sofiaSwing from "@/assets/cover-sofia-swing.webp";
 
 export const Route = createFileRoute("/world")({
   head: () => ({
@@ -30,9 +30,9 @@ export const Route = createFileRoute("/world")({
 
 const screenshots = [
   { img: villa, caption: "Inside the villa" },
-  { img: vineyard, caption: "The old vineyard" },
-  { img: hero, caption: "Tuscan hills at dusk" },
-  { img: cover, caption: "Cast under the moon" },
+  { img: sofiaSwing, caption: "The old vineyard" },
+  { img: tuscanHills, caption: "Tuscan hills at dusk" },
+  { img: coverBeach, caption: "Cast under the moon" },
 ];
 
 function GamesPage() {
