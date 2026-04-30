@@ -1,8 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import vvLogo from "@/assets/vows-vices-logo.png";
 import { PATREON_URL } from "@/lib/links";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
+import { z } from "zod";
 
 export const Route = createFileRoute("/studio")({
   head: () => ({
@@ -16,7 +20,37 @@ export const Route = createFileRoute("/studio")({
   component: StudioPage,
 });
 
+const emailSchema = z.string().trim().email({ message: "Please enter a valid email address" }).max(255);
+
 function StudioPage() {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const parsed = emailSchema.safeParse(email);
+    if (!parsed.success) {
+      toast.error(parsed.error.issues[0].message);
+      return;
+    }
+    setLoading(true);
+    const { error } = await supabase
+      .from("newsletter_subscribers")
+      .insert({ email: parsed.data, source: "studio_page" });
+    setLoading(false);
+    if (error) {
+      if (error.code === "23505") {
+        toast.success("You're already on the list — secrets coming soon.");
+        setEmail("");
+        return;
+      }
+      toast.error("Something went wrong. Please try again.");
+      return;
+    }
+    toast.success("Welcome to the villa. Watch your inbox.");
+    setEmail("");
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -63,20 +97,24 @@ function StudioPage() {
       <section className="px-6 pb-24 max-w-3xl mx-auto">
         <div className="ornament-divider text-xs tracking-[0.3em] uppercase mb-10">Stay Close</div>
         <form
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleSubscribe}
           className="flex flex-col sm:flex-row gap-3 bg-card/60 border border-border p-4 rounded-sm backdrop-blur"
         >
           <input
             type="email"
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            disabled={loading}
             placeholder="your.email@villa.it"
-            className="flex-1 bg-transparent px-4 py-3 outline-none placeholder:text-muted-foreground/60 font-serif text-foreground"
+            className="flex-1 bg-transparent px-4 py-3 outline-none placeholder:text-muted-foreground/60 font-serif text-foreground disabled:opacity-50"
           />
           <button
             type="submit"
-            className="px-6 py-3 font-display tracking-[0.2em] uppercase text-sm bg-romance border border-crimson/40 hover:shadow-[0_0_60px_oklch(0.52_0.20_18/0.5)] transition-all rounded-sm"
+            disabled={loading}
+            className="px-6 py-3 font-display tracking-[0.2em] uppercase text-sm bg-romance border border-crimson/40 hover:shadow-[0_0_60px_oklch(0.52_0.20_18/0.5)] transition-all rounded-sm disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            Receive Letters
+            {loading ? "Sending…" : "Receive Letters"}
           </button>
         </form>
         <p className="text-xs text-muted-foreground mt-3 text-center">Chapter previews and release news. No spam, only secrets.</p>
