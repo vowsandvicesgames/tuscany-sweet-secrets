@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Embers } from "@/components/Embers";
 import logo from "@/assets/sweet-sin-logo.png";
 import hero from "@/assets/tuscany-hero.jpg";
+import cover from "@/assets/cover-moon.webp";
 import vineyard from "@/assets/vineyard.jpg";
 import villa from "@/assets/villa-interior.jpg";
 import { PATREON_URL } from "@/lib/links";
