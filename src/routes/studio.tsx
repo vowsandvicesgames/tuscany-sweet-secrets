@@ -23,6 +23,34 @@ export const Route = createFileRoute("/studio")({
 const emailSchema = z.string().trim().email({ message: "Please enter a valid email address" }).max(255);
 
 function StudioPage() {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const parsed = emailSchema.safeParse(email);
+    if (!parsed.success) {
+      toast.error(parsed.error.issues[0].message);
+      return;
+    }
+    setLoading(true);
+    const { error } = await supabase
+      .from("newsletter_subscribers")
+      .insert({ email: parsed.data, source: "studio_page" });
+    setLoading(false);
+    if (error) {
+      if (error.code === "23505") {
+        toast.success("You're already on the list — secrets coming soon.");
+        setEmail("");
+        return;
+      }
+      toast.error("Something went wrong. Please try again.");
+      return;
+    }
+    toast.success("Welcome to the villa. Watch your inbox.");
+    setEmail("");
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
