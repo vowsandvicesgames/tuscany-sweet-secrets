@@ -29,60 +29,70 @@ function Index() {
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 pb-24">
         <img
-          src={hero}
-          alt=""
+          src={cover}
+          alt="Sweet Sin of Tuscany — cast under a Tuscan moon"
           width={1920}
-          height={1080}
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          height={900}
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-background/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/60" />
         <div className="absolute inset-0 bg-vignette" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/30 to-background" />
         <Embers />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center animate-fade-up">
-          <p className="font-display tracking-[0.4em] uppercase text-xs sm:text-sm text-rose-glow/80 mb-8">
-            Vows &amp; Vices Studio Presents
-          </p>
-          <img
-            src={logo}
-            alt="Sweet Sin of Tuscany"
-            width={1280}
-            height={720}
-            className="mx-auto w-full max-w-3xl drop-shadow-[0_0_60px_rgba(180,30,50,0.4)]"
-          />
-          <p className="mt-10 font-serif-italic text-xl sm:text-2xl text-rose-glow/90 text-balance max-w-2xl mx-auto">
-            A story of long lost, forbidden love — and the consequences of years of forced separation.
-          </p>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid lg:grid-cols-[1fr_auto] gap-10 items-center animate-fade-up">
+          <div className="text-center lg:text-left max-w-2xl">
+            <p className="font-display tracking-[0.4em] uppercase text-xs sm:text-sm text-rose-glow/80 mb-6">
+              Vows &amp; Vices Studio Presents
+            </p>
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl text-rose-glow glow-text text-balance">
+              Sweet Sin <span className="font-serif-italic text-crimson">of Tuscany</span>
+            </h1>
+            <p className="mt-8 font-serif-italic text-xl sm:text-2xl text-rose-glow/90 text-balance">
+              A story of long lost, forbidden love — and the consequences of years of forced separation.
+            </p>
 
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              to="/story"
-              className="group relative inline-flex items-center justify-center px-8 py-4 font-display tracking-[0.2em] uppercase text-sm text-foreground bg-romance rounded-sm shadow-[0_0_60px_oklch(0.52_0.20_18/0.35)] hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 border border-crimson/40"
-            >
-              <span>Enter the Story</span>
-              <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
-            </Link>
-            <Link
-              to="/world"
-              className="inline-flex items-center justify-center px-8 py-4 font-display tracking-[0.2em] uppercase text-sm text-rose-glow border border-rose-glow/30 hover:border-rose-glow/70 hover:bg-rose-glow/5 transition-all duration-500 rounded-sm"
-            >
-              Explore the World
-            </Link>
-            <a
-              href={PATREON_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 font-display tracking-[0.2em] uppercase text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
-            >
-              Support on Patreon
-            </a>
+            <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+              <Link
+                to="/story"
+                className="group relative inline-flex items-center justify-center px-8 py-4 font-display tracking-[0.2em] uppercase text-sm text-foreground bg-romance rounded-sm shadow-[0_0_60px_oklch(0.52_0.20_18/0.35)] hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 border border-crimson/40"
+              >
+                <span>Enter the Story</span>
+                <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
+              </Link>
+              <Link
+                to="/world"
+                className="inline-flex items-center justify-center px-8 py-4 font-display tracking-[0.2em] uppercase text-sm text-rose-glow border border-rose-glow/30 hover:border-rose-glow/70 hover:bg-rose-glow/5 transition-all duration-500 rounded-sm"
+              >
+                Explore the World
+              </Link>
+              <a
+                href={PATREON_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-4 font-display tracking-[0.2em] uppercase text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
+              >
+                Support on Patreon
+              </a>
+            </div>
+
+            <p className="mt-12 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+              Coming Soon · Mature Romance · 18+
+            </p>
           </div>
 
-          <p className="mt-16 text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            Coming Soon · Mature Romance · 18+
-          </p>
+          <div className="hidden lg:flex justify-end">
+            <img
+              src={logo}
+              alt="Sweet Sin of Tuscany logo"
+              width={420}
+              height={420}
+              className="w-64 xl:w-80 drop-shadow-[0_0_60px_rgba(180,30,50,0.5)]"
+            />
+          </div>
         </div>
       </section>
+
 
       {/* PROLOGUE */}
       <section className="relative py-32 px-6">
