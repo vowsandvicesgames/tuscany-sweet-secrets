@@ -116,17 +116,14 @@ function Index() {
             {[
               {
                 q: "Reconnect, or remain?",
-                a: "Will you reconnect with people you once loved, or will you remain in the past mistakes…",
                 img: emili,
               },
               {
                 q: "Defend, or burn it all?",
-                a: "Will you defend your family's legacy, or will you let it all burn…",
                 img: sofia,
               },
               {
                 q: "Old life, or sweet sin?",
-                a: "Will you go back to your old life, or will you taste the Sweet Sin of Tuscany?",
                 img: gloria,
               },
             ].map((c, i) => (
@@ -142,11 +139,10 @@ function Index() {
                   height={1024}
                   className="absolute inset-0 w-full h-full object-contain opacity-65 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-transparent" />
+                <div className="absolute inset-0 from-card via-card/80 to-transparent" />
                 <div className="relative z-10">
                   <p className="text-xs uppercase tracking-[0.3em] text-crimson mb-4">Chapter {i + 1}</p>
                   <h3 className="font-display text-3xl text-rose-glow mb-4 text-balance">{c.q}</h3>
-                  <p className="font-serif-italic text-foreground/80 text-balance">{c.a}</p>
                 </div>
               </article>
             ))}
