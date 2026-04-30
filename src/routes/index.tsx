@@ -112,7 +112,7 @@ function Index() {
       <section className="relative py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="ornament-divider mb-12 text-xs tracking-[0.4em] uppercase">Your Choices</div>
-          <div className="grid gap-px bg-border/40 md:grid-cols-3 rounded-sm overflow-hidden">
+          <div className="grid gap-px min-h-[48rem] bg-border/40 md:grid-cols-3 rounded-sm overflow-hidden">
             {[
               {
                 q: "Reconnect, or remain?",
@@ -140,7 +140,7 @@ function Index() {
                   loading="lazy"
                   width={1024}
                   height={1024}
-                  className="absolute inset-0 w-full h-full object-cover opacity-15 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000"
+                  className="absolute inset-0 w-full h-full object-cover opacity-65 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-transparent" />
                 <div className="relative z-10">
