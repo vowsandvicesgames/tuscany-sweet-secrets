@@ -6,6 +6,12 @@ import coverBeach from "@/assets/cover-beach-1.webp";
 import tuscanHills from "@/assets/a08.webp";
 import villa from "@/assets/g09.webp";
 import sofiaSwing from "@/assets/cover-no1-big-moon.webp";
+import characterSofia from "@/assets/character-sofia.webp";
+import characterEmily from "@/assets/character-emily.webp";
+import characterGloria from "@/assets/character-gloria.webp";
+import characterLuca from "@/assets/character-luca.webp";
+import characterBianca from "@/assets/character-bianca.webp";
+import characterMia from "@/assets/character-mia.webp";
 
 export const Route = createFileRoute("/world")({
   head: () => ({
@@ -27,6 +33,15 @@ export const Route = createFileRoute("/world")({
   }),
   component: GamesPage,
 });
+
+const characters = [
+  { img: characterSofia, name: "Sofia" },
+  { img: characterEmily, name: "Emily" },
+  { img: characterGloria, name: "Gloria" },
+  { img: characterLuca, name: "Luca" },
+  { img: characterBianca, name: "Bianca" },
+  { img: characterMia, name: "Mia" },
+];
 
 const screenshots = [
   { img: villa, caption: "Inside the villa" },
@@ -92,6 +107,32 @@ function GamesPage() {
             </div>
           </div>
         </article>
+
+        {/* CHARACTERS */}
+        <div className="mt-16">
+          <div className="ornament-divider mb-3 text-xs tracking-[0.4em] uppercase">Meet the characters</div>
+          <p className="text-center text-sm text-muted-foreground mb-8 font-serif-italic">
+            From the first chapter — and many more to come in next chapters.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {characters.map((c) => (
+              <figure
+                key={c.name}
+                className="relative aspect-[3/4] overflow-hidden rounded-sm border border-border/60 bg-card group"
+              >
+                <img
+                  src={c.img}
+                  alt={c.name}
+                  loading="lazy"
+                  className="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                />
+                <figcaption className="absolute bottom-0 inset-x-0 p-3 text-xs uppercase tracking-[0.3em] text-rose-glow/90 bg-gradient-to-t from-ink/95 to-transparent text-center">
+                  {c.name}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
 
         {/* SCREENSHOTS */}
         <div className="mt-16">
