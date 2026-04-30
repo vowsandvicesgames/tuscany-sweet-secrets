@@ -13,9 +13,16 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Sweet Sin of Tuscany — A Romantic Visual Novel" },
-      { name: "description", content: "While taking a deserved week off in the Tuscan hills, an unexpected visitor turns your world upside down. A story of forbidden love and family secrets." },
+      {
+        name: "description",
+        content:
+          "While taking a deserved week off in the Tuscan hills, an unexpected visitor turns your world upside down. A story of forbidden love and family secrets.",
+      },
       { property: "og:title", content: "Sweet Sin of Tuscany" },
-      { property: "og:description", content: "A romantic visual novel of forbidden love and family secrets in the Tuscan hills." },
+      {
+        property: "og:description",
+        content: "A romantic visual novel of forbidden love and family secrets in the Tuscan hills.",
+      },
     ],
   }),
   component: Index,
@@ -33,7 +40,7 @@ function Index() {
           alt="Sweet Sin of Tuscany — cast under a Tuscan moon"
           width={1920}
           height={900}
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-95"
+          className="absolute w-full h-full object-cover object-center opacity-95"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
         <div className="absolute inset-0 bg-vignette" />
@@ -82,7 +89,6 @@ function Index() {
         </div>
       </section>
 
-
       {/* PROLOGUE */}
       <section className="relative py-32 px-6">
         <div className="max-w-4xl mx-auto text-center">
@@ -97,9 +103,7 @@ function Index() {
             <p>
               What follows is a story of long lost, forbidden love — and the consequences of years of forced separation.
             </p>
-            <p>
-              Due to these events, your family's web of lies, that holds a dark secret, will unravel.
-            </p>
+            <p>Due to these events, your family's web of lies, that holds a dark secret, will unravel.</p>
           </div>
         </div>
       </section>
@@ -159,7 +163,8 @@ function Index() {
             <span className="block font-serif-italic text-crimson mt-2">Sweet Sin of Tuscany?</span>
           </h2>
           <p className="mt-10 text-muted-foreground max-w-xl mx-auto">
-            Be the first to know when the villa opens its doors. Wishlist updates and chapter previews from Vows &amp; Vices Studio.
+            Be the first to know when the villa opens its doors. Wishlist updates and chapter previews from Vows &amp;
+            Vices Studio.
           </p>
           <Link
             to="/studio"
