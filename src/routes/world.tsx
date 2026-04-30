@@ -184,8 +184,7 @@ function GamesPage() {
           </div>
 
           <p className="mt-6 text-sm text-muted-foreground max-w-xl mx-auto">
-            If our story and characters have stirred something in you, consider supporting the studio — your patronage
-            fuels richer worlds, deeper romance, and the quality this craft deserves.
+            Love the story? Support us to keep it growing.
           </p>
         </div>
       </section>
