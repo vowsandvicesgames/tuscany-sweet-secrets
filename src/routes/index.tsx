@@ -1,4 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { toast } from "sonner";
+import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Embers } from "@/components/Embers";
@@ -8,6 +11,8 @@ import cover from "@/assets/cover-moon.webp";
 import emili from "@/assets/character-emily.webp";
 import sofia from "@/assets/character-sofia.webp";
 import { PATREON_URL } from "@/lib/links";
+
+const emailSchema = z.string().trim().email({ message: "Please enter a valid email address" }).max(255);
 
 export const Route = createFileRoute("/")({
   head: () => ({
