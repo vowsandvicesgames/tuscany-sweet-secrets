@@ -39,9 +39,9 @@ const characters = [
   { img: characterSofia, name: "Sofia", alt: "middle-aged good-looking red-haired women" },
   { img: characterEmily, name: "Emily", alt: "young brunette in the mid-20s" },
   { img: characterGloria, name: "Gloria", alt: "young blonde in the mid-20s" },
-  { img: characterLuca, name: "Luca", alt: "handsome, young, classy Italian guy" },
-  { img: characterBianca, name: "Bianca", alt: "fitness women instructor" },
   { img: characterMia, name: "Mia", alt: "shy girl, mask lover" },
+  { img: characterBianca, name: "Bianca", alt: "fitness women instructor" },
+  { img: characterLuca, name: "Luca", alt: "handsome, young, classy Italian guy" },
 ];
 
 const screenshots = [
