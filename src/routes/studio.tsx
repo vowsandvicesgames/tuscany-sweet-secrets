@@ -114,6 +114,30 @@ function StudioPage() {
         </div>
       </section>
 
+      <section className="px-6 pb-16 max-w-3xl mx-auto">
+        <div className="ornament-divider text-xs tracking-[0.3em] uppercase mb-10">Or Buy Us a Coffee</div>
+        <div className="relative overflow-hidden rounded-sm border border-crimson/40 bg-card/60 p-8 sm:p-10 text-center backdrop-blur">
+          <div className="absolute inset-0 bg-ember opacity-40 pointer-events-none" />
+          <div className="relative">
+            <h2 className="font-display text-3xl sm:text-4xl text-rose-glow glow-text">
+              A small sip, a big thank you.
+            </h2>
+            <p className="mt-4 font-serif text-foreground/80 max-w-xl mx-auto">
+              Not ready for Patreon? You can still support us with a one-time tip — every coffee fuels another late
+              night with laptop.
+            </p>
+            <a
+              href={PAYPAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center px-10 py-4 font-display tracking-[0.25em] uppercase text-sm bg-romance border border-crimson/40 hover:shadow-[0_0_60px_oklch(0.52_0.20_18/0.6)] transition-all rounded-sm"
+            >
+              Buy us a coffee ☕ ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="px-6 pb-24 max-w-3xl mx-auto">
         <div className="ornament-divider text-xs tracking-[0.3em] uppercase mb-10">Stay Close</div>
         <form
