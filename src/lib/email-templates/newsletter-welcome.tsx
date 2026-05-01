@@ -118,3 +118,9 @@ const footer = {
   fontStyle: "italic",
   margin: "0",
 };
+
+const logo = {
+  display: "block",
+  margin: "0 auto 16px",
+  borderRadius: "50%",
+};
