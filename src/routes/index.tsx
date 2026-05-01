@@ -180,10 +180,10 @@ function Index() {
                 Meet the Studio
               </Link>
 
-              <div className="ornament-divider text-xs tracking-[0.3em] uppercase my-10">Or Join the Letters</div>
+              <div className="ornament-divider text-xs tracking-[0.3em] uppercase my-10">And Join the Letters</div>
 
               <h3 className="font-display text-2xl sm:text-3xl text-rose-glow glow-text">
-                Whispers from the villa, straight to your inbox.
+                Whispers from the Sweet sin of Tuscany, straight to your inbox.
               </h3>
               <p className="mt-3 font-serif text-foreground/80 max-w-xl mx-auto">
                 Subscribe for chapter previews, release news, and announcements. No spam, only secrets.
