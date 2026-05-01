@@ -1,4 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { toast } from "sonner";
+import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Embers } from "@/components/Embers";
@@ -8,6 +11,8 @@ import cover from "@/assets/cover-moon.webp";
 import emili from "@/assets/character-emily.webp";
 import sofia from "@/assets/character-sofia.webp";
 import { PATREON_URL } from "@/lib/links";
+
+const emailSchema = z.string().trim().email({ message: "Please enter a valid email address" }).max(255);
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,6 +34,41 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const parsed = emailSchema.safeParse(email);
+    if (!parsed.success) {
+      toast.error(parsed.error.issues[0].message);
+      return;
+    }
+    setLoading(true);
+    try {
+      const res = await fetch("/api/public/newsletter-subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: parsed.data, source: "home_page" }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        toast.error("Something went wrong. Please try again.");
+        return;
+      }
+      if (data.alreadySubscribed) {
+        toast.success("You're already on the list — secrets coming soon.");
+      } else {
+        toast.success("Welcome to the villa. Check your inbox.");
+      }
+      setEmail("");
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       <SiteHeader />
@@ -168,6 +208,35 @@ function Index() {
           >
             Meet the Studio
           </Link>
+
+          <div className="mt-14 max-w-xl mx-auto bg-card/60 border border-crimson/40 rounded-sm p-8 backdrop-blur shadow-[0_0_60px_oklch(0.52_0.20_18/0.15)]">
+            <p className="font-display tracking-[0.3em] uppercase text-xs text-crimson">Stay Close</p>
+            <h3 className="font-serif-italic text-2xl text-rose-glow mt-3 text-balance">
+              Letters from the villa
+            </h3>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Chapter previews, release news and quiet little secrets — straight to your inbox.
+            </p>
+            <form onSubmit={handleSubscribe} className="mt-6 flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={loading}
+                placeholder="your.email@villa.it"
+                className="flex-1 bg-background/50 border border-border/60 px-4 py-3 outline-none focus:border-crimson/60 placeholder:text-muted-foreground/60 font-serif text-foreground disabled:opacity-50 rounded-sm"
+              />
+              <button
+                type="submit"
+                disabled={loading}
+                className="px-6 py-3 font-display tracking-[0.2em] uppercase text-xs bg-romance border border-crimson/40 hover:shadow-[0_0_60px_oklch(0.52_0.20_18/0.5)] transition-all rounded-sm disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {loading ? "Sending…" : "Receive Letters"}
+              </button>
+            </form>
+            <p className="text-xs text-muted-foreground/80 mt-3">No spam. Only secrets. Unsubscribe anytime.</p>
+          </div>
         </div>
       </section>
 
