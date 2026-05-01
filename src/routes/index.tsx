@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Embers } from "@/components/Embers";
 import logo from "@/assets/sweet-sin-logo.png";
-import gloria from "@/assets/character-gloria.webp";
+import gloria from "@/assets/character-gloria-home.webp";
 import cover from "@/assets/cover-moon.webp";
 import emili from "@/assets/character-emily-home.webp";
 import sofia from "@/assets/character-sofia.webp";
