@@ -74,7 +74,7 @@ function StoryPage() {
             {[
               "Will you reconnect with the people you love, or will you remain trapped in past mistakes?",
               "Will you defend your family’s legacy, or will you let it all burn?",
-              "Will you go back to your old existence, or will you taste the… ‘Sweet Sin of Tuscany’?",
+              "Will you go back to your old existence, or will you taste the…" + <span className="font-serif-italic text-crimson">Sweet Sin of Tuscany?</span>",
             ].map((q, i) => (
               <li key={i} className="border-l-2 border-crimson pl-6 font-serif-italic text-rose-glow/90 text-xl">
                 {q}
