@@ -15,7 +15,7 @@ export function SiteFooter() {
         </div>
         <nav className="flex flex-col gap-2 text-sm text-muted-foreground">
           <Link to="/story" className="hover:text-rose-glow transition-colors">The Story</Link>
-          <Link to="/world" className="hover:text-rose-glow transition-colors">The World</Link>
+          <Link to="/world" className="hover:text-rose-glow transition-colors">The Games</Link>
           <Link to="/studio" className="hover:text-rose-glow transition-colors">The Studio</Link>
           <a href={PATREON_URL} target="_blank" rel="noopener noreferrer" className="hover:text-rose-glow transition-colors">Support on Patreon ↗</a>
           <a href={PAYPAL_URL} target="_blank" rel="noopener noreferrer" className="hover:text-rose-glow transition-colors">Buy us a coffee ☕ ↗</a>
