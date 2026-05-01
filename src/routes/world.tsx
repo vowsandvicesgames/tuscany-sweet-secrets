@@ -83,11 +83,11 @@ function GamesPage() {
             <div className="p-8 sm:p-12 flex flex-col justify-center">
               <p className="text-xs uppercase tracking-[0.3em] text-crimson mb-3">Featured · Coming Soon</p>
               <h2 className="font-display text-4xl sm:text-5xl text-rose-glow mb-5">
-                 <span className="font-serif-italic text-crimson">Sweet Sin</span> of Tuscany</span>
+                <span className="font-serif-italic text-crimson">Sweet Sin</span> of Tuscany
               </h2>
               <p className="font-serif-italic text-rose-glow/85 text-lg mb-5">
-                Our first 18+ visual novel, a story of long lost, forbidden love and the consequences of years of
-                forced separation.
+                Our first 18+ visual novel, a story of long lost, forbidden love and the consequences of years of forced
+                separation.
               </p>
               <p className="text-foreground/75 leading-relaxed mb-8">
                 While taking a deserved week off in the Tuscan hills, an unexpected visitor turns your world upside
