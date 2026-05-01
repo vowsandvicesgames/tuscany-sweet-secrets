@@ -52,7 +52,7 @@ function Index() {
         <Embers />
 
         <div className="relative z-10 mt-auto w-full max-w-7xl mx-auto px-6 animate-fade-up">
-          <div className="text-left max-w-3xl">
+          <div className="text-left max-w-4xl">
             <p className="font-display tracking-[0.4em] uppercase text-xs sm:text-sm text-rose-glow/80 mb-4">
               Vows &amp; Vices Studio Proudly Presents
             </p>
@@ -169,8 +169,8 @@ function Index() {
             <div className="absolute inset-0 bg-ember opacity-40 pointer-events-none" />
             <div className="relative">
               <p className="text-muted-foreground max-w-xl mx-auto">
-                Be the first to know when the villa opens its doors. Wishlist updates and chapter previews from Vows &amp;
-                Vices Studio.
+                Be the first to know when the villa opens its doors. Wishlist updates and chapter previews from Vows
+                &amp; Vices Studio.
               </p>
 
               <Link
