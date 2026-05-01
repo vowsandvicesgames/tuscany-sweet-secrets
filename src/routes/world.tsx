@@ -17,16 +17,16 @@ import characterMia from "@/assets/character-mia.webp";
 export const Route = createFileRoute("/world")({
   head: () => ({
     meta: [
-      { title: "Games — Vows & Vices Studio" },
+      { title: "Games - Vows & Vices Studio" },
       {
         name: "description",
         content:
-          "Discover the games of Vows & Vices Studio. Sweet Sin of Tuscany — our first 18+ visual novel of forbidden love and family secrets.",
+          "Discover the games of Vows & Vices Studio. Sweet Sin of Tuscany, our first 18+ visual novel of forbidden love and family secrets.",
       },
-      { property: "og:title", content: "Games — Vows & Vices Studio" },
+      { property: "og:title", content: "Games - Vows & Vices Studio" },
       {
         property: "og:description",
-        content: "Sweet Sin of Tuscany — our first 18+ visual novel from Vows & Vices Studio.",
+        content: "Sweet Sin of Tuscany, our first 18+ visual novel from Vows & Vices Studio.",
       },
       { property: "og:image", content: coverBeach },
       { name: "twitter:image", content: coverBeach },
@@ -59,7 +59,7 @@ function GamesPage() {
       {/* INTRO */}
       <section className="relative pt-40 pb-16 px-6 text-center">
         <p className="mt-6 max-w-2xl mx-auto font-serif-italic text-rose-glow/80 text-lg">
-          Discover the games of Vows & Vices Studio. Sweet Sin of Tuscany — our first 18+ visual novel of forbidden love
+          Discover the games of Vows & Vices Studio. Sweet Sin of Tuscany, our first 18+ visual novel of forbidden love
           and family secrets.
         </p>
       </section>
@@ -83,7 +83,7 @@ function GamesPage() {
             <div className="p-8 sm:p-12 flex flex-col justify-center">
               <p className="text-xs uppercase tracking-[0.3em] text-crimson mb-3">Featured · Coming Soon</p>
               <h2 className="font-display text-4xl sm:text-5xl text-rose-glow mb-5">
-                Sweet Sin <span className="font-serif-italic text-crimson">of Tuscany</span>
+                 <span className="font-serif-italic text-crimson">Sweet Sin</span> of Tuscany</span>
               </h2>
               <p className="font-serif-italic text-rose-glow/85 text-lg mb-5">
                 Our first 18+ visual novel — a story of long lost, forbidden love and the consequences of years of
