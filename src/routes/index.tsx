@@ -6,7 +6,7 @@ import { Embers } from "@/components/Embers";
 import logo from "@/assets/sweet-sin-logo.png";
 import gloria from "@/assets/character-gloria.webp";
 import cover from "@/assets/cover-moon.webp";
-import emili from "@/assets/character-emily.webp";
+import emili from "@/assets/character-emily-home.webp";
 import sofia from "@/assets/character-sofia.webp";
 import { PATREON_URL } from "@/lib/links";
 import { toast } from "sonner";
