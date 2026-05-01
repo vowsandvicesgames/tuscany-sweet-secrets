@@ -41,21 +41,28 @@ function StudioPage() {
       return;
     }
     setLoading(true);
-    const { error } = await supabase
-      .from("newsletter_subscribers")
-      .insert({ email: parsed.data, source: "studio_page" });
-    setLoading(false);
-    if (error) {
-      if (error.code === "23505") {
-        toast.success("You're already on the list — secrets coming soon.");
-        setEmail("");
+    try {
+      const res = await fetch("/api/public/newsletter-subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: parsed.data, source: "studio_page" }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        toast.error("Something went wrong. Please try again.");
         return;
       }
+      if (data.alreadySubscribed) {
+        toast.success("You're already on the list — secrets coming soon.");
+      } else {
+        toast.success("Welcome to the villa. Check your inbox.");
+      }
+      setEmail("");
+    } catch {
       toast.error("Something went wrong. Please try again.");
-      return;
+    } finally {
+      setLoading(false);
     }
-    toast.success("Welcome to the villa. Watch your inbox.");
-    setEmail("");
   };
 
   return (

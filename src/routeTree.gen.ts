@@ -15,6 +15,7 @@ import { Route as StoryRouteImport } from './routes/story'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
+import { Route as ApiPublicNewsletterSubscribeRouteImport } from './routes/api/public/newsletter-subscribe'
 import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
@@ -49,6 +50,12 @@ const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
   path: '/lovable/email/suppression',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicNewsletterSubscribeRoute =
+  ApiPublicNewsletterSubscribeRouteImport.update({
+    id: '/api/public/newsletter-subscribe',
+    path: '/api/public/newsletter-subscribe',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const LovableEmailTransactionalSendRoute =
   LovableEmailTransactionalSendRouteImport.update({
     id: '/lovable/email/transactional/send',
@@ -74,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/studio': typeof StudioRoute
   '/world': typeof WorldRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
+  '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -85,6 +93,7 @@ export interface FileRoutesByTo {
   '/studio': typeof StudioRoute
   '/world': typeof WorldRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
+  '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -97,6 +106,7 @@ export interface FileRoutesById {
   '/studio': typeof StudioRoute
   '/world': typeof WorldRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
+  '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -110,6 +120,7 @@ export interface FileRouteTypes {
     | '/studio'
     | '/world'
     | '/email/unsubscribe'
+    | '/api/public/newsletter-subscribe'
     | '/lovable/email/suppression'
     | '/lovable/email/queue/process'
     | '/lovable/email/transactional/preview'
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/studio'
     | '/world'
     | '/email/unsubscribe'
+    | '/api/public/newsletter-subscribe'
     | '/lovable/email/suppression'
     | '/lovable/email/queue/process'
     | '/lovable/email/transactional/preview'
@@ -132,6 +144,7 @@ export interface FileRouteTypes {
     | '/studio'
     | '/world'
     | '/email/unsubscribe'
+    | '/api/public/newsletter-subscribe'
     | '/lovable/email/suppression'
     | '/lovable/email/queue/process'
     | '/lovable/email/transactional/preview'
@@ -144,6 +157,7 @@ export interface RootRouteChildren {
   StudioRoute: typeof StudioRoute
   WorldRoute: typeof WorldRoute
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
+  ApiPublicNewsletterSubscribeRoute: typeof ApiPublicNewsletterSubscribeRoute
   LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
   LovableEmailQueueProcessRoute: typeof LovableEmailQueueProcessRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
@@ -194,6 +208,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LovableEmailSuppressionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/newsletter-subscribe': {
+      id: '/api/public/newsletter-subscribe'
+      path: '/api/public/newsletter-subscribe'
+      fullPath: '/api/public/newsletter-subscribe'
+      preLoaderRoute: typeof ApiPublicNewsletterSubscribeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lovable/email/transactional/send': {
       id: '/lovable/email/transactional/send'
       path: '/lovable/email/transactional/send'
@@ -224,6 +245,7 @@ const rootRouteChildren: RootRouteChildren = {
   StudioRoute: StudioRoute,
   WorldRoute: WorldRoute,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
+  ApiPublicNewsletterSubscribeRoute: ApiPublicNewsletterSubscribeRoute,
   LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
   LovableEmailQueueProcessRoute: LovableEmailQueueProcessRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
