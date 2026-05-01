@@ -85,15 +85,15 @@ function StudioPage() {
 
       <section className="px-6 pb-20 max-w-3xl mx-auto space-y-8 text-lg font-serif leading-relaxed text-foreground/85">
         <p className="font-serif-italic text-2xl text-rose-glow text-center text-balance">
-          "We write the stories you swore you'd never tell anyone."
+          "We write the stories we swore we would never tell anyone."
         </p>
         <p>
-          Vows &amp; Vices is a small studio devoted to one craft: moody, character-driven 18+ romance. Every choice
-          matters. Every silence is loaded. Every scene is built to be read more than once.
+          Vows & Vices is a small studio devoted to one craft: moody, character-driven 18+ stories. Every choice
+          matters. Every word is carefully chosen. Every scene is created to be seen more than once.
         </p>
         <p>
           <span className="text-rose-glow">Sweet Sin of Tuscany</span> is our first 18+ romantic visual novel about the
-          people you can't unlove and the families that won't let you.
+          people you can’t stop loving and the families that won’t let you love them.
         </p>
       </section>
 
@@ -106,7 +106,7 @@ function StudioPage() {
               Step behind the velvet curtain.
             </h2>
             <p className="mt-4 font-serif text-foreground/80 max-w-xl mx-auto">
-              Patrons receive early chapter previews, character sketches, behind-the-scenes notes, and a vote on what
+              Patrons receive early chapter previews, character sketches, behind the scenes notes, and a vote on what
               happens next at the Sweet sin of Tuscany.
             </p>
             <a
@@ -130,8 +130,8 @@ function StudioPage() {
               A small sip, a big thank you.
             </h2>
             <p className="mt-4 font-serif text-foreground/80 max-w-xl mx-auto">
-              Not ready for Patreon? You can still support us with a one-time tip — every coffee fuels another late
-              night with laptop.
+              Not ready for Patreon? You can still support us with a one-time tip. Every coffee fuels another late night
+              spent with a laptop.
             </p>
             <a
               href={PAYPAL_URL}
