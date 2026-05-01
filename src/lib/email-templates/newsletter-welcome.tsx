@@ -88,6 +88,12 @@ const header = {
   padding: '0 0 24px',
 }
 
+const logo = {
+  display: 'block',
+  margin: '0 auto 16px',
+  borderRadius: '50%',
+}
+
 const h1 = {
   fontSize: '28px',
   fontWeight: 'normal',
