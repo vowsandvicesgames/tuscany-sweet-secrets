@@ -72,7 +72,7 @@ function GamesPage() {
             <div className="relative aspect-square lg:aspect-auto bg-ink flex items-center justify-center p-10 border-b lg:border-b-0 lg:border-r border-border/60">
               <img
                 src={sweetSinLogo}
-                alt=""
+                alt="sweet sin of tuscany logo"
                 aria-hidden="true"
                 className="absolute inset-0 w-full h-full object-cover opacity-80"
               />
