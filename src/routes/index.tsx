@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Embers } from "@/components/Embers";
@@ -8,6 +9,10 @@ import cover from "@/assets/cover-moon.webp";
 import emili from "@/assets/character-emily.webp";
 import sofia from "@/assets/character-sofia.webp";
 import { PATREON_URL } from "@/lib/links";
+import { toast } from "sonner";
+import { z } from "zod";
+
+const emailSchema = z.string().trim().email({ message: "Please enter a valid email address" }).max(255);
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -159,16 +164,34 @@ function Index() {
             Will you taste the
             <span className="block font-serif-italic text-crimson mt-2">Sweet Sin of Tuscany?</span>
           </h2>
-          <p className="mt-10 text-muted-foreground max-w-xl mx-auto">
-            Be the first to know when the villa opens its doors. Wishlist updates and chapter previews from Vows &amp;
-            Vices Studio.
-          </p>
-          <Link
-            to="/studio"
-            className="mt-10 inline-flex items-center px-10 py-4 font-display tracking-[0.25em] uppercase text-sm bg-romance border border-crimson/40 hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 rounded-sm"
-          >
-            Meet the Studio
-          </Link>
+
+          <div className="mt-12 relative overflow-hidden rounded-sm border border-crimson/40 bg-card/60 p-8 sm:p-10 backdrop-blur text-center">
+            <div className="absolute inset-0 bg-ember opacity-40 pointer-events-none" />
+            <div className="relative">
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                Be the first to know when the villa opens its doors. Wishlist updates and chapter previews from Vows &amp;
+                Vices Studio.
+              </p>
+
+              <Link
+                to="/studio"
+                className="mt-8 inline-flex items-center px-10 py-4 font-display tracking-[0.25em] uppercase text-sm bg-romance border border-crimson/40 hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 rounded-sm"
+              >
+                Meet the Studio
+              </Link>
+
+              <div className="ornament-divider text-xs tracking-[0.3em] uppercase my-10">Or Join the Letters</div>
+
+              <h3 className="font-display text-2xl sm:text-3xl text-rose-glow glow-text">
+                Whispers from the villa, straight to your inbox.
+              </h3>
+              <p className="mt-3 font-serif text-foreground/80 max-w-xl mx-auto">
+                Subscribe for chapter previews, release news, and announcements. No spam, only secrets.
+              </p>
+
+              <NewsletterForm />
+            </div>
+          </div>
         </div>
       </section>
 
