@@ -34,6 +34,41 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const parsed = emailSchema.safeParse(email);
+    if (!parsed.success) {
+      toast.error(parsed.error.issues[0].message);
+      return;
+    }
+    setLoading(true);
+    try {
+      const res = await fetch("/api/public/newsletter-subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: parsed.data, source: "home_page" }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        toast.error("Something went wrong. Please try again.");
+        return;
+      }
+      if (data.alreadySubscribed) {
+        toast.success("You're already on the list — secrets coming soon.");
+      } else {
+        toast.success("Welcome to the villa. Check your inbox.");
+      }
+      setEmail("");
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       <SiteHeader />
