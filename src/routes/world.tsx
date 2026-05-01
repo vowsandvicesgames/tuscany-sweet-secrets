@@ -90,8 +90,8 @@ function GamesPage() {
                 separation.
               </p>
               <p className="text-foreground/75 leading-relaxed mb-8">
-                While taking a deserved week off in the Tuscan hills, an unexpected visitor turns your world upside
-                down. Your family's web of lies and the dark secret it hides is about to unravel.
+                While enjoying a well-deserved week off in the Tuscan paradise, an unexpected visitor turns your world
+                upside down. Your family's web of lies and the dark secret it hides is about to unravel.
               </p>
 
               <div className="flex flex-wrap gap-3">
@@ -113,7 +113,7 @@ function GamesPage() {
         <div className="mt-16">
           <div className="ornament-divider mb-3 text-xs tracking-[0.4em] uppercase">Meet the characters</div>
           <p className="text-center text-sm text-muted-foreground mb-8 font-serif-italic">
-            From the first chapter — and many more to come in next chapters.
+            From the first chapter, many more to come in next chapters.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
             {characters.map((c) => (
@@ -168,8 +168,9 @@ function GamesPage() {
             Vows &amp; Vices Studio is just getting started. Future chapters will be announced here.
           </p>
           <p className="mt-6 font-serif-italic text-rose-glow/85 text-lg max-w-2xl mx-auto">
-            Every whisper, every reveal, and every new chapter is first shared with our Patreon family — join us there
-            for sneak peeks, behind-the-scenes stories, and announcements before anyone else.
+            Every whisper, every reveal, and every new chapter is first shared with our Patreon family. Join us there
+            for sneak peeks, story and character influence polls, behind-the-scenes content, and announcements before
+            anyone else.
           </p>
 
           <div className="mt-8 flex justify-center">
