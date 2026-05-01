@@ -199,3 +199,64 @@ function Index() {
     </div>
   );
 }
+
+function NewsletterForm() {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const parsed = emailSchema.safeParse(email);
+    if (!parsed.success) {
+      toast.error(parsed.error.issues[0].message);
+      return;
+    }
+    setLoading(true);
+    try {
+      const res = await fetch("/api/public/newsletter-subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: parsed.data, source: "home_page" }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        toast.error("Something went wrong. Please try again.");
+        return;
+      }
+      if (data.alreadySubscribed) {
+        toast.success("You're already on the list — secrets coming soon.");
+      } else {
+        toast.success("Welcome to the villa. Check your inbox.");
+      }
+      setEmail("");
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <form
+      onSubmit={handleSubscribe}
+      className="mt-6 flex flex-col sm:flex-row gap-3 bg-background/40 border border-border p-3 rounded-sm max-w-xl mx-auto"
+    >
+      <input
+        type="email"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        disabled={loading}
+        placeholder="your.email@villa.it"
+        className="flex-1 bg-transparent px-4 py-3 outline-none placeholder:text-muted-foreground/60 font-serif text-foreground disabled:opacity-50"
+      />
+      <button
+        type="submit"
+        disabled={loading}
+        className="px-6 py-3 font-display tracking-[0.2em] uppercase text-sm bg-romance border border-crimson/40 hover:shadow-[0_0_60px_oklch(0.52_0.20_18/0.5)] transition-all rounded-sm disabled:opacity-60 disabled:cursor-not-allowed"
+      >
+        {loading ? "Sending…" : "Receive Letters"}
+      </button>
+    </form>
+  );
+}
