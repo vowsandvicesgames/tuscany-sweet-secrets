@@ -36,12 +36,12 @@ export const Route = createFileRoute("/world")({
 });
 
 const characters = [
-  { img: characterSofia, name: "Sofia" },
-  { img: characterEmily, name: "Emily" },
-  { img: characterGloria, name: "Gloria" },
-  { img: characterLuca, name: "Luca" },
-  { img: characterBianca, name: "Bianca" },
-  { img: characterMia, name: "Mia" },
+  { img: characterSofia, name: "Sofia", alt: "middle-aged good-looking red-haired women" },
+  { img: characterEmily, name: "Emily", alt: "young brunette in the mid-20s" },
+  { img: characterGloria, name: "Gloria", alt: "young blonde in the mid-20s" },
+  { img: characterLuca, name: "Luca", alt: "handsome, young, classy Italian guy" },
+  { img: characterBianca, name: "Bianca", alt: "fitness women instructor" },
+  { img: characterMia, name: "Mia", alt: "shy girl, mask lover" },
 ];
 
 const screenshots = [
@@ -123,7 +123,7 @@ function GamesPage() {
               >
                 <img
                   src={c.img}
-                  alt={c.name}
+                  alt={c.alt}
                   loading="lazy"
                   className="w-full h-full object-contain object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                 />

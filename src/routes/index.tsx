@@ -12,7 +12,7 @@ import { PATREON_URL } from "@/lib/links";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sweet Sin of Tuscany — A Romantic Visual Novel" },
+      { title: "Sweet Sin of Tuscany — A Romantic 18+ Visual Novel" },
       {
         name: "description",
         content:
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Sweet Sin of Tuscany" },
       {
         property: "og:description",
-        content: "A romantic visual novel of forbidden love and family secrets in the Tuscan hills.",
+        content: "A romantic 18+ visual novel of forbidden love and family secrets in the Tuscan hills.",
       },
     ],
   }),
@@ -61,7 +61,7 @@ function Index() {
             <div className="mt-6 flex flex-wrap items-center justify-start gap-3">
               <Link
                 to="/story"
-                className="group relative inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-foreground bg-romance rounded-sm shadow-[0_0_60px_oklch(0.52_0.20_18/0.35)] hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 border border-crimson/40"
+                className="inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
               >
                 <span>Enter the Story</span>
                 <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
@@ -76,7 +76,7 @@ function Index() {
                 href={PATREON_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
+                className="group relative inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-foreground bg-romance rounded-sm shadow-[0_0_60px_oklch(0.52_0.20_18/0.35)] hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 border border-crimson/40"
               >
                 Support on Patreon
               </a>
