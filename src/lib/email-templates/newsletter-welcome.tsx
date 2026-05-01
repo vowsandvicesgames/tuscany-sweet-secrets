@@ -4,6 +4,7 @@ import {
   Head,
   Heading,
   Html,
+  Img,
   Preview,
   Section,
   Text,
@@ -11,6 +12,8 @@ import {
 import type { TemplateEntry } from './registry'
 
 const SITE_NAME = 'Vows & Vices'
+const LOGO_URL =
+  'https://hedgyuhpcbohmtiwlreg.supabase.co/storage/v1/object/public/email-assets/vows-vices-logo.png'
 
 const NewsletterWelcomeEmail = () => (
   <Html lang="en" dir="ltr">
@@ -19,6 +22,13 @@ const NewsletterWelcomeEmail = () => (
     <Body style={main}>
       <Container style={container}>
         <Section style={header}>
+          <Img
+            src={LOGO_URL}
+            alt="Vows & Vices Studio"
+            width="96"
+            height="96"
+            style={logo}
+          />
           <Heading style={h1}>Welcome to the villa.</Heading>
           <Text style={tagline}>
             "We write the stories you swore you'd never tell anyone."
@@ -76,6 +86,12 @@ const container = {
 const header = {
   textAlign: 'center' as const,
   padding: '0 0 24px',
+}
+
+const logo = {
+  display: 'block',
+  margin: '0 auto 16px',
+  borderRadius: '50%',
 }
 
 const h1 = {
