@@ -118,7 +118,7 @@ function Index() {
       <section className="relative py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="ornament-divider mb-12 text-xs tracking-[0.4em] uppercase">Your Choices</div>
-          <div className="grid gap-px min-h-[48rem] bg-border/40 md:grid-cols-3 rounded-sm overflow-hidden">
+          <div className="grid gap-px bg-border/40 grid-cols-1 md:grid-cols-3 rounded-sm overflow-hidden">
             {[
               {
                 q: "Love or dominate?",
@@ -135,7 +135,7 @@ function Index() {
             ].map((c, i) => (
               <article
                 key={i}
-                className="relative group bg-card p-10 min-h-[28rem] flex flex-col justify-end overflow-hidden"
+                className="relative group bg-card p-8 sm:p-10 aspect-[3/4] sm:aspect-auto sm:min-h-[28rem] md:min-h-[32rem] flex flex-col justify-end overflow-hidden"
               >
                 <img
                   src={c.img}
@@ -143,12 +143,12 @@ function Index() {
                   loading="lazy"
                   width={1024}
                   height={1024}
-                  className="absolute inset-0 w-full h-full opacity-65 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000"
+                  className="absolute inset-0 w-full h-full object-cover object-top opacity-65 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000"
                 />
-                <div className="absolute inset-0 from-card via-card/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
                 <div className="relative z-10">
                   <p className="text-xs uppercase tracking-[0.3em] text-crimson mb-4">Chapter {i + 1}</p>
-                  <h3 className="font-display text-3xl text-rose-glow mb-4 text-balance">{c.q}</h3>
+                  <h3 className="font-display text-2xl sm:text-3xl text-rose-glow mb-4 text-balance">{c.q}</h3>
                 </div>
               </article>
             ))}
