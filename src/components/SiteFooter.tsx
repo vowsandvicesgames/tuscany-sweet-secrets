@@ -18,9 +18,13 @@ export function SiteFooter() {
           <Link to="/world" className="hover:text-rose-glow transition-colors">The World</Link>
           <Link to="/studio" className="hover:text-rose-glow transition-colors">The Studio</Link>
           <a href={PATREON_URL} target="_blank" rel="noopener noreferrer" className="hover:text-rose-glow transition-colors">Support on Patreon ↗</a>
+          <a href={PAYPAL_URL} target="_blank" rel="noopener noreferrer" className="hover:text-rose-glow transition-colors">Buy us a coffee ☕ ↗</a>
         </nav>
         <div className="text-sm text-muted-foreground">
           <p className="font-serif-italic text-rose-glow/80 mb-2">"Will you taste the Sweet Sin of Tuscany?"</p>
+          <p className="mb-3 text-xs">
+            Enjoying the journey? <a href={PAYPAL_URL} target="_blank" rel="noopener noreferrer" className="text-rose-glow hover:underline">Buy us a coffee</a> and keep the candles burning.
+          </p>
           <p>© {new Date().getFullYear()} Vows &amp; Vices Studio. All rights reserved.</p>
           <p className="text-xs mt-1">Mature audiences. 18+</p>
         </div>
