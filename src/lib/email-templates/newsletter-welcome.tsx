@@ -1,7 +1,9 @@
-import { Body, Container, Head, Heading, Html, Preview, Section, Text } from "@react-email/components";
+import { Body, Container, Head, Heading, Html, Img, Preview, Section, Text } from "@react-email/components";
 import type { TemplateEntry } from "./registry";
 
 const SITE_NAME = "Vows & Vices";
+const LOGO_URL =
+  "https://hedgyuhpcbohmtiwlreg.supabase.co/storage/v1/object/public/email-assets/vows-vices-logo.png";
 
 const NewsletterWelcomeEmail = () => (
   <Html lang="en" dir="ltr">
@@ -10,6 +12,7 @@ const NewsletterWelcomeEmail = () => (
     <Body style={main}>
       <Container style={container}>
         <Section style={header}>
+          <Img src={LOGO_URL} width="96" height="96" alt={SITE_NAME} style={logo} />
           <Heading style={h1}>Welcome to the Sweet sin of Tuscany.</Heading>
           <Text style={tagline}>"We write the stories you swore you'd never tell anyone."</Text>
         </Section>
