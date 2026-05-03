@@ -52,12 +52,13 @@ export const Route = createFileRoute("/lovable/email/transactional/send")({
         }
 
         const token = authHeader.slice('Bearer '.length).trim()
-        const supabase = createClient(supabaseUrl, supabaseServiceKey)
-        const { data: { user }, error: authError } = await supabase.auth.getUser(token)
-
-        if (authError || !user) {
+        // Restrict this endpoint to trusted server-side callers only (service role).
+        // Public/unauthenticated triggers must go through dedicated server routes
+        // (e.g. /api/public/newsletter-subscribe) that validate input themselves.
+        if (token !== supabaseServiceKey) {
           return Response.json({ error: 'Unauthorized' }, { status: 401 })
         }
+        const supabase = createClient(supabaseUrl, supabaseServiceKey)
 
         // Parse request body
         let templateName: string
