@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -197,6 +198,46 @@ const screenshots = [
   { img: coverBeach, caption: "Under the Tuscan sun" },
 ];
 
+type Character = (typeof characters)[number];
+
+function CharacterCard({ character: c }: { character: Character }) {
+  const [open, setOpen] = useState(false);
+  const hasDescription = Boolean(c.description);
+  return (
+    <figure
+      onClick={() => hasDescription && setOpen((v) => !v)}
+      className={`relative aspect-[3/5] overflow-hidden rounded-sm border border-border/60 bg-card group ${
+        hasDescription ? "cursor-pointer" : ""
+      }`}
+    >
+      <img
+        src={c.img}
+        alt={c.alt}
+        loading="lazy"
+        className={`w-full h-full object-contain object-top opacity-90 transition-all duration-500 group-hover:opacity-0 ${
+          open ? "opacity-0" : ""
+        }`}
+      />
+      {hasDescription && (
+        <div
+          className={`absolute inset-0 overflow-y-auto transition-opacity duration-500 bg-ink/95 p-5 text-base sm:text-lg leading-relaxed text-rose-glow/90 font-serif-italic whitespace-pre-line group-hover:opacity-100 ${
+            open ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {c.description}
+        </div>
+      )}
+      <figcaption
+        className={`absolute bottom-0 inset-x-0 p-3 text-xs uppercase tracking-[0.3em] text-rose-glow/90 bg-gradient-to-t from-ink/95 to-transparent text-center pointer-events-none transition-opacity duration-500 group-hover:opacity-0 ${
+          open ? "opacity-0" : ""
+        }`}
+      >
+        {c.name}
+      </figcaption>
+    </figure>
+  );
+}
+
 function GamesPage() {
   return (
     <div className="min-h-screen bg-background">
@@ -261,27 +302,9 @@ function GamesPage() {
           <p className="text-center text-sm text-muted-foreground mb-8 font-serif-italic">
             From the first chapter, many more to come in next chapters.
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {characters.map((c) => (
-              <figure
-                key={c.name}
-                className="relative aspect-[3/5] overflow-hidden rounded-sm border border-border/60 bg-card group"
-              >
-                <img
-                  src={c.img}
-                  alt={c.alt}
-                  loading="lazy"
-                  className="w-full h-full object-contain object-top opacity-90 transition-all duration-500 group-hover:opacity-0"
-                />
-                {c.description && (
-                  <div className="absolute inset-0 overflow-y-auto opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-ink/95 p-5 text-base sm:text-lg leading-relaxed text-rose-glow/90 font-serif-italic whitespace-pre-line">
-                    {c.description}
-                  </div>
-                )}
-                <figcaption className="absolute bottom-0 inset-x-0 p-3 text-xs uppercase tracking-[0.3em] text-rose-glow/90 bg-gradient-to-t from-ink/95 to-transparent text-center pointer-events-none group-hover:opacity-0 transition-opacity duration-500">
-                  {c.name}
-                </figcaption>
-              </figure>
+              <CharacterCard key={c.name} character={c} />
             ))}
           </div>
         </div>
