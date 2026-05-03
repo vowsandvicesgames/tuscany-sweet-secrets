@@ -168,7 +168,12 @@ const characters: {
     alt: "fitness women instructor",
     description: biancaDescription,
   },
-  { img: characterLuca, name: "Luca", alt: "handsome, young, classy Italian guy" },
+  {
+    img: characterLuca,
+    name: "Luca",
+    alt: "handsome, young, classy Italian guy",
+    description: lucaDescription,
+  },
 ];
 
 const screenshots = [
