@@ -123,6 +123,20 @@ As time passed, she became more of a tomboy with others, aggressively handling e
 
 Your face beamed with pride.`;
 
+const emilyDescription = `On her first visit to the estate from the orphanage, she was a small, scrawny kid, and you instantly disliked her. You didn't understand why, as she was very sweet and loving. For reasons known only to her, she would not leave your side. No amount of your bitching, complaining, or rejecting her helped. She was attached to you like a tick, and there was no escaping her.
+
+After a few months, you stopped complaining and harassing her. A few months after that, you started interacting and playing with her. The first time she was sick and you spent a day without her, you realised how much you missed her. You began showing her affection, and the two of you would spend every moment of every day together. She was your best friend from that moment forward.
+
+This change did not go unnoticed, and the local kids teased both of you. During summer, one of these teasing sessions went too far when a local kid named Adrian, who always teased her relentlessly, pushed things further. When you arrived at the local meeting point, she was in tears and his hands were on her shoulders. You had never felt such rage. Two of his friends could not pull you off of him. You beat him so badly that you broke the knuckles on both of your hands. Once you stopped exhausted, you saw her looking at you. She was no longer crying, she had a look of terror mixed with relief. As you moved toward her, her expression shifted to a loving gaze. She cautiously took your hand, and you went home.
+
+You honestly thought your father would kill you. When he heard what happened and started shouting, you were truly afraid of him for the first time. He was a mountain of a man, and you knew what he did for a living. Even though you had grown quite strong, you knew he could snap you in half if he wanted to, and it really looked like he would. But at the last second, she fearlessly stepped between you two. It was a sight to behold. He was literally double her size. Gone was the scared, crying girl. In front of you stood a fearless woman, defending what was precious to her. In a commanding voice you never heard from her, she ordered him to calm down. Then she explained what happened, what had been going on with bullying, and some things Adrian had done to her that even you didn't know. As you listened, you felt your blood boil and your temples pulsate. You didn't beat him enough. When your father heard the full story and saw your reaction, he calmed down.
+
+From that day onward, your family and Adrian's were in a bitter feud. You didn't care. You only cared about her. But she changed after that day. She first began avoiding physical contact with you in public. Soon she stopped altogether. Before, you would hold hands like it was the most natural thing in the world, but after the incident, she hesitated. Despite this, you never felt closer to her. While you missed her hugs and her closeness, you could see and feel the love emanating from her.
+
+Following that event, she changed rapidly. She became more outgoing and joined several clubs at school, including the cheerleaders. Since she was a gymnast, she became cheer captain in no time. Everyone liked her and wanted to be in her circle, she was effortlessly friends with everyone. But even then, you never felt neglected. Quite the opposite - you felt special. She could have spent her time with anyone, but she chose to spend all her free time with you. And you were happier than ever...
+
+That is, until that fated summer night...`;
+
 const characters: {
   img: string;
   name: string;
@@ -135,7 +149,12 @@ const characters: {
     alt: "middle-aged good-looking red-haired women",
     description: sofiaDescription,
   },
-  { img: characterEmily, name: "Emily", alt: "young brunette in the mid-20s" },
+  {
+    img: characterEmily,
+    name: "Emily",
+    alt: "young brunette in the mid-20s",
+    description: emilyDescription,
+  },
   {
     img: characterGloria,
     name: "Gloria",
