@@ -115,6 +115,14 @@ And that dreadful night, while your father was dragging you away, the last thing
 
 And she was crying...`;
 
+const biancaDescription = `When she was very young, she and her twin sister (not identical) would drive you crazy. They were inseparable little devils and always up to no good. She was always the leader of the pack and picked on you especially. Although you always found her practical jokes entertaining, and loved her joyful personality, you were not very close during that period.
+
+You heard that nowadays, she spends most of her time at the local gym or on a run. Exercise is the way she expresses herself and she is very similar to you in that way. Unfortunately, she also has a temper, just like you. You feel to blame for both. When you started exercising, she was still a young girl, but she would spend every minute by your side. She would watch your every move and soon started emulating your exercises in her own way. She had great potential, you saw that instantly, but she was making dangerous mistakes and lacking guidance. Reluctantly, you started teaching her, and very soon she became your gym partner, accompanying you every day. At first, you didn't like her going to the, at that time, male dominated gym, but you accepted it and prepared yourself to protect her from bullying. However, after seeing the first guy who tried to mess with her cry, you relaxed and were so proud of her.
+
+As time passed, she became more of a tomboy with others, aggressively handling even those within your group. Unlike with others, she remained innocent, sweet, and loving toward you. Others would tease her that she was in love with you, but they would quickly regret their actions. You never gave it any thought, as she is your friend and was very young at the time. Until your departure, she was your everyday gym partner and your friendship grew. You heard from old gym buddies that she became a fitness instructor at the local gym.
+
+Your face beamed with pride.`;
+
 const characters: {
   img: string;
   name: string;
@@ -135,7 +143,12 @@ const characters: {
     description: gloriaDescription,
   },
   { img: characterMia, name: "Mia", alt: "shy girl, mask lover", description: miaDescription },
-  { img: characterBianca, name: "Bianca", alt: "fitness women instructor" },
+  {
+    img: characterBianca,
+    name: "Bianca",
+    alt: "fitness women instructor",
+    description: biancaDescription,
+  },
   { img: characterLuca, name: "Luca", alt: "handsome, young, classy Italian guy" },
 ];
 
