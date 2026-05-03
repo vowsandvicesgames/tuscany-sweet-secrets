@@ -274,7 +274,7 @@ function GamesPage() {
                   className="w-full h-full object-contain object-top opacity-90 transition-all duration-500 group-hover:opacity-0"
                 />
                 {c.description && (
-                  <div className="absolute inset-0 overflow-y-auto opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-ink/95 p-5 text-sm leading-relaxed text-rose-glow/90 font-serif-italic whitespace-pre-line">
+                  <div className="absolute inset-0 overflow-y-auto opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-ink/95 p-5 text-base sm:text-lg leading-relaxed text-rose-glow/90 font-serif-italic whitespace-pre-line">
                     {c.description}
                   </div>
                 )}
