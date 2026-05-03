@@ -59,6 +59,62 @@ Until that night. The night your life flipped upside down. Dad had a grip on you
 
 Your life there was over...`;
 
+const miaDescription = `She was the youngest of the bunch and by far the smallest. She had a perfect smile and was always part of the group activities, but she never spoke. For the longest time, you and everybody else thought she was speech-impaired.
+
+Once, you had one of your standard brawls. Only this time, you received more than you gave. You were sitting in the living room licking your wounds, which were visible on your face. You were waiting for the headmistress to come with ointment, bandages, and a stern lecture.
+
+But as she walked into the room and saw you, she let a squeal out. You were almost startled. She quickly jumped on the bed and held your arm tightly. She was looking at you with a worried expression, but you were too tired to speak with her. Then, you barely heard a very low and timid, but angelic voice speaking to you: "Why do you fight all the time?"
+
+You almost jumped from your seat. You could not hide the surprise on your face. "Well... he... I... I mean, he started it..." You replied sheepishly, the prepared answer falling out while a look of bafflement remained on your face.
+
+She smiled at you, and again, almost without moving her face, she said in that same angelic voice, this time slightly louder, "You must promise me you will not fight anymore."
+
+You were completely shocked and didn't know what to answer. You were unsure if maybe you had a concussion or something. Again, the reply coming from your mouth was automatic: "Yes, yes, I promise."
+
+The look on your face changed from bafflement to real confusion. You started looking around, as if trying to find someone nearby to confirm this was really happening. She looked annoyed. She understood that your answers were automatic and insincere. She raised her voice, now almost sounding commanding: "You must promise! Even if they start it, you will not fight anymore! Promise me!" Her voice was almost pleading near the end of the sentence, as if she were on the edge of crying. You understood the seriousness of the situation and sat up. You took her by the shoulder with one hand and by her face with the other, and said as sincerely as you could: "I promise you, I will not fight anymore, even if they start it."
+
+She looked into your eyes for what felt like eternity, as if she were testing you to see if you meant it. Suddenly, she got up and started leaving the room just as the headmistress entered. The headmistress noticed your senseless expression and immediately asked, "What did you do?" You just raised your hand in a helpless gesture and started shaking your head, unable to find the words.
+
+At this point, she turned, came back to you, leaned in, and kissed you gently on the cheek. Then she said in the clear voice of an angel: "Thank you!"
+
+She then turned to the headmistress, took her by the hand, and told her in a slightly lower tone, almost like she was telling a secret, "Don't worry, he promised me he will not fight anymore!" and then left the room. The headmistress stood half-hunched, hand held in the air and with a blank expression on her face. She started moving her head from you to the door and back in shock, having also lost her words. You again made a gesture of confusion. You both stood there for a minute in silence. Suddenly, she started crying, like a dam had opened inside her. You jumped up and hugged her as tightly as you could, not really understanding what was happening.
+
+For the next few days, everybody was trying to push her to speak, but she only spoke to you, and only when you were far from others. It felt like an angel was speaking only for your ears. After this, she would come to your room every night, and you would talk for hours until the grownups would come and chase her away.
+
+That is, until the worst night of both your lives. As your father dragged you out, she was standing in front of the door, her mouth open...
+
+But no words came out...`;
+
+const gloriaDescription = `She was always an artistic soul with the most beautiful smile. Her laugh filled you up, and she could lift any tension in the room just by entering. She was a big girl when she was younger, but she never lacked self-confidence. You loved that about her.
+
+One day, she entered your room and asked for help. You had only love for her and would jump into a river for her without thinking, but what she asked of you froze your blood.
+
+She wanted you to be her dance partner.
+
+The headmistress told her she could have dance classes, but only if she found a partner. Never mind that you had two left feet, if anybody found out you were going to dance lessons, with your younger friend no less, your life would be over. You were a high school kid, after all. You said no, of course, and no amount of pleading, bribing, or blackmailing could sway you. You could see her heart breaking, but you could not accept. You could not go to dance classes, surely?
+
+And then you heard something. Something you had never heard from her. As she was leaving, you could hear faint sobbing. She never, ever cried. She was always happy and smiling, even when it was hard. Even after everything life threw at her. As she walked away, the sobbing intensified. You could feel your heart cracking. Without thinking, you shouted, "I will go! Just stop crying." And as if it had never happened, she turned around and started jumping for joy with a big smile on her face. Only the tears rolling down her cheeks served as proof of her distraught state from a few moments ago. She jumped into your arms and held you tighter than ever before.
+
+The next few months were living hell for you. It started with only two practices per week, but as the coach saw her talent, they increased it to four. Unfortunately for you, your presence was mandatory, as there were not enough boys in the club. Who would have thought?
+
+Your only consolation was that no one found out what your extracurricular activities were. That is, until Adrian shouted it in front of the whole school and ran away. To this day, you don't know how he found out. If you thought it was hard before, you were in for a shock. Endless teasing started. Ballet twirling in front of you as you passed through the school hallway, and even a tutu taped to your locker.
+
+But honestly, you didn't care that much.
+
+After a few more months, even though you could salsa with the best of them, the skill difference between you was rapidly increasing. The coach cautiously approached the subject with both of you, but she didn't even let her finish. She almost shouted, "NO!" After she calmed down, the coach explained that she had competition talent and, unfortunately, you did not. She said that with an apologetic smile toward you. She didn't know you were celebrating inside. Finally, you convinced her to have a trial practice with the most talented male partner in the club.
+
+You watched the practice from the side, and that was the first time you saw her dancing. Her body had shaped perfectly since you started a year ago. She moved so gracefully, which accentuated her perfect figure. They were dancing tango so closely that it was the first time you felt true jealousy. You kicked yourself inside - why had you not learned faster and better? You watched them without a sound and without any expression. You were devastated, and you didn't understand why.
+
+Once they finished, she approached you cautiously and with a hint of regret. She started apologising and swearing she would never dance with another again. It was like she felt she had cheated on you. For some unexplained reason, you felt the same. But you understood you would only hold her back, so you convinced her that this was best for her and you lied that you didn't want to be there anyway. It was hard, but you knew you had to say those things. You expected her to cry, but it was like she was looking into your soul. She just smiled the gentlest smile you had ever seen and, while hugging you, she whispered, "Thank you for everything. I will always remember that you made my dream come true." You tried to reply, but she held you tighter.
+
+After this, they won several competitions, and you were watching and cheering at all of them. Every time she finished dancing, she would run to you and jump into your arms. She would kiss you relentlessly and whisper, "Thank you, thank you."
+
+Her smiling face was all you needed.
+
+And that dreadful night, while your father was dragging you away, the last thing you saw was her...
+
+And she was crying...`;
+
 const characters: {
   img: string;
   name: string;
@@ -72,8 +128,13 @@ const characters: {
     description: sofiaDescription,
   },
   { img: characterEmily, name: "Emily", alt: "young brunette in the mid-20s" },
-  { img: characterGloria, name: "Gloria", alt: "young blonde in the mid-20s" },
-  { img: characterMia, name: "Mia", alt: "shy girl, mask lover" },
+  {
+    img: characterGloria,
+    name: "Gloria",
+    alt: "young blonde in the mid-20s",
+    description: gloriaDescription,
+  },
+  { img: characterMia, name: "Mia", alt: "shy girl, mask lover", description: miaDescription },
   { img: characterBianca, name: "Bianca", alt: "fitness women instructor" },
   { img: characterLuca, name: "Luca", alt: "handsome, young, classy Italian guy" },
 ];
