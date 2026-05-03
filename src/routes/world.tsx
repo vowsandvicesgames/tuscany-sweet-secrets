@@ -35,8 +35,42 @@ export const Route = createFileRoute("/world")({
   component: GamesPage,
 });
 
-const characters = [
-  { img: characterSofia, name: "Sofia", alt: "middle-aged good-looking red-haired women" },
+const sofiaDescription = `She was by far the most beautiful woman you had ever seen. She was also the woman with the most authority you knew, and on top of all that, she was incredibly complex. She could be a strict headmistress during the day with a stern voice and a look that allowed no nonsense, but afterward, she was the most caring and gentle person, someone who loved wholeheartedly and gave her all to the people who meant the world to her.
+
+All of this made her even more attractive in your eyes. By the time you turned eighteen, you could barely hide your attraction toward her. It didn't help that during school days, she dressed in tight, professional office clothes that accentuated her perfect figure. One look at her in those clothes, peering at you over her glasses, was enough to leave you breathless. And after work, she would change in regular clothes, that even though were not very revealing, she still look incredibly appealing.
+
+Once, she found you in the kitchen preparing what could barely be called a meal. She took your plate and threw the contents into the garbage. She said, "I have failed you completely. I never taught you how to cook my grandmother's famous ribollita. Common, we will change this today!"
+
+You looked at her in sheer horror, as you knew how protective she was about anyone messing with her kitchen. She noticed your unease and took you by the shoulder, leaning in to your ear and whispering softly, almost seductively, "Don't be scared. I will protect you." You were ashamed to admit, even this small gesture caused a profound reaction in you. Your stomach felt like a lead ball and your trousers were suddenly two numbers too small. You never had an erection this strong before and you were overcome with embarrassment. She started listing ingredients and commanding you like a soldier. You sheepishly followed, trying to keep your composure all the while trying to hide, now poking and painful erection.
+
+By the time you had gathered all the requested ingredients, your problem had subsided a bit. You looked at the items you'd brought proudly, like you'd conquered something, before realising you should already know how to cook for yourself. Finally, you realised you had forgotten one ingredient. You turned to ask her about it and were momentarily stunned. She had removed her sweater and remained in a small and tight tank top. Her big breasts were overflowing from the tiny shirt. It was no match for them.
+
+Your erection returned and with vengeance.
+
+While swaying toward you, she slowly put on her apron, looking you straight in the eyes the whole time. If possible, she looked even better with the apron on. You stared, completely forgetting to hide your gaze and your erection proudly poking out of your pants. Once you saw her eyes going down to your crotch, you violently turned around, your cheeks so hot you could have cooked the ribollita on them. Then you felt her hand on your shoulder, her voice in your ear: "Come on, let's do it." You felt your legs nearly give out.
+
+The next half hour flew by like a blur. The smell of something burning in the pot brought you back to your senses. You looked at her with a guilty expression, expecting her to be mad, but you only saw a warm smile and kind eyes. She stepped behind you, took your hand with the ladle, and started assisting you in mixing. You could feel her ample breasts on your back and arm. She leaned in again to your ear, like she knew the effect she had on you and was enjoying in provoking a reaction in you, and gently whispered, "Ribollita is like life. You have to protect the ingredients from the fire, just like you have to protect people you love from their problems. You are still young, but you will learn this. Then you will protect all of us. Until then, I am your protector, and I will keep you safe from the fire." She then leaned in and kissed you softly on your cheek, dangerously close to your mouth.
+
+To this day, you have no idea how to make ribollita and have always been afraid to ask. But you have an erection whenever you smell it. For this reason, you avoid Italian restaurants.
+
+You felt so loved, aroused and protected all at once. She was your whole world, and you felt invincible...
+
+Until that night. The night your life flipped upside down. Dad had a grip on your right hand so tight you felt your bone would break if he squeezed any harder. There was no talking to him. it would only provoke him more. You knew you had made mistakes, but you never imagined this. As he dragged you through the house, you looked around, searching for the door she would come running through to take you away to safety. You passed through the house and, near the front door, you finally saw her standing in that same apron. She had probably just finished cooking when she heard the commotion. But she didn't have the look of a protector. Her eyes were down, avoiding your searching gaze. At that moment, you understood... there was no more protection. You were on your own.
+
+Your life there was over...`;
+
+const characters: {
+  img: string;
+  name: string;
+  alt: string;
+  description?: string;
+}[] = [
+  {
+    img: characterSofia,
+    name: "Sofia",
+    alt: "middle-aged good-looking red-haired women",
+    description: sofiaDescription,
+  },
   { img: characterEmily, name: "Emily", alt: "young brunette in the mid-20s" },
   { img: characterGloria, name: "Gloria", alt: "young blonde in the mid-20s" },
   { img: characterMia, name: "Mia", alt: "shy girl, mask lover" },
@@ -125,9 +159,14 @@ function GamesPage() {
                   src={c.img}
                   alt={c.alt}
                   loading="lazy"
-                  className="w-full h-full object-contain object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                  className="w-full h-full object-contain object-top opacity-90 transition-all duration-500 group-hover:opacity-0"
                 />
-                <figcaption className="absolute bottom-0 inset-x-0 p-3 text-xs uppercase tracking-[0.3em] text-rose-glow/90 bg-gradient-to-t from-ink/95 to-transparent text-center">
+                {c.description && (
+                  <div className="absolute inset-0 overflow-y-auto opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-ink/95 p-5 text-sm leading-relaxed text-rose-glow/90 font-serif-italic whitespace-pre-line">
+                    {c.description}
+                  </div>
+                )}
+                <figcaption className="absolute bottom-0 inset-x-0 p-3 text-xs uppercase tracking-[0.3em] text-rose-glow/90 bg-gradient-to-t from-ink/95 to-transparent text-center pointer-events-none group-hover:opacity-0 transition-opacity duration-500">
                   {c.name}
                 </figcaption>
               </figure>
