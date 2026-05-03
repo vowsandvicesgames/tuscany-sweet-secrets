@@ -159,9 +159,14 @@ function GamesPage() {
                   src={c.img}
                   alt={c.alt}
                   loading="lazy"
-                  className="w-full h-full object-contain object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                  className="w-full h-full object-contain object-top opacity-90 transition-all duration-500 group-hover:opacity-0"
                 />
-                <figcaption className="absolute bottom-0 inset-x-0 p-3 text-xs uppercase tracking-[0.3em] text-rose-glow/90 bg-gradient-to-t from-ink/95 to-transparent text-center">
+                {c.description && (
+                  <div className="absolute inset-0 overflow-y-auto opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-ink/95 p-5 text-sm leading-relaxed text-rose-glow/90 font-serif-italic whitespace-pre-line">
+                    {c.description}
+                  </div>
+                )}
+                <figcaption className="absolute bottom-0 inset-x-0 p-3 text-xs uppercase tracking-[0.3em] text-rose-glow/90 bg-gradient-to-t from-ink/95 to-transparent text-center pointer-events-none group-hover:opacity-0 transition-opacity duration-500">
                   {c.name}
                 </figcaption>
               </figure>
