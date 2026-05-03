@@ -137,6 +137,20 @@ Following that event, she changed rapidly. She became more outgoing and joined s
 
 That is, until that fated summer night...`;
 
+const lucaDescription = `Your mother died while giving birth to you. Your father was a professional soldier, and when you were very young, he was always away on tours of duty. For a long time, you thought he blamed you for her death and remained away because of that.
+
+You spent your childhood on a family estate in rural Tuscany. Your grandparents took care of you, and you were a problematic kid, even then. You had a bad temper and would often start fights with other kids. But even at your worst, your grandparents loved you unconditionally, and you cannot imagine a better childhood.
+
+At the age of ten, your father started dating the headmistress of a local school and a female only orphanage. You quickly fell in love with her, as she was warm and loving to you and the girls under her care. She would often bring girls from the orphanage to the estate, which you hated at first, but very soon, you could not imagine a world without them. Your father started spending more and more time at home, and you all became closer. For a long time, you were happier than ever.
+
+Unfortunately, the summer you turned eighteen, a series of bad decisions you made destroyed everything.
+
+After this, in the dead of night, your father took you to military school. As you had never seen him so enraged, you did not dare oppose him. Even though you hated it at the time, military school shaped you and instilled proper values in you. After you enlisted, due to high praise from your drill instructors regarding your physical fitness and quick thinking, you were fast-tracked to Special Forces. For the next few years, you hopped from war zone to war zone. Although you gained a lot of experience, you grew tired of the lifestyle. At only 23, you looked like a lifetime had passed over you and possessed the aura of an old soul. Your only thought was to slow down and grow roots. When word of your grandparents passing in quick succession reached you, you were devastated. You decided then that once this tour was over, you would stop chasing the high.
+
+So, when your military career ended, you and a few army buddies started a private security agency. It's a much less stressful job, and you get to stay rooted and close to the new family you created with your friends. And even though you enjoy your new life, you still love going to the family cottage in the remote Tuscan hills. In your childhood, it was an uninhabitable stone ruin that you and the girls played in, but when the Airbnb boom started, your father rebuilt it into a couples retreat. For the last couple of years, it has been your place of recharging, even though you only spend a week per year there. The peace and tranquillity are refreshing and the polar opposite of your lifestyle.
+
+Your story starts on the first day of your vacation, with the sound of a familiar voice...`;
+
 const characters: {
   img: string;
   name: string;
@@ -168,7 +182,12 @@ const characters: {
     alt: "fitness women instructor",
     description: biancaDescription,
   },
-  { img: characterLuca, name: "Luca", alt: "handsome, young, classy Italian guy" },
+  {
+    img: characterLuca,
+    name: "Luca",
+    alt: "handsome, young, classy Italian guy",
+    description: lucaDescription,
+  },
 ];
 
 const screenshots = [
