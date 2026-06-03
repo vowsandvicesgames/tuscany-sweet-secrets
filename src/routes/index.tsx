@@ -88,7 +88,7 @@ function Index() {
             </div>
 
             <p className="mt-6 text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              Coming soon * Visual Novel * Romance * 18+
+              Visual Novel * Romance * 18+
             </p>
           </div>
         </div>
