@@ -94,6 +94,19 @@ function Index() {
         </div>
       </section>
 
+      {/* ITCH.IO WIDGET */}
+      <section className="relative z-10 w-full flex justify-center px-6 -mt-4 mb-8">
+        <iframe
+          frameBorder="0"
+          src="https://itch.io/embed/4640956?linkback=true"
+          width="552"
+          height="167"
+          title="Sweet Sin of Tuscany by VowsandVices"
+        >
+          <a href="https://vowsandvices.itch.io/sweet-sin-of-tuscany">Sweet Sin of Tuscany by VowsandVices</a>
+        </iframe>
+      </section>
+
       {/* PROLOGUE */}
       <section className="relative py-32 px-6">
         <div className="max-w-4xl mx-auto text-center">
