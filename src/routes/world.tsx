@@ -249,6 +249,17 @@ function GamesPage() {
           Discover the games of Vows & Vices Studio. Sweet Sin of Tuscany, our first 18+ visual novel of forbidden love
           and family secrets.
         </p>
+        <div className="mt-8 flex justify-center">
+          <iframe
+            frameBorder="0"
+            src="https://itch.io/embed/4640956?linkback=true&link_color=C1133A"
+            width="552"
+            height="167"
+            title="Sweet Sin of Tuscany by VowsandVices"
+          >
+            <a href="https://vowsandvices.itch.io/sweet-sin-of-tuscany">Sweet Sin of Tuscany by VowsandVices</a>
+          </iframe>
+        </div>
       </section>
 
       {/* SWEET SIN OF TUSCANY */}
