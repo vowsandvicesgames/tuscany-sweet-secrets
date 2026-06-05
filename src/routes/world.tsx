@@ -29,9 +29,11 @@ export const Route = createFileRoute("/world")({
         property: "og:description",
         content: "Sweet Sin of Tuscany, our first 18+ visual novel from Vows & Vices Studio.",
       },
+      { property: "og:url", content: "https://vowsandvicesstudio.com/world" },
       { property: "og:image", content: coverBeach },
       { name: "twitter:image", content: coverBeach },
     ],
+    links: [{ rel: "canonical", href: "https://vowsandvicesstudio.com/world" }],
   }),
   component: GamesPage,
 });
