@@ -36,10 +36,33 @@ export const Route = createFileRoute("/")({
         content:
           "While taking a deserved week off in the Tuscan hills, an unexpected visitor turns your world upside down. A story of forbidden love and family secrets.",
       },
-      { property: "og:title", content: "Sweet Sin of Tuscany" },
+      { property: "og:title", content: "Sweet Sin of Tuscany — A Romantic 18+ Visual Novel" },
       {
         property: "og:description",
         content: "A romantic 18+ visual novel of forbidden love and family secrets in the Tuscan hills.",
+      },
+      { property: "og:url", content: "https://vowsandvicesstudio.com/" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://vowsandvicesstudio.com/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "VideoGame",
+          name: "Sweet Sin of Tuscany",
+          applicationCategory: "Game",
+          genre: ["Visual Novel", "Romance"],
+          contentRating: "Mature 18+",
+          description:
+            "A romantic 18+ visual novel of forbidden love, family secrets, and consequences set in the Tuscan hills.",
+          publisher: {
+            "@type": "Organization",
+            name: "Vows & Vices Studio",
+            url: "https://vowsandvicesstudio.com/",
+          },
+        }),
       },
     ],
   }),
