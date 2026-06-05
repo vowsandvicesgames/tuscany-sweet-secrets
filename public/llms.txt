@@ -10,3 +10,7 @@ Vows & Vices Studio is an independent visual novel studio. Our debut title, *Swe
 - [The Story](/story): Synopsis, themes, and the central choices of Sweet Sin of Tuscany.
 - [Games & Characters](/world): Game details, characters, and screenshots.
 - [The Studio](/studio): About Vows & Vices Studio, Patreon, and tip jar.
+
+## Guides
+
+- [Best Adult Romance Visual Novels](/blog/best-adult-romance-visual-novels): Curated guide to story-driven 18+ visual novels.
