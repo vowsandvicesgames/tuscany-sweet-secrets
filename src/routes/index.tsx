@@ -8,6 +8,19 @@ import gloria from "@/assets/character-gloria-home.webp";
 import cover from "@/assets/cover-moon.webp";
 import emili from "@/assets/character-emily-home.webp";
 import sofia from "@/assets/character-sofia-home.webp";
+import devlog01 from "@/assets/devlogs/devlog-01.png";
+import devlog02 from "@/assets/devlogs/devlog-02.webp";
+import devlog03 from "@/assets/devlogs/devlog-03.webp";
+import devlog04 from "@/assets/devlogs/devlog-04.webp";
+import devlog05 from "@/assets/devlogs/devlog-05.png";
+
+const devLogs = [
+  { title: "Dev Log No. 05", img: devlog05, url: "https://www.patreon.com/posts/welcome-to-our-160246516" },
+  { title: "Dev Log No. 04", img: devlog04, url: "https://www.patreon.com/posts/welcome-to-our-159557997" },
+  { title: "Dev Log No. 03", img: devlog03, url: "https://www.patreon.com/posts/welcome-to-our-158978955" },
+  { title: "Dev Log No. 02", img: devlog02, url: "https://www.patreon.com/posts/welcome-to-our-158371002" },
+  { title: "Dev Log No. 01", img: devlog01, url: "https://www.patreon.com/posts/welcome-to-our-157774143" },
+];
 import { PATREON_URL } from "@/lib/links";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -105,6 +118,38 @@ function Index() {
         >
           <a href="https://vowsandvices.itch.io/sweet-sin-of-tuscany">Sweet Sin of Tuscany by VowsandVices</a>
         </iframe>
+      </section>
+
+      {/* DEV LOGS */}
+      <section className="relative py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="ornament-divider mb-10 text-xs tracking-[0.4em] uppercase">Dev Logs</div>
+          <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+            {devLogs.map((log) => (
+              <a
+                key={log.url}
+                href={log.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden rounded-sm border border-crimson/30 bg-card hover:border-crimson transition-all duration-500"
+              >
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={log.img}
+                    alt={log.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                <div className="p-4 text-center">
+                  <h3 className="font-display text-sm sm:text-base text-rose-glow tracking-wider">
+                    {log.title}
+                  </h3>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* PROLOGUE */}
