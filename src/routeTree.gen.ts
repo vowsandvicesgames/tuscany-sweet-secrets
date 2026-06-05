@@ -15,6 +15,7 @@ import { Route as StoryRouteImport } from './routes/story'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
+import { Route as BlogBestAdultRomanceVisualNovelsRouteImport } from './routes/blog.best-adult-romance-visual-novels'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
 import { Route as ApiPublicNewsletterSubscribeRouteImport } from './routes/api/public/newsletter-subscribe'
 import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
@@ -53,6 +54,12 @@ const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
   path: '/email/unsubscribe',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogBestAdultRomanceVisualNovelsRoute =
+  BlogBestAdultRomanceVisualNovelsRouteImport.update({
+    id: '/blog/best-adult-romance-visual-novels',
+    path: '/blog/best-adult-romance-visual-novels',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
   id: '/lovable/email/suppression',
   path: '/lovable/email/suppression',
@@ -99,6 +106,7 @@ export interface FileRoutesByFullPath {
   '/story': typeof StoryRoute
   '/studio': typeof StudioRoute
   '/world': typeof WorldRoute
+  '/blog/best-adult-romance-visual-novels': typeof BlogBestAdultRomanceVisualNovelsRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -114,6 +122,7 @@ export interface FileRoutesByTo {
   '/story': typeof StoryRoute
   '/studio': typeof StudioRoute
   '/world': typeof WorldRoute
+  '/blog/best-adult-romance-visual-novels': typeof BlogBestAdultRomanceVisualNovelsRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -130,6 +139,7 @@ export interface FileRoutesById {
   '/story': typeof StoryRoute
   '/studio': typeof StudioRoute
   '/world': typeof WorldRoute
+  '/blog/best-adult-romance-visual-novels': typeof BlogBestAdultRomanceVisualNovelsRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -147,6 +157,7 @@ export interface FileRouteTypes {
     | '/story'
     | '/studio'
     | '/world'
+    | '/blog/best-adult-romance-visual-novels'
     | '/email/unsubscribe'
     | '/api/public/newsletter-subscribe'
     | '/lovable/email/suppression'
@@ -162,6 +173,7 @@ export interface FileRouteTypes {
     | '/story'
     | '/studio'
     | '/world'
+    | '/blog/best-adult-romance-visual-novels'
     | '/email/unsubscribe'
     | '/api/public/newsletter-subscribe'
     | '/lovable/email/suppression'
@@ -177,6 +189,7 @@ export interface FileRouteTypes {
     | '/story'
     | '/studio'
     | '/world'
+    | '/blog/best-adult-romance-visual-novels'
     | '/email/unsubscribe'
     | '/api/public/newsletter-subscribe'
     | '/lovable/email/suppression'
@@ -193,6 +206,7 @@ export interface RootRouteChildren {
   StoryRoute: typeof StoryRoute
   StudioRoute: typeof StudioRoute
   WorldRoute: typeof WorldRoute
+  BlogBestAdultRomanceVisualNovelsRoute: typeof BlogBestAdultRomanceVisualNovelsRoute
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
   ApiPublicNewsletterSubscribeRoute: typeof ApiPublicNewsletterSubscribeRoute
   LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
@@ -245,6 +259,13 @@ declare module '@tanstack/react-router' {
       path: '/email/unsubscribe'
       fullPath: '/email/unsubscribe'
       preLoaderRoute: typeof EmailUnsubscribeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/best-adult-romance-visual-novels': {
+      id: '/blog/best-adult-romance-visual-novels'
+      path: '/blog/best-adult-romance-visual-novels'
+      fullPath: '/blog/best-adult-romance-visual-novels'
+      preLoaderRoute: typeof BlogBestAdultRomanceVisualNovelsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lovable/email/suppression': {
@@ -305,6 +326,7 @@ const rootRouteChildren: RootRouteChildren = {
   StoryRoute: StoryRoute,
   StudioRoute: StudioRoute,
   WorldRoute: WorldRoute,
+  BlogBestAdultRomanceVisualNovelsRoute: BlogBestAdultRomanceVisualNovelsRoute,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
   ApiPublicNewsletterSubscribeRoute: ApiPublicNewsletterSubscribeRoute,
   LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
@@ -317,3 +339,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
