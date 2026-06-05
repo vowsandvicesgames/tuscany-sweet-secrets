@@ -29,9 +29,11 @@ export const Route = createFileRoute("/world")({
         property: "og:description",
         content: "Sweet Sin of Tuscany, our first 18+ visual novel from Vows & Vices Studio.",
       },
+      { property: "og:url", content: "https://vowsandvicesstudio.com/world" },
       { property: "og:image", content: coverBeach },
       { name: "twitter:image", content: coverBeach },
     ],
+    links: [{ rel: "canonical", href: "https://vowsandvicesstudio.com/world" }],
   }),
   component: GamesPage,
 });
@@ -245,6 +247,9 @@ function GamesPage() {
 
       {/* INTRO */}
       <section className="relative pt-40 pb-16 px-6 text-center">
+        <h1 className="font-display text-4xl sm:text-6xl text-rose-glow glow-text text-balance">
+          Games &amp; Characters
+        </h1>
         <p className="mt-6 max-w-2xl mx-auto font-serif-italic text-rose-glow/80 text-lg">
           Discover the games of Vows & Vices Studio. Sweet Sin of Tuscany, our first 18+ visual novel of forbidden love
           and family secrets.
@@ -256,9 +261,7 @@ function GamesPage() {
             width="552"
             height="167"
             title="Sweet Sin of Tuscany by VowsandVices"
-          >
-            <a href="https://vowsandvices.itch.io/sweet-sin-of-tuscany">Sweet Sin of Tuscany by VowsandVices</a>
-          </iframe>
+          />
         </div>
       </section>
 

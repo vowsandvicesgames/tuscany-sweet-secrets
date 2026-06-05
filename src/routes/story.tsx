@@ -17,7 +17,9 @@ export const Route = createFileRoute("/story")({
         property: "og:description",
         content: "Forbidden love, a family's web of lies, and a secret that won't stay buried.",
       },
+      { property: "og:url", content: "https://vowsandvicesstudio.com/story" },
     ],
+    links: [{ rel: "canonical", href: "https://vowsandvicesstudio.com/story" }],
   }),
   component: StoryPage,
 });

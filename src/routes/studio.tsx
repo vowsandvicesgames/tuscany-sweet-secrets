@@ -11,16 +11,36 @@ import { z } from "zod";
 export const Route = createFileRoute("/studio")({
   head: () => ({
     meta: [
-      { title: "Vows & Vices Studio" },
+      { title: "Vows & Vices Studio — Independent Visual Novels" },
       {
         name: "description",
         content:
           "Vows & Vices is an independent studio crafting moody, character-driven romantic 18+ visual novels. Creators of Sweet Sin of Tuscany.",
       },
-      { property: "og:title", content: "Vows & Vices Studio" },
+      { property: "og:title", content: "Vows & Vices Studio — Creators of Sweet Sin of Tuscany" },
       {
         property: "og:description",
         content: "An independent studio crafting moody, character-driven romantic visual novels.",
+      },
+      { property: "og:url", content: "https://vowsandvicesstudio.com/studio" },
+    ],
+    links: [{ rel: "canonical", href: "https://vowsandvicesstudio.com/studio" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Vows & Vices Studio",
+          url: "https://vowsandvicesstudio.com/",
+          logo: "https://vowsandvicesstudio.com/favicon.png",
+          description:
+            "An independent studio crafting moody, character-driven romantic 18+ visual novels.",
+          sameAs: [
+            "https://www.patreon.com/VowsandVices",
+            "https://vowsandvices.itch.io/sweet-sin-of-tuscany",
+          ],
+        }),
       },
     ],
   }),

@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorldRouteImport } from './routes/world'
 import { Route as StudioRouteImport } from './routes/studio'
 import { Route as StoryRouteImport } from './routes/story'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
@@ -35,6 +36,11 @@ const StudioRoute = StudioRouteImport.update({
 const StoryRoute = StoryRouteImport.update({
   id: '/story',
   path: '/story',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -89,6 +95,7 @@ const LovableEmailAuthPreviewRoute = LovableEmailAuthPreviewRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
   '/studio': typeof StudioRoute
   '/world': typeof WorldRoute
@@ -103,6 +110,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
   '/studio': typeof StudioRoute
   '/world': typeof WorldRoute
@@ -118,6 +126,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
   '/studio': typeof StudioRoute
   '/world': typeof WorldRoute
@@ -134,6 +143,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/sitemap.xml'
     | '/story'
     | '/studio'
     | '/world'
@@ -148,6 +158,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/sitemap.xml'
     | '/story'
     | '/studio'
     | '/world'
@@ -162,6 +173,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/sitemap.xml'
     | '/story'
     | '/studio'
     | '/world'
@@ -177,6 +189,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StoryRoute: typeof StoryRoute
   StudioRoute: typeof StudioRoute
   WorldRoute: typeof WorldRoute
@@ -211,6 +224,13 @@ declare module '@tanstack/react-router' {
       path: '/story'
       fullPath: '/story'
       preLoaderRoute: typeof StoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -281,6 +301,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   StoryRoute: StoryRoute,
   StudioRoute: StudioRoute,
   WorldRoute: WorldRoute,
