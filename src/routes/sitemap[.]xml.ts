@@ -21,7 +21,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/world", changefreq: "monthly", priority: "0.8" },
           { path: "/studio", changefreq: "monthly", priority: "0.7" },
           { path: "/blog", changefreq: "weekly", priority: "0.8" },
-          { path: "/blog/best-adult-romance-visual-novels", changefreq: "monthly", priority: "0.7" },
+          
         ];
 
         try {
