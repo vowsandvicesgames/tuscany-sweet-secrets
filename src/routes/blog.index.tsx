@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useSuspenseQuery, queryOptions } from "@tanstack/react-query";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { listPublishedPosts } from "@/lib/blog.functions";
@@ -8,13 +7,8 @@ const URL = "https://vowsandvicesstudio.com/blog";
 const TITLE = "Blog — Vows & Vices Studio";
 const DESCRIPTION = "Dev logs, guides, and stories from Vows & Vices Studio.";
 
-const postsQuery = queryOptions({
-  queryKey: ["blog", "list"],
-  queryFn: () => listPublishedPosts(),
-});
-
 export const Route = createFileRoute("/blog/")({
-  loader: ({ context }) => context.queryClient.ensureQueryData(postsQuery),
+  loader: () => listPublishedPosts(),
   head: () => ({
     meta: [
       { title: TITLE },
@@ -30,7 +24,7 @@ export const Route = createFileRoute("/blog/")({
 });
 
 function BlogIndex() {
-  const { data } = useSuspenseQuery(postsQuery);
+  const data = Route.useLoaderData();
   const posts = data.posts;
 
   return (

@@ -1,20 +1,13 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { useSuspenseQuery, queryOptions } from "@tanstack/react-query";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { getPublishedPost } from "@/lib/blog.functions";
 
 const BASE = "https://vowsandvicesstudio.com";
 
-const postQuery = (slug: string) =>
-  queryOptions({
-    queryKey: ["blog", "post", slug],
-    queryFn: () => getPublishedPost({ data: { slug } }),
-  });
-
 export const Route = createFileRoute("/blog/$slug")({
-  loader: async ({ context, params }) => {
-    const res = await context.queryClient.ensureQueryData(postQuery(params.slug));
+  loader: async ({ params }) => {
+    const res = await getPublishedPost({ data: { slug: params.slug } });
     if (!res.post) throw notFound();
     return res;
   },
@@ -79,8 +72,7 @@ function NotFound() {
 }
 
 function PostPage() {
-  const { slug } = Route.useParams();
-  const { data } = useSuspenseQuery(postQuery(slug));
+  const data = Route.useLoaderData();
   const post = data.post!;
 
   return (
