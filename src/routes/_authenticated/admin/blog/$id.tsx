@@ -139,22 +139,14 @@ function EditPost() {
             className="input"
           />
         </Field>
-        <Field label="Cover image URL" hint="Optional. Used as the social-share image.">
-          <input
-            type="url"
+        <Field label="Cover image" hint="Optional. Used as the social-share image and shown at the top of the post.">
+          <CoverImageInput
             value={form.cover_image_url}
-            onChange={(e) => onChange("cover_image_url", e.target.value)}
-            className="input"
+            onChange={(v) => onChange("cover_image_url", v)}
           />
         </Field>
-        <Field label="Body" hint="Plain text or markdown-style. Line breaks are preserved.">
-          <textarea
-            required
-            rows={18}
-            value={form.body}
-            onChange={(e) => onChange("body", e.target.value)}
-            className="input font-mono text-sm"
-          />
+        <Field label="Body" hint="Use the toolbar to format text, add links, headings, lists, and images.">
+          <RichEditor value={form.body} onChange={(v) => onChange("body", v)} />
         </Field>
 
         <label className="flex items-center gap-3 text-sm text-foreground/80">
