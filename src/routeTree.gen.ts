@@ -18,7 +18,6 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
-import { Route as BlogBestAdultRomanceVisualNovelsRouteImport } from './routes/blog.best-adult-romance-visual-novels'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
 import { Route as ApiPublicNewsletterSubscribeRouteImport } from './routes/api/public/newsletter-subscribe'
@@ -74,12 +73,6 @@ const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
   path: '/email/unsubscribe',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogBestAdultRomanceVisualNovelsRoute =
-  BlogBestAdultRomanceVisualNovelsRouteImport.update({
-    id: '/blog/best-adult-romance-visual-novels',
-    path: '/blog/best-adult-romance-visual-novels',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
@@ -145,7 +138,6 @@ export interface FileRoutesByFullPath {
   '/studio': typeof StudioRoute
   '/world': typeof WorldRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/blog/best-adult-romance-visual-novels': typeof BlogBestAdultRomanceVisualNovelsRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/blog/': typeof BlogIndexRoute
   '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
@@ -166,7 +158,6 @@ export interface FileRoutesByTo {
   '/studio': typeof StudioRoute
   '/world': typeof WorldRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/blog/best-adult-romance-visual-novels': typeof BlogBestAdultRomanceVisualNovelsRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/blog': typeof BlogIndexRoute
   '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
@@ -189,7 +180,6 @@ export interface FileRoutesById {
   '/studio': typeof StudioRoute
   '/world': typeof WorldRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/blog/best-adult-romance-visual-novels': typeof BlogBestAdultRomanceVisualNovelsRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/blog/': typeof BlogIndexRoute
   '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
@@ -212,7 +202,6 @@ export interface FileRouteTypes {
     | '/studio'
     | '/world'
     | '/blog/$slug'
-    | '/blog/best-adult-romance-visual-novels'
     | '/email/unsubscribe'
     | '/blog/'
     | '/api/public/newsletter-subscribe'
@@ -233,7 +222,6 @@ export interface FileRouteTypes {
     | '/studio'
     | '/world'
     | '/blog/$slug'
-    | '/blog/best-adult-romance-visual-novels'
     | '/email/unsubscribe'
     | '/blog'
     | '/api/public/newsletter-subscribe'
@@ -255,7 +243,6 @@ export interface FileRouteTypes {
     | '/studio'
     | '/world'
     | '/blog/$slug'
-    | '/blog/best-adult-romance-visual-novels'
     | '/email/unsubscribe'
     | '/blog/'
     | '/api/public/newsletter-subscribe'
@@ -278,7 +265,6 @@ export interface RootRouteChildren {
   StudioRoute: typeof StudioRoute
   WorldRoute: typeof WorldRoute
   BlogSlugRoute: typeof BlogSlugRoute
-  BlogBestAdultRomanceVisualNovelsRoute: typeof BlogBestAdultRomanceVisualNovelsRoute
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
   BlogIndexRoute: typeof BlogIndexRoute
   ApiPublicNewsletterSubscribeRoute: typeof ApiPublicNewsletterSubscribeRoute
@@ -353,13 +339,6 @@ declare module '@tanstack/react-router' {
       path: '/email/unsubscribe'
       fullPath: '/email/unsubscribe'
       preLoaderRoute: typeof EmailUnsubscribeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog/best-adult-romance-visual-novels': {
-      id: '/blog/best-adult-romance-visual-novels'
-      path: '/blog/best-adult-romance-visual-novels'
-      fullPath: '/blog/best-adult-romance-visual-novels'
-      preLoaderRoute: typeof BlogBestAdultRomanceVisualNovelsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
@@ -457,7 +436,6 @@ const rootRouteChildren: RootRouteChildren = {
   StudioRoute: StudioRoute,
   WorldRoute: WorldRoute,
   BlogSlugRoute: BlogSlugRoute,
-  BlogBestAdultRomanceVisualNovelsRoute: BlogBestAdultRomanceVisualNovelsRoute,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
   BlogIndexRoute: BlogIndexRoute,
   ApiPublicNewsletterSubscribeRoute: ApiPublicNewsletterSubscribeRoute,
@@ -471,3 +449,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
