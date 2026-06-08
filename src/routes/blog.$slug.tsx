@@ -108,10 +108,10 @@ function PostPage() {
         )}
 
         <section
-          className="max-w-3xl mx-auto mt-12 prose prose-invert prose-lg font-serif leading-relaxed text-foreground/85 whitespace-pre-wrap"
-        >
-          {post.body}
-        </section>
+          className="max-w-3xl mx-auto mt-12 prose prose-invert prose-lg font-serif leading-relaxed text-foreground/85 prose-headings:font-display prose-headings:text-rose-glow prose-a:text-crimson prose-strong:text-rose-glow prose-img:rounded-sm prose-img:border prose-img:border-crimson/30"
+          dangerouslySetInnerHTML={{ __html: post.body ?? "" }}
+        />
+
 
         <div className="max-w-3xl mx-auto mt-16 text-center">
           <Link to="/blog" className="text-crimson hover:underline text-sm tracking-widest uppercase">
