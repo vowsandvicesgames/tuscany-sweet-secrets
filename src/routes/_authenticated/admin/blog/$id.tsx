@@ -1,9 +1,10 @@
 import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { adminGetPost, adminUpsertPost } from "@/lib/blog-admin.functions";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { RichEditor, uploadBlogImage } from "@/components/blog/RichEditor";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/admin/blog/$id")({
