@@ -15,6 +15,7 @@ export function SiteHeader() {
             { to: "/", label: "Home" },
             { to: "/story", label: "Story" },
             { to: "/world", label: "Games" },
+            { to: "/blog", label: "Blog" },
             { to: "/studio", label: "Studio" },
           ].map((l) => (
             <Link

@@ -54,7 +54,7 @@ function BlogIndex() {
             </p>
           </Link>
 
-          {posts.map((p) => (
+          {posts.map((p: any) => (
             <Link
               key={p.id}
               to="/blog/$slug"
