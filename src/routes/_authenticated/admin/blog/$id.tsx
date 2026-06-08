@@ -205,6 +205,71 @@ function Field({ label, hint, children }: { label: string; hint?: string; childr
   );
 }
 
+function CoverImageInput({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  const ref = useRef<HTMLInputElement>(null);
+  const [uploading, setUploading] = useState(false);
+
+  const handleFile = async (file: File) => {
+    setUploading(true);
+    try {
+      toast.loading("Uploading cover…", { id: "cover-upload" });
+      const url = await uploadBlogImage(file);
+      onChange(url);
+      toast.success("Cover uploaded", { id: "cover-upload" });
+    } catch (e: any) {
+      toast.error(e.message ?? "Upload failed", { id: "cover-upload" });
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  return (
+    <div className="space-y-3">
+      {value && (
+        <div className="relative inline-block">
+          <img src={value} alt="Cover preview" className="max-h-48 rounded-sm border border-crimson/30" />
+          <button
+            type="button"
+            onClick={() => onChange("")}
+            className="absolute top-1 right-1 bg-background/80 border border-crimson/40 text-xs px-2 py-0.5 rounded-sm hover:text-rose-glow"
+          >
+            Remove
+          </button>
+        </div>
+      )}
+      <div className="flex flex-wrap gap-2 items-center">
+        <button
+          type="button"
+          onClick={() => ref.current?.click()}
+          disabled={uploading}
+          className="px-4 py-2 text-xs uppercase tracking-[0.2em] border border-crimson/40 rounded-sm hover:text-rose-glow disabled:opacity-50"
+        >
+          {uploading ? "Uploading…" : value ? "Replace image" : "Upload image"}
+        </button>
+        <input
+          ref={ref}
+          type="file"
+          accept="image/*"
+          className="hidden"
+          onChange={(e) => {
+            const f = e.target.files?.[0];
+            if (f) handleFile(f);
+            e.target.value = "";
+          }}
+        />
+        <span className="text-xs text-foreground/40">or paste a URL:</span>
+        <input
+          type="url"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          placeholder="https://…"
+          className="input flex-1 min-w-[200px]"
+        />
+      </div>
+    </div>
+  );
+}
+
 function Shell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-background">
