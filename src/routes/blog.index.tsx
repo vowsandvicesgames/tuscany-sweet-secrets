@@ -57,7 +57,9 @@ function BlogIndex() {
                 />
               )}
               <p className="text-xs uppercase tracking-[0.3em] text-crimson mb-2">
-                {p.published_at ? new Date(p.published_at).toLocaleDateString() : "Draft"}
+                {p.published_at
+                  ? new Date(p.published_at).toISOString().slice(0, 10).split("-").reverse().join("/")
+                  : "Draft"}
               </p>
               <h2 className="font-display text-xl text-rose-glow group-hover:text-crimson transition-colors">
                 {p.title}
