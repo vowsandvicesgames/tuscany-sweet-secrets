@@ -40,19 +40,6 @@ function BlogIndex() {
         </header>
 
         <section className="max-w-4xl mx-auto mt-16 grid gap-6 sm:grid-cols-2">
-          {/* Featured static guide */}
-          <Link
-            to="/blog/best-adult-romance-visual-novels"
-            className="group rounded-sm border border-crimson/30 bg-card/60 p-6 hover:border-crimson/60 transition-colors backdrop-blur"
-          >
-            <p className="text-xs uppercase tracking-[0.3em] text-crimson mb-2">Guide</p>
-            <h2 className="font-display text-xl text-rose-glow group-hover:text-crimson transition-colors">
-              Best Adult Romance Visual Novels
-            </h2>
-            <p className="mt-3 text-foreground/75 text-sm leading-relaxed">
-              A curated guide to story-driven 18+ visual novels.
-            </p>
-          </Link>
 
           {posts.map((p: any) => (
             <Link
