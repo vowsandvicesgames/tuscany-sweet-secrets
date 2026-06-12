@@ -170,6 +170,14 @@ function Index() {
               </a>
             ))}
           </div>
+          <div className="mt-10 text-center">
+            <Link
+              to="/blog"
+              className="inline-flex items-center px-6 py-3 font-display tracking-[0.25em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
+            >
+              Visit the Blog<span className="ml-3">→</span>
+            </Link>
+          </div>
         </div>
       </section>
 
