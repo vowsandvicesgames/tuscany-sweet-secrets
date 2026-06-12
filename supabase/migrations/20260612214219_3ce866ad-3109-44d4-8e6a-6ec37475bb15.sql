@@ -1,0 +1,1 @@
+UPDATE public.blog_posts SET cover_image_url = '/__l5e/assets-v1/f4c69e2a-a768-4bc8-ad2e-dfdb71ee1732/devlog-06.png' WHERE slug = 'dev-log-no-06';
