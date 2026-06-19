@@ -17,6 +17,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as GotoSplatRouteImport } from './routes/goto.$'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
@@ -66,6 +67,11 @@ const IndexRoute = IndexRouteImport.update({
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GotoSplatRoute = GotoSplatRouteImport.update({
+  id: '/goto/$',
+  path: '/goto/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
@@ -139,6 +145,7 @@ export interface FileRoutesByFullPath {
   '/world': typeof WorldRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
+  '/goto/$': typeof GotoSplatRoute
   '/blog/': typeof BlogIndexRoute
   '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -159,6 +166,7 @@ export interface FileRoutesByTo {
   '/world': typeof WorldRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
+  '/goto/$': typeof GotoSplatRoute
   '/blog': typeof BlogIndexRoute
   '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -181,6 +189,7 @@ export interface FileRoutesById {
   '/world': typeof WorldRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
+  '/goto/$': typeof GotoSplatRoute
   '/blog/': typeof BlogIndexRoute
   '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -203,6 +212,7 @@ export interface FileRouteTypes {
     | '/world'
     | '/blog/$slug'
     | '/email/unsubscribe'
+    | '/goto/$'
     | '/blog/'
     | '/api/public/newsletter-subscribe'
     | '/lovable/email/suppression'
@@ -223,6 +233,7 @@ export interface FileRouteTypes {
     | '/world'
     | '/blog/$slug'
     | '/email/unsubscribe'
+    | '/goto/$'
     | '/blog'
     | '/api/public/newsletter-subscribe'
     | '/lovable/email/suppression'
@@ -244,6 +255,7 @@ export interface FileRouteTypes {
     | '/world'
     | '/blog/$slug'
     | '/email/unsubscribe'
+    | '/goto/$'
     | '/blog/'
     | '/api/public/newsletter-subscribe'
     | '/lovable/email/suppression'
@@ -266,6 +278,7 @@ export interface RootRouteChildren {
   WorldRoute: typeof WorldRoute
   BlogSlugRoute: typeof BlogSlugRoute
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
+  GotoSplatRoute: typeof GotoSplatRoute
   BlogIndexRoute: typeof BlogIndexRoute
   ApiPublicNewsletterSubscribeRoute: typeof ApiPublicNewsletterSubscribeRoute
   LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
@@ -332,6 +345,13 @@ declare module '@tanstack/react-router' {
       path: '/blog'
       fullPath: '/blog/'
       preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/goto/$': {
+      id: '/goto/$'
+      path: '/goto/$'
+      fullPath: '/goto/$'
+      preLoaderRoute: typeof GotoSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/email/unsubscribe': {
@@ -437,6 +457,7 @@ const rootRouteChildren: RootRouteChildren = {
   WorldRoute: WorldRoute,
   BlogSlugRoute: BlogSlugRoute,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
+  GotoSplatRoute: GotoSplatRoute,
   BlogIndexRoute: BlogIndexRoute,
   ApiPublicNewsletterSubscribeRoute: ApiPublicNewsletterSubscribeRoute,
   LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
