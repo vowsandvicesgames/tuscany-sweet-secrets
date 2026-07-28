@@ -62,6 +62,9 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const { posts } = Route.useLoaderData();
+  const latestLogs = posts.slice(0, 5);
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       <SiteHeader />
@@ -138,17 +141,16 @@ function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="ornament-divider mb-10 text-xs tracking-[0.4em] uppercase">Dev Logs</div>
           <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
-            {devLogs.map((log) => (
-              <a
-                key={log.url}
-                href={log.url}
-                target="_blank"
-                rel="noopener noreferrer"
+            {latestLogs.map((log) => (
+              <Link
+                key={log.id}
+                to="/blog/$slug"
+                params={{ slug: log.slug }}
                 className="group relative overflow-hidden rounded-sm border border-crimson/30 bg-card hover:border-crimson transition-all duration-500"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src={log.img}
+                    src={log.cover_image_url ?? ""}
                     alt={log.title}
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -159,7 +161,7 @@ function Index() {
                     {log.title}
                   </h2>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
           <div className="mt-10 text-center">
