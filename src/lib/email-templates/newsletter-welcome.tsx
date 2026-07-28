@@ -6,7 +6,7 @@ const SITE_NAME = "Vows & Vices";
 const NewsletterWelcomeEmail = () => (
   <Html lang="en" dir="ltr">
     <Head />
-    <Preview>Welcome to the Sweet sin of Tuscany, secrets coming soon.</Preview>
+    <Preview>Welcome to the Sweet sin of Tuscany.</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section style={header}>
@@ -43,7 +43,7 @@ const NewsletterWelcomeEmail = () => (
 
 export const template = {
   component: NewsletterWelcomeEmail,
-  subject: "Welcome to the Sweet sin of Tuscany — secrets coming soon",
+  subject: "Welcome to the Sweet sin of Tuscany",
   displayName: "Newsletter welcome",
   previewData: {},
 } satisfies TemplateEntry;

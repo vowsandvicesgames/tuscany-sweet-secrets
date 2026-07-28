@@ -282,7 +282,7 @@ function GamesPage() {
 
             {/* Info */}
             <div className="p-8 sm:p-12 flex flex-col justify-center">
-              <p className="text-xs uppercase tracking-[0.3em] text-crimson mb-3">Featured · Coming Soon</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-crimson mb-3">Featured</p>
               <h2 className="font-display text-4xl sm:text-5xl text-rose-glow mb-5">
                 <span className="font-serif-italic text-crimson">Sweet Sin</span> of Tuscany
               </h2>
