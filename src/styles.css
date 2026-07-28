@@ -52,6 +52,9 @@
   --crimson: oklch(0.52 0.20 18);               /* crimson red */
   --rose-glow: oklch(0.82 0.08 20);             /* rose-pink highlight */
 
+  --discord: #5865F2;
+  --discord-hover: #4752C4;
+
   --card: oklch(0.17 0.04 15);
   --card-foreground: oklch(0.94 0.02 20);
   --popover: oklch(0.17 0.04 15);
@@ -80,6 +83,7 @@
 
   --transition-silk: cubic-bezier(0.22, 1, 0.36, 1);
 }
+
 
 .dark {
   --background: oklch(0.13 0.03 15);
