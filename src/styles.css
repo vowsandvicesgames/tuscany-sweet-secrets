@@ -32,7 +32,9 @@
   --color-crimson: var(--crimson);
   --color-burgundy: var(--burgundy);
   --color-ink: var(--ink);
+  --color-discord: var(--discord);
   --color-discord-hover: var(--discord-hover);
+
   --color-reddit: var(--reddit);
   --color-reddit-hover: var(--reddit-hover);
   --color-x: var(--x);
