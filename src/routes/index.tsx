@@ -148,7 +148,7 @@ function Index() {
       </section>
 
       {/* DISCORD CTA */}
-      <section className="relative px-6 -mt-10 mb-4">
+      <section className="relative px-6 mt-4 mb-4">
         <div className="max-w-7xl mx-auto text-center">
           <a
             href={DISCORD_URL}
