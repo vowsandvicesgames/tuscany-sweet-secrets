@@ -10,10 +10,10 @@ import cover from "@/assets/cover-moon.webp";
 import emili from "@/assets/character-emily-home.webp";
 import sofia from "@/assets/character-sofia-home.webp";
 
-
-import { PATREON_URL } from "@/lib/links";
+import { PATREON_URL, DISCORD_URL } from "@/lib/links";
 import { toast } from "sonner";
 import { z } from "zod";
+
 
 
 const emailSchema = z.string().trim().email({ message: "Please enter a valid email address" }).max(255);
