@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import vvLogo from "@/assets/vows-vices-logo.png";
-import { PATREON_URL, DISCORD_URL, REDDIT_URL } from "@/lib/links";
+import { PATREON_URL, DISCORD_URL, REDDIT_URL, TWITTER_URL } from "@/lib/links";
+
 
 
 export function SiteFooter() {
@@ -44,7 +45,19 @@ export function SiteFooter() {
             </svg>
             Reddit
           </a>
+          <a
+            href={TWITTER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 font-display tracking-[0.2em] uppercase text-xs text-x-fg bg-x hover:bg-x-hover rounded-sm transition-colors"
+          >
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            X / Twitter
+          </a>
         </div>
+
 
         <div className="text-sm text-muted-foreground">
           <p className="font-serif-italic text-rose-glow/80 mb-2">"Will you taste the Sweet Sin of Tuscany?"</p>
