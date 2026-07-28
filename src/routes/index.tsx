@@ -10,7 +10,8 @@ import cover from "@/assets/cover-moon.webp";
 import emili from "@/assets/character-emily-home.webp";
 import sofia from "@/assets/character-sofia-home.webp";
 
-import { PATREON_URL, DISCORD_URL } from "@/lib/links";
+import { PATREON_URL, DISCORD_URL, REDDIT_URL } from "@/lib/links";
+
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -149,7 +150,7 @@ function Index() {
 
       {/* DISCORD CTA */}
       <section className="relative px-6 mt-4 mb-4">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3">
           <a
             href={DISCORD_URL}
             target="_blank"
@@ -161,8 +162,20 @@ function Index() {
             </svg>
             Join the Discord
           </a>
+          <a
+            href={REDDIT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-foreground bg-reddit hover:bg-reddit-hover rounded-sm transition-colors"
+          >
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.63 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.753-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l6.907 1.486a.75.75 0 0 0 .154-1.482l-2.614-.56a.75.75 0 0 0-.316 1.466l.521.112a1.75 1.75 0 0 1 .369 3.444zM8 14.041c-.917 0-1.69.802-1.69 1.79 0 .988.773 1.79 1.69 1.79.917 0 1.69-.802 1.69-1.79 0-.988-.773-1.79-1.69-1.79zm7.441.001c-.916 0-1.688.8-1.688 1.788 0 .988.772 1.789 1.688 1.789s1.688-.801 1.688-1.789c0-.988-.772-1.788-1.688-1.788z" />
+            </svg>
+            Join Reddit
+          </a>
         </div>
       </section>
+
 
       {/* DEV LOGS */}
 

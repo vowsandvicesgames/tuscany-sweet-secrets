@@ -34,6 +34,9 @@
   --color-ink: var(--ink);
   --color-discord: var(--discord);
   --color-discord-hover: var(--discord-hover);
+  --color-reddit: var(--reddit);
+  --color-reddit-hover: var(--reddit-hover);
+
   --font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
@@ -54,6 +57,9 @@
 
   --discord: #5865F2;
   --discord-hover: #4752C4;
+  --reddit: #FF4500;
+  --reddit-hover: #E03E00;
+
 
   --card: oklch(0.17 0.04 15);
   --card-foreground: oklch(0.94 0.02 20);
