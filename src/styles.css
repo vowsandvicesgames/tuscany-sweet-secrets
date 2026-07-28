@@ -58,8 +58,9 @@
   --crimson: oklch(0.52 0.20 18);               /* crimson red */
   --rose-glow: oklch(0.82 0.08 20);             /* rose-pink highlight */
 
-  --discord: #5865F2;
-  --discord-hover: #4752C4;
+  --discord: #7289DA;
+  --discord-hover: #5B6EAE;
+
   --reddit: #FF4500;
   --reddit-hover: #E03E00;
   --x: #000000;
