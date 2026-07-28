@@ -18,6 +18,16 @@ import { z } from "zod";
 
 const emailSchema = z.string().trim().email({ message: "Please enter a valid email address" }).max(255);
 
+type BlogPost = {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string | null;
+  cover_image_url: string | null;
+  published_at: string | null;
+};
+
+
 export const Route = createFileRoute("/")({
   loader: () => listPublishedPosts(),
   head: () => ({
@@ -62,8 +72,9 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const { posts } = Route.useLoaderData();
+  const { posts } = Route.useLoaderData() as { posts: BlogPost[] };
   const latestLogs = posts.slice(0, 5);
+
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
