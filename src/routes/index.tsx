@@ -361,7 +361,7 @@ function NewsletterForm() {
         return;
       }
       if (data.alreadySubscribed) {
-        toast.success("You're already on the list — secrets coming soon.");
+        toast.success("You're already on the list.");
       } else {
         toast.success("Welcome to the villa. Check your inbox.");
       }
