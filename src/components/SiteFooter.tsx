@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import vvLogo from "@/assets/vows-vices-logo.png";
 import { PATREON_URL, DISCORD_URL, REDDIT_URL, TWITTER_URL } from "@/lib/links";
+import { trackRedditClick } from "@/lib/analytics";
 
 
 
