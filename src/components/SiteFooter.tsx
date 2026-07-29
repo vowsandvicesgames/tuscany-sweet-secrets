@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import vvLogo from "@/assets/vows-vices-logo.png";
 import { PATREON_URL, DISCORD_URL, REDDIT_URL, TWITTER_URL } from "@/lib/links";
+import { trackRedditClick } from "@/lib/analytics";
 
 
 
@@ -38,6 +39,7 @@ export function SiteFooter() {
             href={REDDIT_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackRedditClick(window.location.pathname)}
             className="inline-flex items-center justify-center gap-2 px-5 py-2.5 font-display tracking-[0.2em] uppercase text-xs text-foreground bg-reddit hover:bg-reddit-hover rounded-sm transition-colors"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
