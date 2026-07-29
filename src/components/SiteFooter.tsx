@@ -20,14 +20,15 @@ export function SiteFooter() {
           <Link to="/story" className="hover:text-rose-glow transition-colors">The Story</Link>
           <Link to="/world" className="hover:text-rose-glow transition-colors">The Games</Link>
           <Link to="/studio" className="hover:text-rose-glow transition-colors">The Studio</Link>
-          <a href={PATREON_URL} target="_blank" rel="noopener noreferrer" className="hover:text-rose-glow transition-colors">Support on Patreon ↗</a>
-          <a href="https://x.com/VowsandVice" target="_blank" rel="noopener noreferrer" className="hover:text-rose-glow transition-colors">X / Twitter ↗</a>
+          <a href={PATREON_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackPatreonClick(window.location.pathname)} className="hover:text-rose-glow transition-colors">Support on Patreon ↗</a>
+          <a href="https://x.com/VowsandVice" target="_blank" rel="noopener noreferrer" onClick={() => trackTwitterClick(window.location.pathname)} className="hover:text-rose-glow transition-colors">X / Twitter ↗</a>
         </nav>
         <div className="mt-4 flex flex-wrap gap-3">
           <a
             href={DISCORD_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackDiscordClick(window.location.pathname)}
             className="inline-flex items-center justify-center gap-2 px-5 py-2.5 font-display tracking-[0.2em] uppercase text-xs text-foreground bg-discord hover:bg-discord-hover rounded-sm transition-colors"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -51,6 +52,7 @@ export function SiteFooter() {
             href={TWITTER_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackTwitterClick(window.location.pathname)}
             className="inline-flex items-center justify-center gap-2 px-5 py-2.5 font-display tracking-[0.2em] uppercase text-xs text-x-fg bg-x hover:bg-x-hover rounded-sm transition-colors"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
