@@ -168,6 +168,7 @@ function Index() {
             href={REDDIT_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackRedditClick(window.location.pathname)}
             className="inline-flex items-center justify-center gap-2 px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-foreground bg-reddit hover:bg-reddit-hover rounded-sm transition-colors"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
