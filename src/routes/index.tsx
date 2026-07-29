@@ -11,7 +11,7 @@ import emili from "@/assets/character-emily-home.webp";
 import sofia from "@/assets/character-sofia-home.webp";
 
 import { PATREON_URL, DISCORD_URL, REDDIT_URL, TWITTER_URL } from "@/lib/links";
-import { trackRedditClick } from "@/lib/analytics";
+import { trackRedditClick, trackPatreonClick, trackItchClick, trackDiscordClick, trackTwitterClick } from "@/lib/analytics";
 
 
 import { toast } from "sonner";
@@ -126,6 +126,7 @@ function Index() {
                 href={PATREON_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackPatreonClick(window.location.pathname)}
                 className="group relative inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-foreground bg-romance rounded-sm shadow-[0_0_60px_oklch(0.52_0.20_18/0.35)] hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 border border-crimson/40"
               >
                 Support us on Patreon
@@ -140,7 +141,10 @@ function Index() {
       </section>
 
       {/* ITCH.IO WIDGET */}
-      <section className="relative z-10 w-full flex justify-center px-6 -mt-4 mb-8">
+      <section
+        className="relative z-10 w-full flex justify-center px-6 -mt-4 mb-8"
+        onClick={() => trackItchClick(window.location.pathname)}
+      >
         <iframe
           frameBorder="0"
           src="https://itch.io/embed/4640956?linkback=true"
@@ -157,6 +161,7 @@ function Index() {
             href={DISCORD_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackDiscordClick(window.location.pathname)}
             className="inline-flex items-center justify-center gap-2 px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-foreground bg-discord hover:bg-discord-hover rounded-sm transition-colors"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -180,6 +185,7 @@ function Index() {
             href={TWITTER_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackTwitterClick(window.location.pathname)}
             className="inline-flex items-center justify-center gap-2 px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-x-fg bg-x hover:bg-x-hover rounded-sm transition-colors"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
