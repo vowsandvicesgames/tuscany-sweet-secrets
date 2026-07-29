@@ -11,7 +11,7 @@ import emili from "@/assets/character-emily-home.webp";
 import sofia from "@/assets/character-sofia-home.webp";
 
 import { PATREON_URL, DISCORD_URL, REDDIT_URL, TWITTER_URL } from "@/lib/links";
-import { trackRedditClick } from "@/lib/analytics";
+import { trackRedditClick, trackPatreonClick, trackItchClick, trackDiscordClick, trackTwitterClick } from "@/lib/analytics";
 
 
 import { toast } from "sonner";
