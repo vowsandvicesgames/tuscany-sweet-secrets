@@ -93,6 +93,8 @@ function RootComponent() {
       <Outlet />
       <Toaster />
       <AgeGate />
+      <EpisodeCountdown />
     </>
   );
 }
+
