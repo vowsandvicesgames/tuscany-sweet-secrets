@@ -82,7 +82,7 @@ function PostPage() {
         <header className="max-w-3xl mx-auto text-center">
           {post.published_at && (
             <p className="text-xs uppercase tracking-[0.4em] text-rose-glow/70">
-              {new Date(post.published_at).toLocaleDateString(undefined, {
+              {new Date(post.published_at).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
