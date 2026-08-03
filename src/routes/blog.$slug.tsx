@@ -108,7 +108,7 @@ function PostPage() {
         )}
 
         <section
-          className="max-w-3xl mx-auto mt-12 prose prose-invert prose-xl font-serif leading-relaxed text-foreground/85 prose-headings:font-display prose-headings:text-rose-glow prose-a:text-crimson prose-strong:text-rose-glow prose-img:rounded-sm prose-img:border prose-img:border-crimson/30"
+          className="max-w-3xl mx-auto mt-12 prose prose-invert prose-2xl font-serif leading-relaxed text-foreground/85 prose-headings:font-display prose-headings:text-rose-glow prose-a:text-crimson prose-strong:text-rose-glow prose-img:rounded-sm prose-img:border prose-img:border-crimson/30"
           dangerouslySetInnerHTML={{ __html: post.body ?? "" }}
         />
 
