@@ -82,7 +82,7 @@ function PostPage() {
         <header className="max-w-3xl mx-auto text-center">
           {post.published_at && (
             <p className="text-xs uppercase tracking-[0.4em] text-rose-glow/70">
-              {new Date(post.published_at).toLocaleDateString(undefined, {
+              {new Date(post.published_at).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
@@ -108,7 +108,7 @@ function PostPage() {
         )}
 
         <section
-          className="max-w-3xl mx-auto mt-12 prose prose-invert prose-lg font-serif leading-relaxed text-foreground/85 prose-headings:font-display prose-headings:text-rose-glow prose-a:text-crimson prose-strong:text-rose-glow prose-img:rounded-sm prose-img:border prose-img:border-crimson/30"
+          className="max-w-3xl mx-auto mt-12 prose prose-invert prose-xl font-serif leading-relaxed text-foreground/85 prose-headings:font-display prose-headings:text-rose-glow prose-a:text-crimson prose-strong:text-rose-glow prose-img:rounded-sm prose-img:border prose-img:border-crimson/30"
           dangerouslySetInnerHTML={{ __html: post.body ?? "" }}
         />
 
