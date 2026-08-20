@@ -35,6 +35,42 @@ function stripHtml(html: string) {
     .trim()
 }
 
+function firstImageUrl(html: string): string | null {
+  const m = html.match(/<img[^>]+src="([^"]+)"/i)
+  if (!m?.[1]) return null
+  return m[1].replace(/&amp;/g, '&')
+}
+
+/**
+ * Patreon image URLs are signed and expire, so copy the image into our own
+ * storage bucket and return a permanent public URL.
+ */
+async function mirrorImage(
+  supabase: any,
+  sourceUrl: string,
+  postId: string,
+): Promise<string | null> {
+  try {
+    const res = await fetch(sourceUrl)
+    if (!res.ok) return null
+    const contentType = res.headers.get('content-type') ?? 'image/png'
+    const ext = contentType.includes('jpeg') ? 'jpg' : contentType.includes('webp') ? 'webp' : 'png'
+    const bytes = new Uint8Array(await res.arrayBuffer())
+    const path = `blog/patreon/${postId}.${ext}`
+    const { error } = await supabase.storage
+      .from('email-assets')
+      .upload(path, bytes, { contentType, upsert: true })
+    if (error) {
+      console.error('patreon-sync image upload failed', error)
+      return null
+    }
+    return supabase.storage.from('email-assets').getPublicUrl(path).data.publicUrl as string
+  } catch (e) {
+    console.error('patreon-sync image mirror failed', e)
+    return null
+  }
+}
+
 async function patreonFetch(path: string, token: string) {
   const res = await fetch(`${PATREON_API}${path}`, {
     headers: { Authorization: `Bearer ${token}` },
