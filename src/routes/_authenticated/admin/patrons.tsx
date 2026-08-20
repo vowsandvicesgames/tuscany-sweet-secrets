@@ -116,6 +116,10 @@ function AdminPatrons() {
           <Link to="/admin/blog" className="text-sm text-foreground/60 hover:text-rose-glow self-center">
             Blog posts
           </Link>
+          <Link to="/admin/automations" className="text-sm text-foreground/60 hover:text-rose-glow self-center">
+            Automations
+          </Link>
+
           <button
             onClick={exportCsv}
             disabled={withEmail === 0}
