@@ -8,28 +8,29 @@ interface Props {
   tier?: string;
 }
 
-const PatronWelcomePaidEmail = ({ name, tier }: Props) => (
+const PatronWelcomePaidEmail = ({ name }: Props) => (
   <Html lang="en" dir="ltr">
     <Head />
-    <Preview>Your support just unlocked the velvet curtain.</Preview>
+    <Preview>Welcome to the Sinner Ranks</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section style={header}>
           <Heading style={h1}>Welcome to the Sinner Ranks</Heading>
-          <Text style={tagline}>"We write the stories you swore you'd never tell anyone."</Text>
+          <Text style={tagline}>&ldquo;We write the stories you swore you'd never tell anyone.&rdquo;</Text>
         </Section>
 
         <Section style={card}>
           <Text style={text}>{name ? `Dear ${name},` : "Dear friend,"}</Text>
+          <Text style={text}>Thank you. Truly. 🖤</Text>
           <Text style={text}>
-            Thank you for supporting {SITE_NAME}
-            {tier ? ` as part of the ${tier} tier` : ""}. Your pledge keeps Tuscany's darkest romance alive.
+            Thank you for choosing to support {SITE_NAME}. We know you have countless things you could spend your time and money on, so the fact that you decided to put your support behind our little story means a lot to us.
           </Text>
-          <Text style={text}>As a paid supporter you now get:</Text>
-          <Text style={listItem}>· Early builds and uncensored chapter previews</Text>
-          <Text style={listItem}>· Full dev logs and behind the scenes art</Text>
-          <Text style={listItem}>· A vote in the choices that shape the story</Text>
-          <Text style={text}>See you inside.</Text>
+          <Text style={text}>Your support helps us keep creating, writing, and bringing Tuscany to life.</Text>
+          <Text style={text}>We won't take it for granted.</Text>
+          <Text style={text}>
+            Thank you for believing in us, and welcome to the Sinner Ranks.
+          </Text>
+          <Text style={text}>See you inside. 🖤</Text>
         </Section>
 
         <Section style={footerSection}>
