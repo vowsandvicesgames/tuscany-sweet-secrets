@@ -22,6 +22,7 @@ import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
 import { Route as ApiPublicPatreonSyncRouteImport } from './routes/api/public/patreon-sync'
+import { Route as ApiPublicPatreonPatronsSyncRouteImport } from './routes/api/public/patreon-patrons-sync'
 import { Route as ApiPublicNewsletterSubscribeRouteImport } from './routes/api/public/newsletter-subscribe'
 import { Route as AuthenticatedAdminBlogIndexRouteImport } from './routes/_authenticated/admin/blog/index'
 import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
@@ -95,6 +96,12 @@ const ApiPublicPatreonSyncRoute = ApiPublicPatreonSyncRouteImport.update({
   path: '/api/public/patreon-sync',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicPatreonPatronsSyncRoute =
+  ApiPublicPatreonPatronsSyncRouteImport.update({
+    id: '/api/public/patreon-patrons-sync',
+    path: '/api/public/patreon-patrons-sync',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiPublicNewsletterSubscribeRoute =
   ApiPublicNewsletterSubscribeRouteImport.update({
     id: '/api/public/newsletter-subscribe',
@@ -154,6 +161,7 @@ export interface FileRoutesByFullPath {
   '/goto/$': typeof GotoSplatRoute
   '/blog/': typeof BlogIndexRoute
   '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
+  '/api/public/patreon-patrons-sync': typeof ApiPublicPatreonPatronsSyncRoute
   '/api/public/patreon-sync': typeof ApiPublicPatreonSyncRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/admin/blog/$id': typeof AuthenticatedAdminBlogIdRoute
@@ -176,6 +184,7 @@ export interface FileRoutesByTo {
   '/goto/$': typeof GotoSplatRoute
   '/blog': typeof BlogIndexRoute
   '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
+  '/api/public/patreon-patrons-sync': typeof ApiPublicPatreonPatronsSyncRoute
   '/api/public/patreon-sync': typeof ApiPublicPatreonSyncRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/admin/blog/$id': typeof AuthenticatedAdminBlogIdRoute
@@ -200,6 +209,7 @@ export interface FileRoutesById {
   '/goto/$': typeof GotoSplatRoute
   '/blog/': typeof BlogIndexRoute
   '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
+  '/api/public/patreon-patrons-sync': typeof ApiPublicPatreonPatronsSyncRoute
   '/api/public/patreon-sync': typeof ApiPublicPatreonSyncRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/_authenticated/admin/blog/$id': typeof AuthenticatedAdminBlogIdRoute
@@ -224,6 +234,7 @@ export interface FileRouteTypes {
     | '/goto/$'
     | '/blog/'
     | '/api/public/newsletter-subscribe'
+    | '/api/public/patreon-patrons-sync'
     | '/api/public/patreon-sync'
     | '/lovable/email/suppression'
     | '/admin/blog/$id'
@@ -246,6 +257,7 @@ export interface FileRouteTypes {
     | '/goto/$'
     | '/blog'
     | '/api/public/newsletter-subscribe'
+    | '/api/public/patreon-patrons-sync'
     | '/api/public/patreon-sync'
     | '/lovable/email/suppression'
     | '/admin/blog/$id'
@@ -269,6 +281,7 @@ export interface FileRouteTypes {
     | '/goto/$'
     | '/blog/'
     | '/api/public/newsletter-subscribe'
+    | '/api/public/patreon-patrons-sync'
     | '/api/public/patreon-sync'
     | '/lovable/email/suppression'
     | '/_authenticated/admin/blog/$id'
@@ -293,6 +306,7 @@ export interface RootRouteChildren {
   GotoSplatRoute: typeof GotoSplatRoute
   BlogIndexRoute: typeof BlogIndexRoute
   ApiPublicNewsletterSubscribeRoute: typeof ApiPublicNewsletterSubscribeRoute
+  ApiPublicPatreonPatronsSyncRoute: typeof ApiPublicPatreonPatronsSyncRoute
   ApiPublicPatreonSyncRoute: typeof ApiPublicPatreonSyncRoute
   LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
   LovableEmailAuthPreviewRoute: typeof LovableEmailAuthPreviewRoute
@@ -395,6 +409,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicPatreonSyncRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/patreon-patrons-sync': {
+      id: '/api/public/patreon-patrons-sync'
+      path: '/api/public/patreon-patrons-sync'
+      fullPath: '/api/public/patreon-patrons-sync'
+      preLoaderRoute: typeof ApiPublicPatreonPatronsSyncRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/newsletter-subscribe': {
       id: '/api/public/newsletter-subscribe'
       path: '/api/public/newsletter-subscribe'
@@ -480,6 +501,7 @@ const rootRouteChildren: RootRouteChildren = {
   GotoSplatRoute: GotoSplatRoute,
   BlogIndexRoute: BlogIndexRoute,
   ApiPublicNewsletterSubscribeRoute: ApiPublicNewsletterSubscribeRoute,
+  ApiPublicPatreonPatronsSyncRoute: ApiPublicPatreonPatronsSyncRoute,
   ApiPublicPatreonSyncRoute: ApiPublicPatreonSyncRoute,
   LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
   LovableEmailAuthPreviewRoute: LovableEmailAuthPreviewRoute,
