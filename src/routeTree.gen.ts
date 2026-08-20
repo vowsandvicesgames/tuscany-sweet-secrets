@@ -24,6 +24,7 @@ import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/em
 import { Route as ApiPublicPatreonSyncRouteImport } from './routes/api/public/patreon-sync'
 import { Route as ApiPublicPatreonPatronsSyncRouteImport } from './routes/api/public/patreon-patrons-sync'
 import { Route as ApiPublicNewsletterSubscribeRouteImport } from './routes/api/public/newsletter-subscribe'
+import { Route as AuthenticatedAdminPatronsRouteImport } from './routes/_authenticated/admin/patrons'
 import { Route as AuthenticatedAdminBlogIndexRouteImport } from './routes/_authenticated/admin/blog/index'
 import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
@@ -108,6 +109,12 @@ const ApiPublicNewsletterSubscribeRoute =
     path: '/api/public/newsletter-subscribe',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AuthenticatedAdminPatronsRoute =
+  AuthenticatedAdminPatronsRouteImport.update({
+    id: '/admin/patrons',
+    path: '/admin/patrons',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedAdminBlogIndexRoute =
   AuthenticatedAdminBlogIndexRouteImport.update({
     id: '/admin/blog/',
@@ -160,6 +167,7 @@ export interface FileRoutesByFullPath {
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/goto/$': typeof GotoSplatRoute
   '/blog/': typeof BlogIndexRoute
+  '/admin/patrons': typeof AuthenticatedAdminPatronsRoute
   '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
   '/api/public/patreon-patrons-sync': typeof ApiPublicPatreonPatronsSyncRoute
   '/api/public/patreon-sync': typeof ApiPublicPatreonSyncRoute
@@ -183,6 +191,7 @@ export interface FileRoutesByTo {
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/goto/$': typeof GotoSplatRoute
   '/blog': typeof BlogIndexRoute
+  '/admin/patrons': typeof AuthenticatedAdminPatronsRoute
   '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
   '/api/public/patreon-patrons-sync': typeof ApiPublicPatreonPatronsSyncRoute
   '/api/public/patreon-sync': typeof ApiPublicPatreonSyncRoute
@@ -208,6 +217,7 @@ export interface FileRoutesById {
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/goto/$': typeof GotoSplatRoute
   '/blog/': typeof BlogIndexRoute
+  '/_authenticated/admin/patrons': typeof AuthenticatedAdminPatronsRoute
   '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
   '/api/public/patreon-patrons-sync': typeof ApiPublicPatreonPatronsSyncRoute
   '/api/public/patreon-sync': typeof ApiPublicPatreonSyncRoute
@@ -233,6 +243,7 @@ export interface FileRouteTypes {
     | '/email/unsubscribe'
     | '/goto/$'
     | '/blog/'
+    | '/admin/patrons'
     | '/api/public/newsletter-subscribe'
     | '/api/public/patreon-patrons-sync'
     | '/api/public/patreon-sync'
@@ -256,6 +267,7 @@ export interface FileRouteTypes {
     | '/email/unsubscribe'
     | '/goto/$'
     | '/blog'
+    | '/admin/patrons'
     | '/api/public/newsletter-subscribe'
     | '/api/public/patreon-patrons-sync'
     | '/api/public/patreon-sync'
@@ -280,6 +292,7 @@ export interface FileRouteTypes {
     | '/email/unsubscribe'
     | '/goto/$'
     | '/blog/'
+    | '/_authenticated/admin/patrons'
     | '/api/public/newsletter-subscribe'
     | '/api/public/patreon-patrons-sync'
     | '/api/public/patreon-sync'
@@ -423,6 +436,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicNewsletterSubscribeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin/patrons': {
+      id: '/_authenticated/admin/patrons'
+      path: '/admin/patrons'
+      fullPath: '/admin/patrons'
+      preLoaderRoute: typeof AuthenticatedAdminPatronsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/admin/blog/': {
       id: '/_authenticated/admin/blog/'
       path: '/admin/blog'
@@ -476,11 +496,13 @@ declare module '@tanstack/react-router' {
 }
 
 interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminPatronsRoute: typeof AuthenticatedAdminPatronsRoute
   AuthenticatedAdminBlogIdRoute: typeof AuthenticatedAdminBlogIdRoute
   AuthenticatedAdminBlogIndexRoute: typeof AuthenticatedAdminBlogIndexRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminPatronsRoute: AuthenticatedAdminPatronsRoute,
   AuthenticatedAdminBlogIdRoute: AuthenticatedAdminBlogIdRoute,
   AuthenticatedAdminBlogIndexRoute: AuthenticatedAdminBlogIndexRoute,
 }

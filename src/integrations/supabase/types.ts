@@ -331,6 +331,7 @@ export type Database = {
           read_ct: number
         }[]
       }
+      run_patreon_patrons_sync: { Args: never; Returns: undefined }
       run_patreon_sync: { Args: never; Returns: undefined }
     }
     Enums: {
