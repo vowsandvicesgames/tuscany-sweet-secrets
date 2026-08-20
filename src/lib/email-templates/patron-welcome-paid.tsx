@@ -5,7 +5,6 @@ const SITE_NAME = "Vows & Vices";
 
 interface Props {
   name?: string;
-  tier?: string;
 }
 
 const PatronWelcomePaidEmail = ({ name }: Props) => (
@@ -49,7 +48,7 @@ export const template = {
   component: PatronWelcomePaidEmail,
   subject: "Welcome to the Sinner Ranks",
   displayName: "Patron welcome (paid)",
-  previewData: { name: "Jane", tier: "Sinner" },
+  previewData: { name: "Jane" },
 } satisfies TemplateEntry;
 
 const main = { backgroundColor: "#ffffff", fontFamily: "Georgia, 'Times New Roman', serif", margin: "0", padding: "0" };
