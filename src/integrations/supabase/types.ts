@@ -173,18 +173,21 @@ export type Database = {
           id: boolean
           last_result: string | null
           last_run_at: string | null
+          sync_since: string
         }
         Insert: {
           cron_secret?: string
           id?: boolean
           last_result?: string | null
           last_run_at?: string | null
+          sync_since?: string
         }
         Update: {
           cron_secret?: string
           id?: boolean
           last_result?: string | null
           last_run_at?: string | null
+          sync_since?: string
         }
         Relationships: []
       }
