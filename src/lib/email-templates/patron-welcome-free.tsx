@@ -14,19 +14,17 @@ const PatronWelcomeFreeEmail = ({ name }: Props) => (
     <Body style={main}>
       <Container style={container}>
         <Section style={header}>
-          <Heading style={h1}>Welcome to Tuscany</Heading>
-          <Text style={tagline}>"We write the stories you swore you'd never tell anyone."</Text>
+          <Heading style={h1}>Welcome to Sweet Sin of Tuscany</Heading>
         </Section>
 
         <Section style={card}>
           <Text style={text}>{name ? `Dear ${name},` : "Dear friend,"}</Text>
-          <Text style={text}>Welcome to Tuscany. ❤️</Text>
+          <Text style={text}>Welcome to Sweet Sin of Tuscany. ❤️</Text>
           <Text style={text}>
-            We're so glad you decided to follow {SITE_NAME} here on Patreon. From now on, you'll get our free releases,
+            We're so glad you decided to follow Vows & Vices here on Patreon. From now on, you'll get our free releases,
             public dev logs, and the quieter secrets of the studio.
           </Text>
           <Text style={text}>And honestly? Thank you.</Text>
-          <Text style={text}>Now for the slightly less romantic part.</Text>
           <Text style={text}>
             Consider supporting one of the paid tiers. Your support helps us spend more time making the game, gives you
             access to early builds and uncensored previews, and lets you have a say in some of the story's choices.
@@ -43,7 +41,7 @@ const PatronWelcomeFreeEmail = ({ name }: Props) => (
           <Text style={footer}>
             With love,
             <br />
-            The {SITE_NAME} Team
+            The Vows & Vices Team
           </Text>
           <Text style={ps}>
             P.S. You can absolutely stay on the free tier. We're happy you're here either way. ❤️
