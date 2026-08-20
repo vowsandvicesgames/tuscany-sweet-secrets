@@ -25,19 +25,11 @@ const PatronWelcomeFreeEmail = ({ name }: Props) => (
             We're so glad you decided to follow {SITE_NAME} here on Patreon. From now on, you'll get our free releases,
             public dev logs, and the quieter secrets of the studio.
           </Text>
-          <Text style={text}>
-            And honestly? Thank you. Every person who follows us, reads our posts, leaves a comment, or tells a friend
-            about the game means more to us than you probably realize.
-          </Text>
+          <Text style={text}>And honestly? Thank you.</Text>
           <Text style={text}>Now for the slightly less romantic part.</Text>
           <Text style={text}>
-            We would love to make {SITE_NAME} entirely through passion, artistic vision, and the mysterious power of
-            Tuscany...
-          </Text>
-          <Text style={text}>
-            So if you enjoy what we're making and want to help us keep creating it, consider supporting one of the paid
-            tiers. Your support helps us spend more time making the game, gives you access to early builds and uncensored
-            previews, and lets you have a say in some of the story's choices.
+            Consider supporting one of the paid tiers. Your support helps us spend more time making the game, gives you
+            access to early builds and uncensored previews, and lets you have a say in some of the story's choices.
           </Text>
           <Text style={text}>No pressure, of course.</Text>
           <Text style={text}>
