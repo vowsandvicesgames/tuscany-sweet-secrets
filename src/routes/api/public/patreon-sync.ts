@@ -35,6 +35,42 @@ function stripHtml(html: string) {
     .trim()
 }
 
+function firstImageUrl(html: string): string | null {
+  const m = html.match(/<img[^>]+src="([^"]+)"/i)
+  if (!m?.[1]) return null
+  return m[1].replace(/&amp;/g, '&')
+}
+
+/**
+ * Patreon image URLs are signed and expire, so copy the image into our own
+ * storage bucket and return a permanent public URL.
+ */
+async function mirrorImage(
+  supabase: any,
+  sourceUrl: string,
+  postId: string,
+): Promise<string | null> {
+  try {
+    const res = await fetch(sourceUrl)
+    if (!res.ok) return null
+    const contentType = res.headers.get('content-type') ?? 'image/png'
+    const ext = contentType.includes('jpeg') ? 'jpg' : contentType.includes('webp') ? 'webp' : 'png'
+    const bytes = new Uint8Array(await res.arrayBuffer())
+    const path = `blog/patreon/${postId}.${ext}`
+    const { error } = await supabase.storage
+      .from('email-assets')
+      .upload(path, bytes, { contentType, upsert: true })
+    if (error) {
+      console.error('patreon-sync image upload failed', error)
+      return null
+    }
+    return supabase.storage.from('email-assets').getPublicUrl(path).data.publicUrl as string
+  } catch (e) {
+    console.error('patreon-sync image mirror failed', e)
+    return null
+  }
+}
+
 async function patreonFetch(path: string, token: string) {
   const res = await fetch(`${PATREON_API}${path}`, {
     headers: { Authorization: `Bearer ${token}` },
@@ -129,11 +165,15 @@ export const Route = createFileRoute('/api/public/patreon-sync')({
               .maybeSingle()
             if (clash) slug = `${slug}-${p.id}`.slice(0, 100)
 
+            const patreonImage = firstImageUrl(rawContent)
+            const coverUrl = patreonImage ? await mirrorImage(supabase, patreonImage, p.id) : null
+
             const { error } = await supabase.from('blog_posts').insert({
               slug,
               title,
               excerpt,
               body: bodyHtml,
+              cover_image_url: coverUrl,
               published: true,
               published_at: p.attributes.published_at,
               patreon_post_id: p.id,
@@ -143,6 +183,19 @@ export const Route = createFileRoute('/api/public/patreon-sync')({
               continue
             }
             created.push(slug)
+          }
+
+          // 4. Backfill covers for previously imported posts that still lack one
+          const { data: missingCovers } = await supabase
+            .from('blog_posts')
+            .select('id, body, patreon_post_id')
+            .not('patreon_post_id', 'is', null)
+            .is('cover_image_url', null)
+          for (const row of missingCovers ?? []) {
+            const src = firstImageUrl(row.body ?? '')
+            if (!src) continue
+            const url = await mirrorImage(supabase, src, row.patreon_post_id)
+            if (url) await supabase.from('blog_posts').update({ cover_image_url: url }).eq('id', row.id)
           }
 
           await supabase
