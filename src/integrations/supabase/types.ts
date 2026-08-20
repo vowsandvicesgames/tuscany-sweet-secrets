@@ -248,6 +248,86 @@ export type Database = {
         }
         Relationships: []
       }
+      patron_automations: {
+        Row: {
+          created_at: string
+          enabled: boolean
+          id: string
+          name: string
+          template_name: string
+          trigger_type: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          enabled?: boolean
+          id?: string
+          name: string
+          template_name: string
+          trigger_type: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          enabled?: boolean
+          id?: string
+          name?: string
+          template_name?: string
+          trigger_type?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      patron_events: {
+        Row: {
+          automation_id: string | null
+          created_at: string
+          details: Json
+          email: string | null
+          error: string | null
+          event_type: string
+          full_name: string | null
+          id: string
+          patreon_member_id: string
+          processed_at: string | null
+          status: string
+        }
+        Insert: {
+          automation_id?: string | null
+          created_at?: string
+          details?: Json
+          email?: string | null
+          error?: string | null
+          event_type: string
+          full_name?: string | null
+          id?: string
+          patreon_member_id: string
+          processed_at?: string | null
+          status?: string
+        }
+        Update: {
+          automation_id?: string | null
+          created_at?: string
+          details?: Json
+          email?: string | null
+          error?: string | null
+          event_type?: string
+          full_name?: string | null
+          id?: string
+          patreon_member_id?: string
+          processed_at?: string | null
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "patron_events_automation_id_fkey"
+            columns: ["automation_id"]
+            isOneToOne: false
+            referencedRelation: "patron_automations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       suppressed_emails: {
         Row: {
           created_at: string
@@ -333,6 +413,7 @@ export type Database = {
       }
       run_patreon_patrons_sync: { Args: never; Returns: undefined }
       run_patreon_sync: { Args: never; Returns: undefined }
+      run_patron_automations: { Args: never; Returns: undefined }
     }
     Enums: {
       app_role: "admin" | "user"

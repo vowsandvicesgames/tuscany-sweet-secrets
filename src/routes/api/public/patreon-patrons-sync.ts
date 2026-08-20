@@ -96,6 +96,15 @@ export const Route = createFileRoute('/api/public/patreon-patrons-sync')({
             if (!cursor) break
           }
 
+          // Snapshot the previous state so we can detect membership changes
+          const { data: existing } = await supabase
+            .from('patreon_patrons')
+            .select('patreon_member_id, patron_status, currently_entitled_amount_cents, tier_names')
+          const prev = new Map<string, any>(
+            (existing ?? []).map((r: any) => [r.patreon_member_id, r]),
+          )
+          const firstEverSync = prev.size === 0
+
           // Upsert in chunks so a large campaign doesn't blow the request size
           let saved = 0
           for (let i = 0; i < rows.length; i += 200) {
@@ -107,7 +116,67 @@ export const Route = createFileRoute('/api/public/patreon-patrons-sync')({
             saved += chunk.length
           }
 
-          return Response.json({ success: true, synced: saved })
+          // Derive automation events from the diff (skipped on the very first sync)
+          const events: any[] = []
+          if (!firstEverSync) {
+            for (const r of rows) {
+              const before = prev.get(r.patreon_member_id)
+              const paid = (r.currently_entitled_amount_cents ?? 0) > 0
+              const tierNow = (r.tier_names ?? []).join(', ') || null
+
+              if (!before) {
+                events.push({
+                  patreon_member_id: r.patreon_member_id,
+                  email: r.email,
+                  full_name: r.full_name,
+                  event_type: paid ? 'new_paid_patron' : 'new_free_patron',
+                  details: { tier: tierNow, amount_cents: r.currently_entitled_amount_cents },
+                })
+                continue
+              }
+
+              const beforeAmount = before.currently_entitled_amount_cents ?? 0
+              const afterAmount = r.currently_entitled_amount_cents ?? 0
+              const tierBefore = (before.tier_names ?? []).join(', ') || null
+
+              if (
+                before.patron_status === 'active_patron' &&
+                r.patron_status !== 'active_patron'
+              ) {
+                events.push({
+                  patreon_member_id: r.patreon_member_id,
+                  email: r.email,
+                  full_name: r.full_name,
+                  event_type: 'patron_cancelled',
+                  details: { previousTier: tierBefore, status: r.patron_status },
+                })
+              } else if (afterAmount > beforeAmount) {
+                events.push({
+                  patreon_member_id: r.patreon_member_id,
+                  email: r.email,
+                  full_name: r.full_name,
+                  event_type: 'tier_upgrade',
+                  details: { previousTier: tierBefore, newTier: tierNow, direction: 'upgrade' },
+                })
+              } else if (afterAmount < beforeAmount) {
+                events.push({
+                  patreon_member_id: r.patreon_member_id,
+                  email: r.email,
+                  full_name: r.full_name,
+                  event_type: 'tier_downgrade',
+                  details: { previousTier: tierBefore, newTier: tierNow, direction: 'downgrade' },
+                })
+              }
+            }
+          }
+
+          if (events.length > 0) {
+            const { error: evErr } = await supabase.from('patron_events').insert(events)
+            if (evErr) console.error('patron_events insert failed', evErr.message)
+          }
+
+          return Response.json({ success: true, synced: saved, events: events.length })
+
         } catch (e: any) {
           const message = e?.message ?? 'Unknown error'
           console.error('patreon-patrons-sync failed', message)
