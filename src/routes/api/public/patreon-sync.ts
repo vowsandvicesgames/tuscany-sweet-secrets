@@ -78,7 +78,7 @@ export const Route = createFileRoute('/api/public/patreon-sync')({
 
           // 2. Fetch recent posts
           const fields =
-            'fields%5Bpost%5D=title,content,url,published_at,is_public&page%5Bcount%5D=20'
+            'fields%5Bpost%5D=title,content,url,published_at,is_public&sort=-published_at&page%5Bcount%5D=20'
           const postsRes = await patreonFetch(`/campaigns/${campaignId}/posts?${fields}`, token)
           const posts: PatreonPost[] = postsRes?.data ?? []
 
