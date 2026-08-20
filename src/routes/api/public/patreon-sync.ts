@@ -165,11 +165,15 @@ export const Route = createFileRoute('/api/public/patreon-sync')({
               .maybeSingle()
             if (clash) slug = `${slug}-${p.id}`.slice(0, 100)
 
+            const patreonImage = firstImageUrl(rawContent)
+            const coverUrl = patreonImage ? await mirrorImage(supabase, patreonImage, p.id) : null
+
             const { error } = await supabase.from('blog_posts').insert({
               slug,
               title,
               excerpt,
               body: bodyHtml,
+              cover_image_url: coverUrl,
               published: true,
               published_at: p.attributes.published_at,
               patreon_post_id: p.id,
@@ -179,6 +183,19 @@ export const Route = createFileRoute('/api/public/patreon-sync')({
               continue
             }
             created.push(slug)
+          }
+
+          // 4. Backfill covers for previously imported posts that still lack one
+          const { data: missingCovers } = await supabase
+            .from('blog_posts')
+            .select('id, body, patreon_post_id')
+            .not('patreon_post_id', 'is', null)
+            .is('cover_image_url', null)
+          for (const row of missingCovers ?? []) {
+            const src = firstImageUrl(row.body ?? '')
+            if (!src) continue
+            const url = await mirrorImage(supabase, src, row.patreon_post_id)
+            if (url) await supabase.from('blog_posts').update({ cover_image_url: url }).eq('id', row.id)
           }
 
           await supabase
