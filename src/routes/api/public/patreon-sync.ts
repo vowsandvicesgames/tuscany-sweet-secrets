@@ -64,7 +64,7 @@ export const Route = createFileRoute('/api/public/patreon-sync')({
         const provided = request.headers.get('x-sync-secret') ?? ''
         const { data: cfg } = await supabase
           .from('patreon_sync_config')
-          .select('cron_secret')
+          .select('cron_secret, sync_since')
           .maybeSingle()
         if (!cfg?.cron_secret || provided !== cfg.cron_secret) {
           return new Response('Unauthorized', { status: 401 })
@@ -82,8 +82,15 @@ export const Route = createFileRoute('/api/public/patreon-sync')({
           const postsRes = await patreonFetch(`/campaigns/${campaignId}/posts?${fields}`, token)
           const posts: PatreonPost[] = postsRes?.data ?? []
 
+          // Only import posts published after the sync watermark, so posts
+          // already added by hand are never duplicated.
+          const since = cfg.sync_since ? new Date(cfg.sync_since).getTime() : 0
           const publicPosts = posts.filter(
-            (p) => p.attributes?.is_public && p.attributes?.published_at && p.attributes?.title,
+            (p) =>
+              p.attributes?.is_public &&
+              p.attributes?.published_at &&
+              p.attributes?.title &&
+              new Date(p.attributes.published_at).getTime() > since,
           )
 
           // 3. Skip anything already imported
