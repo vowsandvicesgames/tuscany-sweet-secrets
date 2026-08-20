@@ -22,6 +22,7 @@ export type Database = {
           created_at: string
           excerpt: string | null
           id: string
+          patreon_post_id: string | null
           published: boolean
           published_at: string | null
           slug: string
@@ -35,6 +36,7 @@ export type Database = {
           created_at?: string
           excerpt?: string | null
           id?: string
+          patreon_post_id?: string | null
           published?: boolean
           published_at?: string | null
           slug: string
@@ -48,6 +50,7 @@ export type Database = {
           created_at?: string
           excerpt?: string | null
           id?: string
+          patreon_post_id?: string | null
           published?: boolean
           published_at?: string | null
           slug?: string
@@ -164,6 +167,27 @@ export type Database = {
         }
         Relationships: []
       }
+      patreon_sync_config: {
+        Row: {
+          cron_secret: string
+          id: boolean
+          last_result: string | null
+          last_run_at: string | null
+        }
+        Insert: {
+          cron_secret?: string
+          id?: boolean
+          last_result?: string | null
+          last_run_at?: string | null
+        }
+        Update: {
+          cron_secret?: string
+          id?: boolean
+          last_result?: string | null
+          last_run_at?: string | null
+        }
+        Relationships: []
+      }
       suppressed_emails: {
         Row: {
           created_at: string
@@ -247,6 +271,7 @@ export type Database = {
           read_ct: number
         }[]
       }
+      run_patreon_sync: { Args: never; Returns: undefined }
     }
     Enums: {
       app_role: "admin" | "user"
