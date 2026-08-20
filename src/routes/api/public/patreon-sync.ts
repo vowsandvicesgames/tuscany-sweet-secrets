@@ -48,21 +48,6 @@ async function patreonFetch(path: string, token: string) {
 export const Route = createFileRoute('/api/public/patreon-sync')({
   server: {
     handlers: {
-      GET: async ({ request }) => {
-        const token = process.env['PATREON_ACCESS_TOKEN']
-        const url = new URL(request.url)
-        if (!token || url.searchParams.get('debug') !== '1') return new Response('no', { status: 404 })
-        const campaigns = await patreonFetch('/campaigns', token)
-        const campaignId = campaigns?.data?.[0]?.id
-        const r = await patreonFetch(
-          `/campaigns/${campaignId}/posts?fields%5Bpost%5D=title,url,published_at,is_public&sort=-published_at&page%5Bcount%5D=20`,
-          token,
-        )
-        return Response.json({
-          count: r?.data?.length,
-          posts: (r?.data ?? []).map((p: any) => [p.attributes.published_at, p.attributes.is_public, p.attributes.title]),
-        })
-      },
       POST: async ({ request }) => {
         const supabaseUrl = process.env['SUPABASE_URL']
         const serviceKey = process.env['SUPABASE_SERVICE_ROLE_KEY']
