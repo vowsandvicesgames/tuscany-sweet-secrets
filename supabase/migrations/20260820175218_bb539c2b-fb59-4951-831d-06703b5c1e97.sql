@@ -1,0 +1,1 @@
+UPDATE public.patreon_sync_config SET sync_since = '2026-08-06T00:00:00Z' WHERE id;

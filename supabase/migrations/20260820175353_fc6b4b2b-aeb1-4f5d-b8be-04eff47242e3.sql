@@ -1,0 +1,1 @@
+UPDATE public.patreon_sync_config SET sync_since = now() WHERE id;

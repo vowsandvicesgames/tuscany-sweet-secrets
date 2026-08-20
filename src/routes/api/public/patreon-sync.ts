@@ -76,11 +76,19 @@ export const Route = createFileRoute('/api/public/patreon-sync')({
           const campaignId = campaigns?.data?.[0]?.id
           if (!campaignId) throw new Error('No Patreon campaign found for this token')
 
-          // 2. Fetch recent posts
+          // 2. Fetch posts (Patreon returns them oldest-first and paginates,
+          // so walk the cursor to the end to reach the newest posts).
           const fields =
-            'fields%5Bpost%5D=title,content,url,published_at,is_public&page%5Bcount%5D=20'
-          const postsRes = await patreonFetch(`/campaigns/${campaignId}/posts?${fields}`, token)
-          const posts: PatreonPost[] = postsRes?.data ?? []
+            'fields%5Bpost%5D=title,content,url,published_at,is_public&page%5Bcount%5D=50'
+          const posts: PatreonPost[] = []
+          let cursor: string | null = null
+          for (let page = 0; page < 20; page++) {
+            const qs = cursor ? `${fields}&page%5Bcursor%5D=${encodeURIComponent(cursor)}` : fields
+            const postsRes: any = await patreonFetch(`/campaigns/${campaignId}/posts?${qs}`, token)
+            posts.push(...((postsRes?.data ?? []) as PatreonPost[]))
+            cursor = postsRes?.meta?.pagination?.cursors?.next ?? null
+            if (!cursor) break
+          }
 
           // Only import posts published after the sync watermark, so posts
           // already added by hand are never duplicated.
