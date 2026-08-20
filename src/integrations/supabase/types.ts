@@ -167,6 +167,63 @@ export type Database = {
         }
         Relationships: []
       }
+      patreon_patrons: {
+        Row: {
+          created_at: string
+          currently_entitled_amount_cents: number
+          email: string | null
+          full_name: string | null
+          id: string
+          is_follower: boolean
+          last_charge_date: string | null
+          last_charge_status: string | null
+          last_synced_at: string
+          lifetime_support_cents: number
+          patreon_member_id: string
+          patreon_user_id: string | null
+          patron_status: string | null
+          pledge_relationship_start: string | null
+          tier_names: string[]
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          currently_entitled_amount_cents?: number
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          is_follower?: boolean
+          last_charge_date?: string | null
+          last_charge_status?: string | null
+          last_synced_at?: string
+          lifetime_support_cents?: number
+          patreon_member_id: string
+          patreon_user_id?: string | null
+          patron_status?: string | null
+          pledge_relationship_start?: string | null
+          tier_names?: string[]
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          currently_entitled_amount_cents?: number
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          is_follower?: boolean
+          last_charge_date?: string | null
+          last_charge_status?: string | null
+          last_synced_at?: string
+          lifetime_support_cents?: number
+          patreon_member_id?: string
+          patreon_user_id?: string | null
+          patron_status?: string | null
+          pledge_relationship_start?: string | null
+          tier_names?: string[]
+          updated_at?: string
+        }
+        Relationships: []
+      }
       patreon_sync_config: {
         Row: {
           cron_secret: string
@@ -274,6 +331,7 @@ export type Database = {
           read_ct: number
         }[]
       }
+      run_patreon_patrons_sync: { Args: never; Returns: undefined }
       run_patreon_sync: { Args: never; Returns: undefined }
     }
     Enums: {
