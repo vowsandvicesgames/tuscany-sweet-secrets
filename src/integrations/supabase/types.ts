@@ -413,6 +413,7 @@ export type Database = {
       }
       run_patreon_patrons_sync: { Args: never; Returns: undefined }
       run_patreon_sync: { Args: never; Returns: undefined }
+      run_patron_automations: { Args: never; Returns: undefined }
     }
     Enums: {
       app_role: "admin" | "user"
