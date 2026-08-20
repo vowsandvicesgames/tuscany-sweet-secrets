@@ -82,7 +82,8 @@ function AdminBlogList() {
         <h1 className="font-display text-3xl text-rose-glow">Blog posts</h1>
         <div className="flex gap-3">
           <Link
-            to="/admin/blog/new"
+            to="/admin/blog/$id"
+            params={{ id: "new" }}
             className="px-4 py-2 font-display tracking-[0.2em] uppercase text-xs bg-romance border border-crimson/40 rounded-sm hover:shadow-[0_0_30px_oklch(0.52_0.20_18/0.5)] transition-all"
           >
             New post
