@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const RELEASE_DATE = new Date("2026-09-26T00:00:00");
+const RELEASE_DATE = new Date("2026-10-01T00:00:00");
 
 function formatUnit(value: number, label: string) {
   return (
