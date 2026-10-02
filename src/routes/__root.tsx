@@ -1,7 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
 import { AgeGate } from "@/components/AgeGate";
-import { EpisodeCountdown } from "@/components/EpisodeCountdown";
 
 
 import appCss from "../styles.css?url";
@@ -93,7 +92,6 @@ function RootComponent() {
       <Outlet />
       <Toaster />
       <AgeGate />
-      <EpisodeCountdown />
     </>
   );
 }
