@@ -323,8 +323,8 @@ function Index() {
             <div className="absolute inset-0 bg-ember opacity-40 pointer-events-none" />
             <div className="relative">
               <p className="text-muted-foreground max-w-xl mx-auto">
-                Be the first to know when the villa opens its doors. Wishlist updates and chapter previews from Vows
-                &amp; Vices Studio.
+                Episode 1 is free to play now. Subscribe for episode previews, release news, and announcements from
+                Vows &amp; Vices Studio.
               </p>
 
               <Link
