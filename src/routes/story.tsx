@@ -38,7 +38,7 @@ function StoryPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
         <div className="relative max-w-4xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-[0.4em] text-rose-glow/70">Chapter I — Arrival</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-rose-glow/70">Episode 1 — Arrival</p>
           <h1 className="font-display text-5xl sm:text-7xl text-rose-glow mt-6 glow-text">The Story</h1>
         </div>
       </section>
@@ -55,7 +55,7 @@ function StoryPage() {
             You came here to escape the city, your hectic job, and the echoes of past wars. The villa is always silent.
             The hills were supposed to be yours. This is your sanctuary. For one week.
           </p>
-          <p>Then they walked through the door, and seven days became a heroic journey of resilience.</p>
+          <p>Then she walked through the door, and seven days were no longer yours alone.</p>
 
           <div className="ornament-divider text-xs tracking-[0.3em] uppercase">A Forbidden Love</div>
           <p>
@@ -74,9 +74,10 @@ function StoryPage() {
           <div className="ornament-divider text-xs tracking-[0.3em] uppercase">Your Choices</div>
           <ul className="space-y-6 not-prose">
             {[
-              <>Will you reconnect with the people you love, or will you remain trapped in past mistakes?</>,
+              <>Will you greet her with love, or with the need to be in control?</>,
+              <>Will you give your heart to one person, or to more than one?</>,
               <>Will you defend your family’s legacy, or will you let it all burn?</>,
-              <>Will you go back to your old existence, or will you taste the…{" "}<span className="font-serif-italic text-crimson">Sweet Sin of Tuscany?</span></>,
+              <>Will you go back to your old existence, or will you taste the{" "}<span className="font-serif-italic text-crimson">Sweet Sin of Tuscany?</span></>,
             ].map((q, i) => (
               <li key={i} className="border-l-2 border-crimson pl-6 font-serif-italic text-rose-glow/90 text-xl">
                 {q}

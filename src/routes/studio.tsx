@@ -128,7 +128,7 @@ function StudioPage() {
             </h2>
             <p className="mt-4 font-serif text-foreground/80 max-w-xl mx-auto">
               Patrons receive early chapter previews, character sketches, behind the scenes notes, and a vote on what
-              happens next at the Sweet sin of Tuscany.
+              happens next at the Sweet Sin of Tuscany.
             </p>
             <a
               href={PATREON_URL}
