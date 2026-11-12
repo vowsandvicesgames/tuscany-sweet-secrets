@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import vvLogo from "@/assets/vows-vices-logo.png";
-import { PATREON_URL } from "@/lib/links";
+import { ITCH_URL, PATREON_URL } from "@/lib/links";
 
 export function SiteHeader() {
   return (
@@ -28,6 +28,14 @@ export function SiteHeader() {
               {l.label}
             </Link>
           ))}
+          <a
+            href={ITCH_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-1 sm:ml-3 px-2 sm:px-4 py-1.5 sm:py-2 font-display tracking-[0.15em] sm:tracking-widest uppercase text-[10px] sm:text-xs text-foreground bg-romance border border-crimson/40 rounded-sm hover:shadow-[0_0_30px_oklch(0.52_0.20_18/0.5)] transition-all"
+          >
+            Play Free
+          </a>
           <a
             href={PATREON_URL}
             target="_blank"
