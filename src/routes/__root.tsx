@@ -35,6 +35,7 @@ export const Route = createRootRoute({
       { title: "Sweet Sin of Tuscany — A 18+ Visual Novel by Vows & Vices" },
       { name: "description", content: "A story of forbidden love, family secrets, and consequences in the Tuscan hills. From Vows & Vices Studio." },
       { name: "author", content: "Vows & Vices Studio" },
+      { name: "google-site-verification", content: "4AKRtAjT0F-XOCyKnSqCatEywR0TrF0rYQ4c6UPU-Bk" },
       { property: "og:title", content: "Sweet Sin of Tuscany — A 18+ Visual Novel by Vows & Vices" },
       { property: "og:description", content: "A story of forbidden love, family secrets, and consequences in the Tuscan hills. From Vows & Vices Studio." },
       { property: "og:type", content: "website" },
