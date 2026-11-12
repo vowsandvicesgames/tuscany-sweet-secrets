@@ -34,7 +34,9 @@ const faqs: { q: string; a: React.ReactNode }[] = [
       <>
         Sweet Sin of Tuscany is an 18+ visual novel by Vows &amp; Vices Studio — a story of long lost, forbidden love
         and the consequences of years of forced separation, set in a Tuscan villa full of family secrets. You play as
-        Luca, and the story revolves around Sofia, Mia, Gloria, Bianca and Emily. Read more on the{" "}
+        Luca (you can change the name), and the story revolves around Sofia, Mia, Gloria, Bianca and Emily, with more
+        love interests planned later. Choices can lean toward love or dominance, and you may pursue one person or more
+        than one. Read more on the{" "}
         <Link to="/story" className="text-crimson underline hover:text-rose-glow transition-colors">
           Story page
         </Link>{" "}
