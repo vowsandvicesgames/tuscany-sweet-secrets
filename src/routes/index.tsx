@@ -10,7 +10,7 @@ import cover from "@/assets/cover-moon.webp";
 import emili from "@/assets/character-emily-home.webp";
 import sofia from "@/assets/character-sofia-home.webp";
 
-import { PATREON_URL, DISCORD_URL, REDDIT_URL, TWITTER_URL } from "@/lib/links";
+import { PATREON_URL, DISCORD_URL, REDDIT_URL, TWITTER_URL, ITCH_URL } from "@/lib/links";
 import { trackRedditClick, trackPatreonClick, trackItchClick, trackDiscordClick, trackTwitterClick } from "@/lib/analytics";
 
 
@@ -109,6 +109,15 @@ function Index() {
             </p>
 
             <div className="mt-6 flex flex-wrap items-center justify-start gap-3">
+              <a
+                href={ITCH_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackItchClick(window.location.pathname)}
+                className="inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-foreground bg-romance rounded-sm shadow-[0_0_60px_oklch(0.52_0.20_18/0.35)] hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 border border-crimson/40"
+              >
+                Play Episode 1 Free
+              </a>
               <Link
                 to="/story"
                 className="inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
@@ -127,7 +136,7 @@ function Index() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackPatreonClick(window.location.pathname)}
-                className="group relative inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-foreground bg-romance rounded-sm shadow-[0_0_60px_oklch(0.52_0.20_18/0.35)] hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 border border-crimson/40"
+                className="group relative inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
               >
                 Support us on Patreon
               </a>

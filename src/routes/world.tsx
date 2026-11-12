@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { PATREON_URL } from "@/lib/links";
+import { ITCH_URL, PATREON_URL } from "@/lib/links";
 import sweetSinLogo from "@/assets/sweet-sin-logo.png";
 import coverBeach from "@/assets/cover-beach-1.webp";
 import tuscanHills from "@/assets/a08.webp";
@@ -255,6 +255,16 @@ function GamesPage() {
           and family secrets.
         </p>
         <div className="mt-8 flex justify-center">
+          <a
+            href={ITCH_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-8 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-foreground bg-romance rounded-sm shadow-[0_0_60px_oklch(0.52_0.20_18/0.35)] hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 border border-crimson/40"
+          >
+            Play Episode 1 Free
+          </a>
+        </div>
+        <div className="mt-6 flex justify-center">
           <iframe
             frameBorder="0"
             src="https://itch.io/embed/4640956?linkback=true&link_color=C1133A"
