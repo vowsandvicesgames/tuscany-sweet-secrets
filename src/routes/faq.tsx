@@ -81,12 +81,20 @@ const faqs: { q: string; a: React.ReactNode }[] = [
     a: <>Windows, macOS, Linux, Android, and in the browser (HTML5) on itch.io.</>,
   },
   {
+    q: "Which languages?",
+    a: (
+      <>
+        English, plus Español, Deutsch, Français, Italiano, Português (BR), Polski, Türkçe, Bahasa Indonesia, Tiếng Việt, 简体中文, 繁體中文, 日本語, 한국어, Русский, and ภาษาไทย. You can switch language in-game.
+      </>
+    ),
+  },
+  {
     q: "What kind of content does the game contain?",
     a: (
       <>
-        Sweet Sin of Tuscany is an adult (18+) visual novel with romance, drama and explicit scenes. It deals with
-        mature themes like forbidden love and family secrets. It is intended for adults only — that's why the site
-        asks you to confirm your age before entering.
+        Adult (18+) visual novel with romance, drama, humor, and explicit scenes, plus mature themes of forbidden love
+        and family secrets. Love and dominance paths, optional intimate scenes after the opening night with Emily, and
+        in-game filters for certain fetish content and for blood/gore.
       </>
     ),
   },
@@ -94,12 +102,12 @@ const faqs: { q: string; a: React.ReactNode }[] = [
     q: "How is the game released?",
     a: (
       <>
-        The story is released in episodes. Episode 1 is out now and free. We share progress, previews and behind the
-        scenes notes in our{" "}
+        The story comes out in episodes. Episode 1 is out now and free. Later episodes are in development. Progress,
+        previews, and behind-the-scenes notes are on the{" "}
         <Link to="/blog" className="text-crimson underline hover:text-rose-glow transition-colors">
-          dev logs
+          blog
         </Link>
-        , and patrons on Patreon get early access to new builds before anyone else.
+        ; patrons get early builds.
       </>
     ),
   },
