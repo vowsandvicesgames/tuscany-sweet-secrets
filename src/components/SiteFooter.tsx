@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import vvLogo from "@/assets/vows-vices-logo.png";
-import { PATREON_URL, DISCORD_URL, REDDIT_URL, TWITTER_URL } from "@/lib/links";
+import { PATREON_URL, DISCORD_URL, REDDIT_URL, TWITTER_URL, VNDB_URL } from "@/lib/links";
 import { trackRedditClick, trackPatreonClick, trackDiscordClick, trackTwitterClick } from "@/lib/analytics";
 
 
@@ -23,6 +23,7 @@ export function SiteFooter() {
           <Link to="/faq" className="hover:text-rose-glow transition-colors">About the Game / FAQ</Link>
           <a href={PATREON_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackPatreonClick(window.location.pathname)} className="hover:text-rose-glow transition-colors">Support on Patreon ↗</a>
           <a href="https://x.com/VowsandVice" target="_blank" rel="noopener noreferrer" onClick={() => trackTwitterClick(window.location.pathname)} className="hover:text-rose-glow transition-colors">X / Twitter ↗</a>
+          <a href={VNDB_URL} target="_blank" rel="noopener noreferrer" className="hover:text-rose-glow transition-colors">VNDB ↗</a>
         </nav>
         <div className="mt-4 flex flex-wrap gap-3">
           <a
