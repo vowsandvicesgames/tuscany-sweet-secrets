@@ -133,6 +133,7 @@ function StudioPage() {
               href={PATREON_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackPatreonClick(window.location.pathname)}
               className="mt-8 inline-flex items-center px-10 py-4 font-display tracking-[0.25em] uppercase text-sm bg-romance border border-crimson/40 hover:shadow-[0_0_60px_oklch(0.52_0.20_18/0.6)] transition-all rounded-sm"
             >
               Join us on Patreon ↗

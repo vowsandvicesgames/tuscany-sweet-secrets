@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ITCH_URL, PATREON_URL } from "@/lib/links";
+import { trackPatreonClick } from "@/lib/analytics";
 import sweetSinLogo from "@/assets/sweet-sin-logo.png";
 import coverBeach from "@/assets/cover-beach-1.webp";
 import tuscanHills from "@/assets/a08.webp";
@@ -376,6 +377,7 @@ function GamesPage() {
               href={PATREON_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackPatreonClick(window.location.pathname)}
               className="inline-flex items-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs bg-romance border border-crimson/40 rounded-sm hover:shadow-[0_0_60px_oklch(0.52_0.20_18/0.5)] transition-all"
             >
               Join us on Patreon
