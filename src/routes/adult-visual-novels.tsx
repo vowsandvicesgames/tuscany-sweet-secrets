@@ -11,12 +11,12 @@ import shot1 from "@/assets/cover-no1-big-moon.webp";
 import shot2 from "@/assets/cover-sofia-swing.webp";
 import shot3 from "@/assets/cover-beach-1.webp";
 
-const URL = "https://vowsandvicesstudio.com/romance-visual-novels";
-const TITLE = "Free Romance Visual Novel (18+) with Choices — Sweet Sin of Tuscany";
+const URL = "https://vowsandvicesstudio.com/adult-visual-novels";
+const TITLE = "Free Adult Visual Novel (18+) with Choices — Sweet Sin of Tuscany";
 const DESC =
-  "Looking for a story-driven 18+ romance visual novel with real choices? Sweet Sin of Tuscany: forbidden love, family secrets, multiple love interests. Episode 1 is free.";
+  "Looking for a story-driven 18+ adult visual novel with real choices? Sweet Sin of Tuscany: forbidden love, family secrets, multiple love interests. Episode 1 is free.";
 
-export const Route = createFileRoute("/romance-visual-novels")({
+export const Route = createFileRoute("/adult-visual-novels")({
   component: Page,
   head: () => ({
     meta: [
@@ -46,7 +46,7 @@ const chars = [
 ];
 
 const facts = [
-  ["Genre", "Romance visual novel, 18+"],
+  ["Genre", "Adult visual novel, 18+"],
   ["Gameplay", "Story choices, multiple love interests"],
   ["Price", "Episode 1 free"],
   ["Platforms", "Windows, macOS, Linux, Android"],
@@ -76,7 +76,7 @@ function Page() {
         <img src={cover} alt="Sweet Sin of Tuscany cast under a Tuscan moon" className="absolute inset-0 w-full h-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
         <div className="relative max-w-3xl mx-auto">
-          <p className="font-display tracking-[0.4em] uppercase text-xs text-rose-glow/80 mb-4">Romance Visual Novel · 18+</p>
+          <p className="font-display tracking-[0.4em] uppercase text-xs text-rose-glow/80 mb-4">Adult Visual Novel · 18+</p>
           <h1 className="font-display text-4xl sm:text-6xl text-rose-glow glow-text text-balance">
             Adult visual novels <span className="font-serif-italic text-crimson">like the best of the genre</span>
           </h1>
