@@ -78,7 +78,7 @@ function Page() {
         <div className="relative max-w-3xl mx-auto">
           <p className="font-display tracking-[0.4em] uppercase text-xs text-rose-glow/80 mb-4">Romance Visual Novel · 18+</p>
           <h1 className="font-display text-4xl sm:text-6xl text-rose-glow glow-text text-balance">
-            Looking for your next <span className="font-serif-italic text-crimson">romance visual novel?</span>
+            Adult visual novels <span className="font-serif-italic text-crimson">like the best of the genre</span>
           </h1>
           <p className="mt-6 font-serif text-lg sm:text-xl text-foreground/80 text-balance">
             Sweet Sin of Tuscany is a story-driven 18+ visual novel about long lost, forbidden love, family secrets and the choices you make in one unforgettable week.
