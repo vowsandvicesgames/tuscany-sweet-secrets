@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import vvLogo from "@/assets/vows-vices-logo.png";
 import { PATREON_URL } from "@/lib/links";
+import { trackPatreonClick } from "@/lib/analytics";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { z } from "zod";
