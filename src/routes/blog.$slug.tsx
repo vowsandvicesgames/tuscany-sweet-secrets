@@ -51,7 +51,7 @@ export const Route = createFileRoute("/blog/$slug")({
   },
   notFoundComponent: NotFound,
   errorComponent: ({ error }) => (
-    <div className="min-h-screen flex items-center justify-center text-foreground/70">{error.message}</div>
+    <div className="min-h-screen flex items-center justify-center text-foreground/70">{(error as Error).message}</div>
   ),
   component: PostPage,
 });
