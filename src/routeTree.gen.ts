@@ -9,50 +9,39 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WorldRouteImport } from './routes/world'
-import { Route as StudioRouteImport } from './routes/studio'
-import { Route as StoryRouteImport } from './routes/story'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as AuthRouteImport } from './routes/auth'
-import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as StoryRouteImport } from './routes/story'
+import { Route as StudioRouteImport } from './routes/studio'
+import { Route as WorldRouteImport } from './routes/world'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
-import { Route as GotoSplatRouteImport } from './routes/goto.$'
-import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
-import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
-import { Route as ApiPublicPatronAutomationsRunRouteImport } from './routes/api/public/patron-automations-run'
-import { Route as ApiPublicPatreonSyncRouteImport } from './routes/api/public/patreon-sync'
-import { Route as ApiPublicPatreonPatronsSyncRouteImport } from './routes/api/public/patreon-patrons-sync'
-import { Route as ApiPublicNewsletterSubscribeRouteImport } from './routes/api/public/newsletter-subscribe'
-import { Route as AuthenticatedAdminPatronsRouteImport } from './routes/_authenticated/admin/patrons'
+import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
+import { Route as GotoSplatRouteImport } from './routes/goto.$'
 import { Route as AuthenticatedAdminAutomationsRouteImport } from './routes/_authenticated/admin/automations'
+import { Route as AuthenticatedAdminPatronsRouteImport } from './routes/_authenticated/admin/patrons'
+import { Route as ApiPublicNewsletterSubscribeRouteImport } from './routes/api/public/newsletter-subscribe'
+import { Route as ApiPublicPatreonPatronsSyncRouteImport } from './routes/api/public/patreon-patrons-sync'
+import { Route as ApiPublicPatreonSyncRouteImport } from './routes/api/public/patreon-sync'
+import { Route as ApiPublicPatronAutomationsRunRouteImport } from './routes/api/public/patron-automations-run'
+import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
 import { Route as AuthenticatedAdminBlogIndexRouteImport } from './routes/_authenticated/admin/blog/index'
-import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
-import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
-import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
-import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
-import { Route as LovableEmailAuthPreviewRouteImport } from './routes/lovable/email/auth/preview'
 import { Route as AuthenticatedAdminBlogIdRouteImport } from './routes/_authenticated/admin/blog/$id'
+import { Route as LovableEmailAuthPreviewRouteImport } from './routes/lovable/email/auth/preview'
+import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
+import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
+import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
+import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
 
-const WorldRoute = WorldRouteImport.update({
-  id: '/world',
-  path: '/world',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const StudioRoute = StudioRouteImport.update({
-  id: '/studio',
-  path: '/studio',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const StoryRoute = StoryRouteImport.update({
-  id: '/story',
-  path: '/story',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthRoute = AuthRouteImport.update({
@@ -60,13 +49,24 @@ const AuthRoute = AuthRouteImport.update({
   path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
-  id: '/_authenticated',
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const StoryRoute = StoryRouteImport.update({
+  id: '/story',
+  path: '/story',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioRoute = StudioRouteImport.update({
+  id: '/studio',
+  path: '/studio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorldRoute = WorldRouteImport.update({
+  id: '/world',
+  path: '/world',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -74,9 +74,9 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GotoSplatRoute = GotoSplatRouteImport.update({
-  id: '/goto/$',
-  path: '/goto/$',
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
@@ -84,14 +84,38 @@ const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
   path: '/email/unsubscribe',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/blog/$slug',
-  path: '/blog/$slug',
+const GotoSplatRoute = GotoSplatRouteImport.update({
+  id: '/goto/$',
+  path: '/goto/$',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
-  id: '/lovable/email/suppression',
-  path: '/lovable/email/suppression',
+const AuthenticatedAdminAutomationsRoute =
+  AuthenticatedAdminAutomationsRouteImport.update({
+    id: '/admin/automations',
+    path: '/admin/automations',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedAdminPatronsRoute =
+  AuthenticatedAdminPatronsRouteImport.update({
+    id: '/admin/patrons',
+    path: '/admin/patrons',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const ApiPublicNewsletterSubscribeRoute =
+  ApiPublicNewsletterSubscribeRouteImport.update({
+    id: '/api/public/newsletter-subscribe',
+    path: '/api/public/newsletter-subscribe',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiPublicPatreonPatronsSyncRoute =
+  ApiPublicPatreonPatronsSyncRouteImport.update({
+    id: '/api/public/patreon-patrons-sync',
+    path: '/api/public/patreon-patrons-sync',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiPublicPatreonSyncRoute = ApiPublicPatreonSyncRouteImport.update({
+  id: '/api/public/patreon-sync',
+  path: '/api/public/patreon-sync',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPublicPatronAutomationsRunRoute =
@@ -100,45 +124,37 @@ const ApiPublicPatronAutomationsRunRoute =
     path: '/api/public/patron-automations-run',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ApiPublicPatreonSyncRoute = ApiPublicPatreonSyncRouteImport.update({
-  id: '/api/public/patreon-sync',
-  path: '/api/public/patreon-sync',
+const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
+  id: '/lovable/email/suppression',
+  path: '/lovable/email/suppression',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiPublicPatreonPatronsSyncRoute =
-  ApiPublicPatreonPatronsSyncRouteImport.update({
-    id: '/api/public/patreon-patrons-sync',
-    path: '/api/public/patreon-patrons-sync',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ApiPublicNewsletterSubscribeRoute =
-  ApiPublicNewsletterSubscribeRouteImport.update({
-    id: '/api/public/newsletter-subscribe',
-    path: '/api/public/newsletter-subscribe',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AuthenticatedAdminPatronsRoute =
-  AuthenticatedAdminPatronsRouteImport.update({
-    id: '/admin/patrons',
-    path: '/admin/patrons',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedAdminAutomationsRoute =
-  AuthenticatedAdminAutomationsRouteImport.update({
-    id: '/admin/automations',
-    path: '/admin/automations',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
 const AuthenticatedAdminBlogIndexRoute =
   AuthenticatedAdminBlogIndexRouteImport.update({
     id: '/admin/blog/',
     path: '/admin/blog/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
-const LovableEmailTransactionalSendRoute =
-  LovableEmailTransactionalSendRouteImport.update({
-    id: '/lovable/email/transactional/send',
-    path: '/lovable/email/transactional/send',
+const AuthenticatedAdminBlogIdRoute =
+  AuthenticatedAdminBlogIdRouteImport.update({
+    id: '/admin/blog/$id',
+    path: '/admin/blog/$id',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const LovableEmailAuthPreviewRoute = LovableEmailAuthPreviewRouteImport.update({
+  id: '/lovable/email/auth/preview',
+  path: '/lovable/email/auth/preview',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LovableEmailAuthWebhookRoute = LovableEmailAuthWebhookRouteImport.update({
+  id: '/lovable/email/auth/webhook',
+  path: '/lovable/email/auth/webhook',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LovableEmailQueueProcessRoute =
+  LovableEmailQueueProcessRouteImport.update({
+    id: '/lovable/email/queue/process',
+    path: '/lovable/email/queue/process',
     getParentRoute: () => rootRouteImport,
   } as any)
 const LovableEmailTransactionalPreviewRoute =
@@ -147,27 +163,11 @@ const LovableEmailTransactionalPreviewRoute =
     path: '/lovable/email/transactional/preview',
     getParentRoute: () => rootRouteImport,
   } as any)
-const LovableEmailQueueProcessRoute =
-  LovableEmailQueueProcessRouteImport.update({
-    id: '/lovable/email/queue/process',
-    path: '/lovable/email/queue/process',
+const LovableEmailTransactionalSendRoute =
+  LovableEmailTransactionalSendRouteImport.update({
+    id: '/lovable/email/transactional/send',
+    path: '/lovable/email/transactional/send',
     getParentRoute: () => rootRouteImport,
-  } as any)
-const LovableEmailAuthWebhookRoute = LovableEmailAuthWebhookRouteImport.update({
-  id: '/lovable/email/auth/webhook',
-  path: '/lovable/email/auth/webhook',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LovableEmailAuthPreviewRoute = LovableEmailAuthPreviewRouteImport.update({
-  id: '/lovable/email/auth/preview',
-  path: '/lovable/email/auth/preview',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AuthenticatedAdminBlogIdRoute =
-  AuthenticatedAdminBlogIdRouteImport.update({
-    id: '/admin/blog/$id',
-    path: '/admin/blog/$id',
-    getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
 
 export interface FileRoutesByFullPath {
@@ -358,39 +358,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/world': {
-      id: '/world'
-      path: '/world'
-      fullPath: '/world'
-      preLoaderRoute: typeof WorldRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/studio': {
-      id: '/studio'
-      path: '/studio'
-      fullPath: '/studio'
-      preLoaderRoute: typeof StudioRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/story': {
-      id: '/story'
-      path: '/story'
-      fullPath: '/story'
-      preLoaderRoute: typeof StoryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/auth': {
-      id: '/auth'
-      path: '/auth'
-      fullPath: '/auth'
-      preLoaderRoute: typeof AuthRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated': {
@@ -400,11 +372,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/story': {
+      id: '/story'
+      path: '/story'
+      fullPath: '/story'
+      preLoaderRoute: typeof StoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio': {
+      id: '/studio'
+      path: '/studio'
+      fullPath: '/studio'
+      preLoaderRoute: typeof StudioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/world': {
+      id: '/world'
+      path: '/world'
+      fullPath: '/world'
+      preLoaderRoute: typeof WorldRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -414,11 +414,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/goto/$': {
-      id: '/goto/$'
-      path: '/goto/$'
-      fullPath: '/goto/$'
-      preLoaderRoute: typeof GotoSplatRouteImport
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/email/unsubscribe': {
@@ -428,32 +428,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EmailUnsubscribeRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/blog/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
+    '/goto/$': {
+      id: '/goto/$'
+      path: '/goto/$'
+      fullPath: '/goto/$'
+      preLoaderRoute: typeof GotoSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/lovable/email/suppression': {
-      id: '/lovable/email/suppression'
-      path: '/lovable/email/suppression'
-      fullPath: '/lovable/email/suppression'
-      preLoaderRoute: typeof LovableEmailSuppressionRouteImport
-      parentRoute: typeof rootRouteImport
+    '/_authenticated/admin/automations': {
+      id: '/_authenticated/admin/automations'
+      path: '/admin/automations'
+      fullPath: '/admin/automations'
+      preLoaderRoute: typeof AuthenticatedAdminAutomationsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/api/public/patron-automations-run': {
-      id: '/api/public/patron-automations-run'
-      path: '/api/public/patron-automations-run'
-      fullPath: '/api/public/patron-automations-run'
-      preLoaderRoute: typeof ApiPublicPatronAutomationsRunRouteImport
-      parentRoute: typeof rootRouteImport
+    '/_authenticated/admin/patrons': {
+      id: '/_authenticated/admin/patrons'
+      path: '/admin/patrons'
+      fullPath: '/admin/patrons'
+      preLoaderRoute: typeof AuthenticatedAdminPatronsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/api/public/patreon-sync': {
-      id: '/api/public/patreon-sync'
-      path: '/api/public/patreon-sync'
-      fullPath: '/api/public/patreon-sync'
-      preLoaderRoute: typeof ApiPublicPatreonSyncRouteImport
+    '/api/public/newsletter-subscribe': {
+      id: '/api/public/newsletter-subscribe'
+      path: '/api/public/newsletter-subscribe'
+      fullPath: '/api/public/newsletter-subscribe'
+      preLoaderRoute: typeof ApiPublicNewsletterSubscribeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/public/patreon-patrons-sync': {
@@ -463,26 +463,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicPatreonPatronsSyncRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/public/newsletter-subscribe': {
-      id: '/api/public/newsletter-subscribe'
-      path: '/api/public/newsletter-subscribe'
-      fullPath: '/api/public/newsletter-subscribe'
-      preLoaderRoute: typeof ApiPublicNewsletterSubscribeRouteImport
+    '/api/public/patreon-sync': {
+      id: '/api/public/patreon-sync'
+      path: '/api/public/patreon-sync'
+      fullPath: '/api/public/patreon-sync'
+      preLoaderRoute: typeof ApiPublicPatreonSyncRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/admin/patrons': {
-      id: '/_authenticated/admin/patrons'
-      path: '/admin/patrons'
-      fullPath: '/admin/patrons'
-      preLoaderRoute: typeof AuthenticatedAdminPatronsRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+    '/api/public/patron-automations-run': {
+      id: '/api/public/patron-automations-run'
+      path: '/api/public/patron-automations-run'
+      fullPath: '/api/public/patron-automations-run'
+      preLoaderRoute: typeof ApiPublicPatronAutomationsRunRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/admin/automations': {
-      id: '/_authenticated/admin/automations'
-      path: '/admin/automations'
-      fullPath: '/admin/automations'
-      preLoaderRoute: typeof AuthenticatedAdminAutomationsRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+    '/lovable/email/suppression': {
+      id: '/lovable/email/suppression'
+      path: '/lovable/email/suppression'
+      fullPath: '/lovable/email/suppression'
+      preLoaderRoute: typeof LovableEmailSuppressionRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_authenticated/admin/blog/': {
       id: '/_authenticated/admin/blog/'
@@ -491,25 +491,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminBlogIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/lovable/email/transactional/send': {
-      id: '/lovable/email/transactional/send'
-      path: '/lovable/email/transactional/send'
-      fullPath: '/lovable/email/transactional/send'
-      preLoaderRoute: typeof LovableEmailTransactionalSendRouteImport
-      parentRoute: typeof rootRouteImport
+    '/_authenticated/admin/blog/$id': {
+      id: '/_authenticated/admin/blog/$id'
+      path: '/admin/blog/$id'
+      fullPath: '/admin/blog/$id'
+      preLoaderRoute: typeof AuthenticatedAdminBlogIdRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/lovable/email/transactional/preview': {
-      id: '/lovable/email/transactional/preview'
-      path: '/lovable/email/transactional/preview'
-      fullPath: '/lovable/email/transactional/preview'
-      preLoaderRoute: typeof LovableEmailTransactionalPreviewRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/lovable/email/queue/process': {
-      id: '/lovable/email/queue/process'
-      path: '/lovable/email/queue/process'
-      fullPath: '/lovable/email/queue/process'
-      preLoaderRoute: typeof LovableEmailQueueProcessRouteImport
+    '/lovable/email/auth/preview': {
+      id: '/lovable/email/auth/preview'
+      path: '/lovable/email/auth/preview'
+      fullPath: '/lovable/email/auth/preview'
+      preLoaderRoute: typeof LovableEmailAuthPreviewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lovable/email/auth/webhook': {
@@ -519,19 +512,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LovableEmailAuthWebhookRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/lovable/email/auth/preview': {
-      id: '/lovable/email/auth/preview'
-      path: '/lovable/email/auth/preview'
-      fullPath: '/lovable/email/auth/preview'
-      preLoaderRoute: typeof LovableEmailAuthPreviewRouteImport
+    '/lovable/email/queue/process': {
+      id: '/lovable/email/queue/process'
+      path: '/lovable/email/queue/process'
+      fullPath: '/lovable/email/queue/process'
+      preLoaderRoute: typeof LovableEmailQueueProcessRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/admin/blog/$id': {
-      id: '/_authenticated/admin/blog/$id'
-      path: '/admin/blog/$id'
-      fullPath: '/admin/blog/$id'
-      preLoaderRoute: typeof AuthenticatedAdminBlogIdRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+    '/lovable/email/transactional/preview': {
+      id: '/lovable/email/transactional/preview'
+      path: '/lovable/email/transactional/preview'
+      fullPath: '/lovable/email/transactional/preview'
+      preLoaderRoute: typeof LovableEmailTransactionalPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/transactional/send': {
+      id: '/lovable/email/transactional/send'
+      path: '/lovable/email/transactional/send'
+      fullPath: '/lovable/email/transactional/send'
+      preLoaderRoute: typeof LovableEmailTransactionalSendRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
