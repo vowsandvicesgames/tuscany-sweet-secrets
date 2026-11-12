@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as RomanceVisualNovelsRouteImport } from './routes/romance-visual-novels'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StoryRouteImport } from './routes/story'
 import { Route as StudioRouteImport } from './routes/studio'
@@ -53,6 +54,11 @@ const AuthRoute = AuthRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RomanceVisualNovelsRoute = RomanceVisualNovelsRouteImport.update({
+  id: '/romance-visual-novels',
+  path: '/romance-visual-novels',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -180,6 +186,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/faq': typeof FaqRoute
+  '/romance-visual-novels': typeof RomanceVisualNovelsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
   '/studio': typeof StudioRoute
@@ -207,6 +214,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/faq': typeof FaqRoute
+  '/romance-visual-novels': typeof RomanceVisualNovelsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
   '/studio': typeof StudioRoute
@@ -236,6 +244,7 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
   '/faq': typeof FaqRoute
+  '/romance-visual-novels': typeof RomanceVisualNovelsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
   '/studio': typeof StudioRoute
@@ -265,6 +274,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/faq'
+    | '/romance-visual-novels'
     | '/sitemap.xml'
     | '/story'
     | '/studio'
@@ -292,6 +302,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/faq'
+    | '/romance-visual-novels'
     | '/sitemap.xml'
     | '/story'
     | '/studio'
@@ -320,6 +331,7 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/auth'
     | '/faq'
+    | '/romance-visual-novels'
     | '/sitemap.xml'
     | '/story'
     | '/studio'
@@ -349,6 +361,7 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
   FaqRoute: typeof FaqRoute
+  RomanceVisualNovelsRoute: typeof RomanceVisualNovelsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StoryRoute: typeof StoryRoute
   StudioRoute: typeof StudioRoute
@@ -397,6 +410,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/romance-visual-novels': {
+      id: '/romance-visual-novels'
+      path: '/romance-visual-novels'
+      fullPath: '/romance-visual-novels'
+      preLoaderRoute: typeof RomanceVisualNovelsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -578,6 +598,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
   FaqRoute: FaqRoute,
+  RomanceVisualNovelsRoute: RomanceVisualNovelsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StoryRoute: StoryRoute,
   StudioRoute: StudioRoute,
