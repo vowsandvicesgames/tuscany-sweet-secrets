@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import vvLogo from "@/assets/vows-vices-logo.png";
 import { ITCH_URL, PATREON_URL } from "@/lib/links";
+import { trackPatreonClick } from "@/lib/analytics";
 
 export function SiteHeader() {
   return (
@@ -40,6 +41,7 @@ export function SiteHeader() {
             href={PATREON_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackPatreonClick(window.location.pathname)}
             className="ml-1 sm:ml-3 px-2 sm:px-4 py-1.5 sm:py-2 font-display tracking-[0.15em] sm:tracking-widest uppercase text-[10px] sm:text-xs text-rose-glow border border-crimson/40 rounded-sm hover:bg-romance hover:shadow-[0_0_30px_oklch(0.52_0.20_18/0.5)] transition-all"
           >
             Patreon
