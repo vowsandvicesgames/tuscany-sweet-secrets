@@ -324,8 +324,11 @@ function GamesPage() {
         {/* CHARACTERS */}
         <div className="mt-16">
           <div className="ornament-divider mb-3 text-xs tracking-[0.4em] uppercase">Meet the characters</div>
-          <p className="text-center text-sm text-muted-foreground mb-8 font-serif-italic">
+          <p className="text-center text-sm text-muted-foreground font-serif-italic">
             From the first chapter, many more to come in next chapters.
+          </p>
+          <p className="text-center text-sm text-muted-foreground mb-8 font-serif-italic">
+            From Episode 1. More love interests are planned in later episodes.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {characters.map((c) => (
