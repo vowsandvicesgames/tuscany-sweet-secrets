@@ -78,7 +78,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
   },
   {
     q: "Which platforms does it run on?",
-    a: <>The game is available for Windows, macOS, Linux and Android. Download it from our itch.io page.</>,
+    a: <>Windows, macOS, Linux, Android, and in the browser (HTML5) on itch.io.</>,
   },
   {
     q: "What kind of content does the game contain?",
