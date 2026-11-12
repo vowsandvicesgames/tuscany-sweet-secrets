@@ -21,7 +21,7 @@ export function SiteFooter() {
           <Link to="/world" className="hover:text-rose-glow transition-colors">The Games</Link>
           <Link to="/studio" className="hover:text-rose-glow transition-colors">The Studio</Link>
           <Link to="/faq" className="hover:text-rose-glow transition-colors">About the Game / FAQ</Link>
-          <Link to="/romance-visual-novels" className="hover:text-rose-glow transition-colors">Romance Visual Novels</Link>
+          <Link to="/romance-visual-novels" className="hover:text-rose-glow transition-colors">Adult Visual Novels Like the Best of the Genre</Link>
           <a href={PATREON_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackPatreonClick(window.location.pathname)} className="hover:text-rose-glow transition-colors">Support on Patreon ↗</a>
           <a href="https://x.com/VowsandVice" target="_blank" rel="noopener noreferrer" onClick={() => trackTwitterClick(window.location.pathname)} className="hover:text-rose-glow transition-colors">X / Twitter ↗</a>
           <a href={VNDB_URL} target="_blank" rel="noopener noreferrer" className="hover:text-rose-glow transition-colors">VNDB ↗</a>
