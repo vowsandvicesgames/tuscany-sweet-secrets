@@ -50,7 +50,10 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "https://vowsandvicesstudio.com/" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://vowsandvicesstudio.com/" }],
+    links: [
+      { rel: "canonical", href: "https://vowsandvicesstudio.com/" },
+      { rel: "preload", as: "image", href: cover, fetchPriority: "high" },
+    ],
     scripts: [
       {
         type: "application/ld+json",
