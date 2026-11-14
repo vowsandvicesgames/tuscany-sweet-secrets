@@ -43,28 +43,17 @@ const NewsletterWelcomeEmail = ({ unsubscribeUrl }: NewsletterWelcomeProps) => (
         </Section>
 
         <Section style={footerSection}>
+          <Text style={followLabel}>Follow us</Text>
+          <Text style={socialRow}>
+            <Link href="https://www.reddit.com/user/DowntownPrompt5202/" style={socialPill}>Reddit</Link>
+            <Link href="https://x.com/VowsandVice" style={socialPill}>X</Link>
+            <Link href="https://bsky.app/profile/vowsandvices.bsky.social" style={socialPill}>Bluesky</Link>
+            <Link href="https://discord.gg/pVkRhe2ZEJ" style={socialPill}>Discord</Link>
+          </Text>
           <Text style={footer}>
             With love,
             <br />
             The {SITE_NAME} Team
-          </Text>
-          <Text style={mutedFooter}>
-            Follow us:{" "}
-            <Link href="https://www.reddit.com/user/DowntownPrompt5202/" style={inlineLink}>
-              Reddit
-            </Link>
-            {" · "}
-            <Link href="https://x.com/VowsandVice" style={inlineLink}>
-              X
-            </Link>
-            {" · "}
-            <Link href="https://bsky.app/profile/vowsandvices.bsky.social" style={inlineLink}>
-              Bluesky
-            </Link>
-            {" · "}
-            <Link href="https://discord.gg/pVkRhe2ZEJ" style={inlineLink}>
-              Discord
-            </Link>
           </Text>
           <Text style={mutedFooter}>
             You're receiving this because you subscribed at vowsandvicesstudio.com.{" "}
@@ -178,4 +167,28 @@ const mutedFooter = {
   fontSize: "12px",
   color: "#8a6a6a",
   margin: "0 0 8px",
+};
+
+const followLabel = {
+  fontSize: "13px",
+  color: "#7a1f1f",
+  letterSpacing: "0.08em",
+  textTransform: "uppercase" as const,
+  margin: "0 0 10px",
+};
+
+const socialRow = {
+  margin: "0 0 24px",
+  lineHeight: "2.4",
+};
+
+const socialPill = {
+  display: "inline-block",
+  border: "1px solid #7a1f1f",
+  borderRadius: "999px",
+  color: "#7a1f1f",
+  fontSize: "13px",
+  padding: "6px 16px",
+  margin: "0 4px",
+  textDecoration: "none",
 };
