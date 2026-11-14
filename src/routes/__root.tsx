@@ -1,4 +1,5 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts, useLocation } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { AgeGate } from "@/components/AgeGate";
 
@@ -46,8 +47,8 @@ export const Route = createRootRoute({
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/fau8yhC67SYgCEotzDd8RwGoHYj2/social-images/social-1777651915234-Main_cover.webp" },
     ],
     links: [
-      { rel: "icon", type: "image/png", href: "/favicon.png" },
-      { rel: "apple-touch-icon", href: "/favicon.png" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon.png" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -67,14 +68,14 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW9GHPXK1T"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JR23CT9FXS"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-YW9GHPXK1T');
+              gtag('config', 'G-JR23CT9FXS', { send_page_view: false });
             `,
           }}
         />
@@ -88,6 +89,17 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
+  const { href } = useLocation();
+
+  useEffect(() => {
+    window.gtag?.("event", "page_view", {
+      send_to: "G-JR23CT9FXS",
+      page_location: window.location.href,
+      page_path: href,
+      page_title: document.title,
+    });
+  }, [href]);
+
   return (
     <>
       <Outlet />
