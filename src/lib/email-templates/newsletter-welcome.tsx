@@ -1,32 +1,45 @@
-import { Body, Container, Head, Heading, Html, Preview, Section, Text } from "@react-email/components";
+import { Body, Button, Container, Head, Heading, Html, Link, Preview, Section, Text } from "@react-email/components";
 import type { TemplateEntry } from "./registry";
 
 const SITE_NAME = "Vows & Vices";
 
-const NewsletterWelcomeEmail = () => (
+type NewsletterWelcomeProps = {
+  unsubscribeUrl?: string;
+};
+
+const NewsletterWelcomeEmail = ({ unsubscribeUrl }: NewsletterWelcomeProps) => (
   <Html lang="en" dir="ltr">
     <Head />
-    <Preview>Welcome to the Sweet sin of Tuscany.</Preview>
+    <Preview>Episode 1 is free to play now. Your seat at the villa is waiting.</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section style={header}>
-          <Heading style={h1}>Welcome to the Sweet sin of Tuscany.</Heading>
-          <Text style={tagline}>"We write the stories you swore you'd never tell anyone."</Text>
+          <Heading style={h1}>Welcome to Sweet Sin of Tuscany.</Heading>
+          <Text style={tagline}>We write the stories you swore you'd never tell anyone.</Text>
         </Section>
 
         <Section style={card}>
           <Text style={text}>
-            Thank you for joining {SITE_NAME}. You've just stepped behind the velvet curtain and we're so glad you're
+            Thank you for joining {SITE_NAME}. You've just stepped behind the velvet curtain, and we're so glad you're
             here.
           </Text>
-          <Text style={text}>From now on, you'll be among the first to receive:</Text>
-          <Text style={listItem}>
-            · Chapter previews from <em>Sweet Sin of Tuscany</em>
+          <Text style={text}>
+            <strong>Episode 1 is free to play now.</strong>
           </Text>
-          <Text style={listItem}>· Release news and announcements</Text>
-          <Text style={listItem}>· Behind the scenes notes and character sketches</Text>
+          <Button style={button} href="https://vowsandvices.itch.io/sweet-sin-of-tuscany">
+            Play on itch.io
+          </Button>
+          <Text style={text}>From now on, you'll be among the first to receive:</Text>
+          <Text style={listItem}>· Episode previews and release news</Text>
+          <Text style={listItem}>· Behind-the-scenes notes and character sketches</Text>
           <Text style={listItem}>· Studio updates and quiet little secrets</Text>
-          <Text style={text}>No spam. Only secrets straight from the Sweet sin of Tuscany to your inbox.</Text>
+          <Text style={text}>
+            Can't wait for the next episode? Patrons get early builds.{" "}
+            <Link href="https://www.patreon.com/cw/VowsandVicesStudio" style={inlineLink}>
+              Join us on Patreon
+            </Link>
+          </Text>
+          <Text style={text}>No spam. Only secrets from Tuscany, straight to your inbox.</Text>
         </Section>
 
         <Section style={footerSection}>
@@ -34,6 +47,30 @@ const NewsletterWelcomeEmail = () => (
             With love,
             <br />
             The {SITE_NAME} Team
+          </Text>
+          <Text style={mutedFooter}>
+            Follow us:{" "}
+            <Link href="https://www.reddit.com/user/DowntownPrompt5202/" style={inlineLink}>
+              Reddit
+            </Link>
+            {" · "}
+            <Link href="https://x.com/VowsandVice" style={inlineLink}>
+              X
+            </Link>
+            {" · "}
+            <Link href="https://bsky.app/profile/vowsandvices.bsky.social" style={inlineLink}>
+              Bluesky
+            </Link>
+          </Text>
+          <Text style={mutedFooter}>
+            You're receiving this because you subscribed at vowsandvicesstudio.com.{" "}
+            {unsubscribeUrl ? (
+              <Link href={unsubscribeUrl} style={inlineLink}>
+                Unsubscribe
+              </Link>
+            ) : (
+              "Unsubscribe"
+            )}
           </Text>
         </Section>
       </Container>
@@ -43,9 +80,11 @@ const NewsletterWelcomeEmail = () => (
 
 export const template = {
   component: NewsletterWelcomeEmail,
-  subject: "Welcome to the Sweet sin of Tuscany",
+  subject: "Welcome to Sweet Sin of Tuscany",
   displayName: "Newsletter welcome",
-  previewData: {},
+  previewData: {
+    unsubscribeUrl: "https://vowsandvicesstudio.com/email/unsubscribe?token=preview",
+  },
 } satisfies TemplateEntry;
 
 const main = {
@@ -104,6 +143,21 @@ const listItem = {
   paddingLeft: "8px",
 };
 
+const button = {
+  backgroundColor: "#7a1f1f",
+  color: "#ffffff",
+  fontSize: "15px",
+  padding: "12px 24px",
+  borderRadius: "4px",
+  textDecoration: "none",
+  margin: "0 0 24px",
+};
+
+const inlineLink = {
+  color: "#7a1f1f",
+  textDecoration: "underline",
+};
+
 const footerSection = {
   textAlign: "center" as const,
   padding: "12px 0 0",
@@ -113,5 +167,11 @@ const footer = {
   fontSize: "14px",
   color: "#8a6a6a",
   fontStyle: "italic",
-  margin: "0",
+  margin: "0 0 16px",
+};
+
+const mutedFooter = {
+  fontSize: "12px",
+  color: "#8a6a6a",
+  margin: "0 0 8px",
 };
