@@ -33,10 +33,11 @@ const NewsletterWelcomeEmail = ({ unsubscribeUrl }: NewsletterWelcomeProps) => (
           <Text style={listItem}>· Behind-the-scenes notes and character sketches</Text>
           <Text style={listItem}>· Studio updates and quiet little secrets</Text>
           <Text style={text}>
-            Can't wait for the next episode? Patrons get early builds.{" "}
+            Can't wait for the next episode? Patrons get early builds, uncensored previews, monthly 8K wallpapers and a vote in story choices. Or{" "}
             <Link href="https://www.patreon.com/cw/VowsandVicesStudio" style={inlineLink}>
-              Join us on Patreon
-            </Link>
+              join us on Patreon for free
+            </Link>{" "}
+            and get our dev logs and free releases.
           </Text>
           <Text style={text}>No spam. Only secrets from Tuscany, straight to your inbox.</Text>
         </Section>
