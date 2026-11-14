@@ -76,6 +76,11 @@ function StudioPage() {
       if (data.alreadySubscribed) {
         toast.success("You're already on the list.");
       } else {
+        window.gtag?.("event", "newsletter_signup", {
+          send_to: "G-JR23CT9FXS",
+          method: "website_form",
+          form_location: "studio",
+        });
         toast.success("Welcome to the villa. Check your inbox.");
       }
       setEmail("");
