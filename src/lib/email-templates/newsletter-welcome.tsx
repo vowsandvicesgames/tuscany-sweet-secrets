@@ -43,28 +43,17 @@ const NewsletterWelcomeEmail = ({ unsubscribeUrl }: NewsletterWelcomeProps) => (
         </Section>
 
         <Section style={footerSection}>
+          <Text style={followLabel}>Follow us</Text>
+          <Text style={socialRow}>
+            <Link href="https://www.reddit.com/user/DowntownPrompt5202/" style={socialPill}>Reddit</Link>
+            <Link href="https://x.com/VowsandVice" style={socialPill}>X</Link>
+            <Link href="https://bsky.app/profile/vowsandvices.bsky.social" style={socialPill}>Bluesky</Link>
+            <Link href="https://discord.gg/pVkRhe2ZEJ" style={socialPill}>Discord</Link>
+          </Text>
           <Text style={footer}>
             With love,
             <br />
             The {SITE_NAME} Team
-          </Text>
-          <Text style={mutedFooter}>
-            Follow us:{" "}
-            <Link href="https://www.reddit.com/user/DowntownPrompt5202/" style={inlineLink}>
-              Reddit
-            </Link>
-            {" · "}
-            <Link href="https://x.com/VowsandVice" style={inlineLink}>
-              X
-            </Link>
-            {" · "}
-            <Link href="https://bsky.app/profile/vowsandvices.bsky.social" style={inlineLink}>
-              Bluesky
-            </Link>
-            {" · "}
-            <Link href="https://discord.gg/pVkRhe2ZEJ" style={inlineLink}>
-              Discord
-            </Link>
           </Text>
           <Text style={mutedFooter}>
             You're receiving this because you subscribed at vowsandvicesstudio.com.{" "}
