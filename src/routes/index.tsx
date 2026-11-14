@@ -27,6 +27,7 @@ type BlogPost = {
   title: string;
   excerpt: string | null;
   cover_image_url: string | null;
+  thumbnail_url: string | null;
   published_at: string | null;
 };
 
@@ -226,7 +227,7 @@ function Index() {
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src={log.cover_image_url ?? ""}
+                    src={log.thumbnail_url ?? log.cover_image_url ?? ""}
                     alt={log.title}
                     loading="lazy"
                     decoding="async"

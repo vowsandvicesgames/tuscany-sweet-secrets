@@ -50,10 +50,12 @@ function BlogIndex() {
             >
               {p.cover_image_url && (
                 <img
-                  src={p.cover_image_url}
+                  src={p.thumbnail_url ?? p.cover_image_url}
                   alt=""
                   loading="lazy"
                   decoding="async"
+                  width={800}
+                  height={450}
                   className="w-full h-40 object-cover rounded-sm mb-4 opacity-90 group-hover:opacity-100 transition-opacity"
                 />
               )}

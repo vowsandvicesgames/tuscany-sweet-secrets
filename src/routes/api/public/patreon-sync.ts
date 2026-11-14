@@ -49,7 +49,7 @@ async function mirrorImage(
   supabase: any,
   sourceUrl: string,
   postId: string,
-): Promise<string | null> {
+): Promise<{ coverUrl: string; thumbnailUrl: string | null } | null> {
   try {
     const res = await fetch(sourceUrl)
     if (!res.ok) return null
@@ -64,7 +64,20 @@ async function mirrorImage(
       console.error('patreon-sync image upload failed', error)
       return null
     }
-    return supabase.storage.from('email-assets').getPublicUrl(path).data.publicUrl as string
+    const coverUrl = supabase.storage.from('email-assets').getPublicUrl(path).data.publicUrl as string
+    let thumbnailUrl: string | null = null
+    try {
+      const { createBlogThumbnail } = await import('@/lib/blog-thumbnail.server')
+      const thumbnail = await createBlogThumbnail(bytes)
+      const thumbnailPath = `blog/patreon/${postId}-thumb.webp`
+      const { error: thumbnailError } = await supabase.storage.from('email-assets')
+        .upload(thumbnailPath, thumbnail, { contentType: 'image/webp', upsert: true })
+      if (thumbnailError) throw thumbnailError
+      thumbnailUrl = supabase.storage.from('email-assets').getPublicUrl(thumbnailPath).data.publicUrl
+    } catch (error) {
+      console.error('patreon-sync thumbnail failed', error)
+    }
+    return { coverUrl, thumbnailUrl }
   } catch (e) {
     console.error('patreon-sync image mirror failed', e)
     return null
@@ -166,14 +179,15 @@ export const Route = createFileRoute('/api/public/patreon-sync')({
             if (clash) slug = `${slug}-${p.id}`.slice(0, 100)
 
             const patreonImage = firstImageUrl(rawContent)
-            const coverUrl = patreonImage ? await mirrorImage(supabase, patreonImage, p.id) : null
+            const cover = patreonImage ? await mirrorImage(supabase, patreonImage, p.id) : null
 
             const { error } = await supabase.from('blog_posts').insert({
               slug,
               title,
               excerpt,
               body: bodyHtml,
-              cover_image_url: coverUrl,
+              cover_image_url: cover?.coverUrl ?? null,
+              thumbnail_url: cover?.thumbnailUrl ?? null,
               published: true,
               published_at: p.attributes.published_at,
               patreon_post_id: p.id,
@@ -195,7 +209,7 @@ export const Route = createFileRoute('/api/public/patreon-sync')({
             const src = firstImageUrl(row.body ?? '')
             if (!src) continue
             const url = await mirrorImage(supabase, src, row.patreon_post_id)
-            if (url) await supabase.from('blog_posts').update({ cover_image_url: url }).eq('id', row.id)
+            if (url) await supabase.from('blog_posts').update({ cover_image_url: url.coverUrl, thumbnail_url: url.thumbnailUrl }).eq('id', row.id)
           }
 
           await supabase
