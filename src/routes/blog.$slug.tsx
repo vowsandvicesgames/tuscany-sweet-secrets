@@ -103,6 +103,8 @@ function PostPage() {
           <img
             src={post.cover_image_url}
             alt=""
+            loading="lazy"
+            decoding="async"
             className="max-w-3xl mx-auto mt-12 w-full rounded-sm border border-crimson/30"
           />
         )}

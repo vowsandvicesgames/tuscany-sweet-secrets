@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import vvLogo from "@/assets/vows-vices-logo.png";
+import vvLogo from "@/assets/vows-vices-logo.webp";
 import { PATREON_URL, DISCORD_URL, REDDIT_URL, TWITTER_URL, VNDB_URL } from "@/lib/links";
 import { trackRedditClick, trackPatreonClick, trackDiscordClick, trackTwitterClick } from "@/lib/analytics";
 
@@ -10,7 +10,7 @@ export function SiteFooter() {
     <footer className="border-t border-border/40 bg-ink/60 mt-32">
       <div className="max-w-7xl mx-auto px-6 py-16 grid gap-10 md:grid-cols-3">
         <div className="flex items-center gap-4">
-          <img src={vvLogo} alt="" width={56} height={56} className="rounded-full" />
+          <img src={vvLogo} alt="" width={56} height={56} loading="lazy" decoding="async" className="rounded-full" />
           <div>
             <div className="font-display text-lg text-rose-glow tracking-wider">Vows &amp; Vices</div>
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Independent Studio</div>

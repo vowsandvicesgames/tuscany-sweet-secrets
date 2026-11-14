@@ -3,7 +3,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { createServerFn } from '@tanstack/react-start'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import logo from '@/assets/vows-vices-logo.png'
+import logo from '@/assets/vows-vices-logo.webp'
 
 function redactEmail(email: string | null | undefined): string {
   if (!email) return '***'

@@ -90,6 +90,9 @@ function Index() {
           alt="Sweet Sin of Tuscany, cast under a Tuscan moon"
           width={1920}
           height={900}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 sm:top-[73px] sm:inset-x-0 sm:bottom-auto w-full h-full sm:h-auto object-cover sm:object-contain object-top opacity-95"
         />
         <div className="absolute inset-0 sm:top-[73px] sm:h-[42.8125vw] bg-gradient-to-t from-background via-background/60 sm:via-background/30 to-background/40 sm:to-transparent" />
@@ -226,6 +229,9 @@ function Index() {
                     src={log.cover_image_url ?? ""}
                     alt={log.title}
                     loading="lazy"
+                    decoding="async"
+                    width={820}
+                    height={461}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
@@ -295,6 +301,7 @@ function Index() {
                   src={c.img}
                   alt=""
                   loading="lazy"
+                  decoding="async"
                   width={1024}
                   height={1024}
                   className="absolute inset-0 w-full h-full object-cover object-top opacity-65 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000"

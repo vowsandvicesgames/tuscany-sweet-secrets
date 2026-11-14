@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import vvLogo from "@/assets/vows-vices-logo.png";
+import vvLogo from "@/assets/vows-vices-logo.webp";
 import { ITCH_URL, PATREON_URL } from "@/lib/links";
 import { trackPatreonClick } from "@/lib/analytics";
 
