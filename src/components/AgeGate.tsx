@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "@tanstack/react-router";
 
 const STORAGE_KEY = "vv-age-verified";
 
 export function AgeGate() {
+  const { pathname } = useLocation();
+  const bypass = pathname === "/email/unsubscribe";
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -18,13 +21,13 @@ export function AgeGate() {
 
   useEffect(() => {
     if (!mounted) return;
-    document.body.style.overflow = open ? "hidden" : "";
+    document.body.style.overflow = open && !bypass ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [open, mounted]);
+  }, [open, mounted, bypass]);
 
-  if (!mounted || !open) return null;
+  if (bypass || !mounted || !open) return null;
 
   const confirm = () => {
     try {
