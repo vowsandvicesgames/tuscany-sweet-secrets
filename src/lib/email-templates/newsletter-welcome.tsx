@@ -20,8 +20,7 @@ const NewsletterWelcomeEmail = ({ unsubscribeUrl }: NewsletterWelcomeProps) => (
 
         <Section style={card}>
           <Text style={text}>
-            Thank you for joining {SITE_NAME}. You've just stepped behind the velvet curtain, and we're so glad you're
-            here.
+            Thank you for joining {SITE_NAME}. We're so glad you're here.
           </Text>
           <Text style={text}>
             <strong>Episode 1 is free to play now.</strong>
