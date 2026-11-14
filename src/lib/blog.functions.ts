@@ -7,7 +7,7 @@ export const listPublishedPosts = createServerFn({ method: "GET" }).handler(asyn
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
   const { data, error } = await supabaseAdmin
     .from("blog_posts")
-    .select("id, slug, title, excerpt, cover_image_url, published_at")
+    .select("id, slug, title, excerpt, cover_image_url, thumbnail_url, published_at")
     .eq("published", true)
     .order("published_at", { ascending: false })
     .limit(100);
