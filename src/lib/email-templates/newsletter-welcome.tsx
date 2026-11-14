@@ -168,3 +168,27 @@ const mutedFooter = {
   color: "#8a6a6a",
   margin: "0 0 8px",
 };
+
+const followLabel = {
+  fontSize: "13px",
+  color: "#7a1f1f",
+  letterSpacing: "0.08em",
+  textTransform: "uppercase" as const,
+  margin: "0 0 10px",
+};
+
+const socialRow = {
+  margin: "0 0 24px",
+  lineHeight: "2.4",
+};
+
+const socialPill = {
+  display: "inline-block",
+  border: "1px solid #7a1f1f",
+  borderRadius: "999px",
+  color: "#7a1f1f",
+  fontSize: "13px",
+  padding: "6px 16px",
+  margin: "0 4px",
+  textDecoration: "none",
+};
