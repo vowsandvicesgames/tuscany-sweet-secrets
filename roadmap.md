@@ -1,4 +1,4 @@
 - [x] Generate thumbnails during Patreon cover mirroring.
 - [x] Backfill existing covers and store thumbnail URLs.
 - [x] Use thumbnails on homepage and blog cards; verify appearance and original full-post covers.
-- [ ] Replace incompatible WASM imports with hosted image transformation and verify it.
+- [x] Replace incompatible WASM imports with hosted image transformation and verify it.
