@@ -73,7 +73,7 @@ function Page() {
       <SiteHeader />
 
       <section className="relative pt-40 pb-24 px-6 text-center">
-        <img src={cover} alt="Sweet Sin of Tuscany cast under a Tuscan moon" className="absolute inset-0 w-full h-full object-cover opacity-30" />
+        <img src={cover} alt="Sweet Sin of Tuscany cast under a Tuscan moon" loading="eager" fetchPriority="high" decoding="async" width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
         <div className="relative max-w-3xl mx-auto">
           <p className="font-display tracking-[0.4em] uppercase text-xs text-rose-glow/80 mb-4">Adult Visual Novel · 18+</p>
@@ -116,7 +116,7 @@ function Page() {
         <div className="grid gap-5 grid-cols-1 md:grid-cols-3">
           {chars.map((c) => (
             <Link key={c.n} to="/world" className="group relative block aspect-[3/4] overflow-hidden rounded-sm border border-crimson/30">
-              <img src={c.img} alt={c.n} loading="lazy" className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+              <img src={c.img} alt={c.n} loading="lazy" decoding="async" width={1080} height={1920} className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
               <div className="absolute bottom-0 p-6">
                 <h3 className="font-display text-2xl text-rose-glow">{c.n}</h3>
@@ -134,7 +134,7 @@ function Page() {
         <div className="ornament-divider mb-10 text-xs tracking-[0.4em] uppercase">Screenshots</div>
         <div className="grid gap-4 sm:grid-cols-3">
           {[shot1, shot2, shot3].map((s, i) => (
-            <img key={i} src={s} alt={`Sweet Sin of Tuscany screenshot ${i + 1}`} loading="lazy" className="w-full aspect-video object-cover rounded-sm border border-border" />
+            <img key={i} src={s} alt={`Sweet Sin of Tuscany screenshot ${i + 1}`} loading="lazy" decoding="async" className="w-full aspect-video object-cover rounded-sm border border-border" />
           ))}
         </div>
       </section>

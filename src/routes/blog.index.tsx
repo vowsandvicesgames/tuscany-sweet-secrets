@@ -53,6 +53,7 @@ function BlogIndex() {
                   src={p.cover_image_url}
                   alt=""
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-40 object-cover rounded-sm mb-4 opacity-90 group-hover:opacity-100 transition-opacity"
                 />
               )}
