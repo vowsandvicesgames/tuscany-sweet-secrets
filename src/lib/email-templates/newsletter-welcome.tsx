@@ -61,6 +61,10 @@ const NewsletterWelcomeEmail = ({ unsubscribeUrl }: NewsletterWelcomeProps) => (
             <Link href="https://bsky.app/profile/vowsandvices.bsky.social" style={inlineLink}>
               Bluesky
             </Link>
+            {" · "}
+            <Link href="https://discord.gg/pVkRhe2ZEJ" style={inlineLink}>
+              Discord
+            </Link>
           </Text>
           <Text style={mutedFooter}>
             You're receiving this because you subscribed at vowsandvicesstudio.com.{" "}
