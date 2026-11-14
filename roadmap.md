@@ -1,3 +1,3 @@
-- [ ] Generate thumbnails during Patreon cover mirroring.
-- [ ] Backfill existing covers and store thumbnail URLs.
-- [ ] Use thumbnails on homepage and blog cards; verify appearance and original full-post covers.
+- [x] Generate thumbnails during Patreon cover mirroring.
+- [x] Backfill existing covers and store thumbnail URLs.
+- [x] Use thumbnails on homepage and blog cards; verify appearance and original full-post covers.
