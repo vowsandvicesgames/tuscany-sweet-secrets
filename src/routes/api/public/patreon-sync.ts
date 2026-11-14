@@ -68,7 +68,7 @@ async function mirrorImage(
     let thumbnailUrl: string | null = null
     try {
       const { createBlogThumbnail } = await import('@/lib/blog-thumbnail.server')
-      const thumbnail = await createBlogThumbnail(bytes)
+      const thumbnail = await createBlogThumbnail(coverUrl, new URL(coverUrl).origin)
       const thumbnailPath = `blog/patreon/${postId}-thumb.webp`
       const { error: thumbnailError } = await supabase.storage.from('email-assets')
         .upload(thumbnailPath, thumbnail, { contentType: 'image/webp', upsert: true })

@@ -1,3 +1,3 @@
 # Architecture rules
 
-- Generate blog-card thumbnails with bundled Worker-compatible WASM encoders in a server-only helper; preserve original covers for full posts.
+- Generate blog-card thumbnails through the hosted storage image transformer, restricted to mirrored cover URLs; avoid WASM source imports and preserve full-post originals.
