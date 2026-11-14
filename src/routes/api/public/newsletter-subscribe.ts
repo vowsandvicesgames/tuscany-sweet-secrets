@@ -88,7 +88,8 @@ export const Route = createFileRoute('/api/public/newsletter-subscribe')({
           if (stored) unsubscribeToken = stored.token
         }
 
-        const element = React.createElement(template.component, {})
+        const unsubscribeUrl = `https://${FROM_DOMAIN}/email/unsubscribe?token=${unsubscribeToken}`
+        const element = React.createElement(template.component, { unsubscribeUrl })
         const html = await render(element)
         const text = await render(element, { plainText: true })
         const subject = typeof template.subject === 'function' ? template.subject({}) : template.subject
