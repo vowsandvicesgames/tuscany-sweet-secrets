@@ -2,6 +2,7 @@ import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { HeroineMatcher } from "@/components/HeroineMatcher";
 import { ITCH_URL, PATREON_URL } from "@/lib/links";
 import { trackPatreonClick } from "@/lib/analytics";
 import sweetSinLogo from "@/assets/sweet-sin-logo.png";
@@ -243,6 +244,8 @@ function GamesPage() {
           </p>
         </div>
       </section>
+
+      <HeroineMatcher />
 
       <SiteFooter />
     </div>
