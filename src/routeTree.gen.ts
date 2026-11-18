@@ -20,6 +20,7 @@ import { Route as StudioRouteImport } from './routes/studio'
 import { Route as WorldRouteImport } from './routes/world'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as CharactersSlugRouteImport } from './routes/characters.$slug'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
 import { Route as GotoSplatRouteImport } from './routes/goto.$'
 import { Route as AuthenticatedAdminAutomationsRouteImport } from './routes/_authenticated/admin/automations'
@@ -89,6 +90,11 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CharactersSlugRoute = CharactersSlugRouteImport.update({
+  id: '/characters/$slug',
+  path: '/characters/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
@@ -192,6 +198,7 @@ export interface FileRoutesByFullPath {
   '/studio': typeof StudioRoute
   '/world': typeof WorldRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/characters/$slug': typeof CharactersSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/goto/$': typeof GotoSplatRoute
   '/blog/': typeof BlogIndexRoute
@@ -220,6 +227,7 @@ export interface FileRoutesByTo {
   '/studio': typeof StudioRoute
   '/world': typeof WorldRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/characters/$slug': typeof CharactersSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/goto/$': typeof GotoSplatRoute
   '/blog': typeof BlogIndexRoute
@@ -250,6 +258,7 @@ export interface FileRoutesById {
   '/studio': typeof StudioRoute
   '/world': typeof WorldRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/characters/$slug': typeof CharactersSlugRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/goto/$': typeof GotoSplatRoute
   '/blog/': typeof BlogIndexRoute
@@ -280,6 +289,7 @@ export interface FileRouteTypes {
     | '/studio'
     | '/world'
     | '/blog/$slug'
+    | '/characters/$slug'
     | '/email/unsubscribe'
     | '/goto/$'
     | '/blog/'
@@ -308,6 +318,7 @@ export interface FileRouteTypes {
     | '/studio'
     | '/world'
     | '/blog/$slug'
+    | '/characters/$slug'
     | '/email/unsubscribe'
     | '/goto/$'
     | '/blog'
@@ -337,6 +348,7 @@ export interface FileRouteTypes {
     | '/studio'
     | '/world'
     | '/blog/$slug'
+    | '/characters/$slug'
     | '/email/unsubscribe'
     | '/goto/$'
     | '/blog/'
@@ -367,6 +379,7 @@ export interface RootRouteChildren {
   StudioRoute: typeof StudioRoute
   WorldRoute: typeof WorldRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  CharactersSlugRoute: typeof CharactersSlugRoute
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
   GotoSplatRoute: typeof GotoSplatRoute
   BlogIndexRoute: typeof BlogIndexRoute
@@ -459,6 +472,13 @@ declare module '@tanstack/react-router' {
       path: '/blog/$slug'
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/characters/$slug': {
+      id: '/characters/$slug'
+      path: '/characters/$slug'
+      fullPath: '/characters/$slug'
+      preLoaderRoute: typeof CharactersSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/email/unsubscribe': {
@@ -604,6 +624,7 @@ const rootRouteChildren: RootRouteChildren = {
   StudioRoute: StudioRoute,
   WorldRoute: WorldRoute,
   BlogSlugRoute: BlogSlugRoute,
+  CharactersSlugRoute: CharactersSlugRoute,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
   GotoSplatRoute: GotoSplatRoute,
   BlogIndexRoute: BlogIndexRoute,
