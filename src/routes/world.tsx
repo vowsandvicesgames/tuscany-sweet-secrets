@@ -15,20 +15,20 @@ import { characters, heroineSlugs } from "@/lib/characters";
 export const Route = createFileRoute("/world")({
   head: () => ({
     meta: [
-      { title: "Games - Vows & Vices Studio" },
+      { title: "Sweet Sin of Tuscany Game & Characters | Vows & Vices Studio" },
       {
         name: "description",
         content:
-          "Discover the games of Vows & Vices Studio. Sweet Sin of Tuscany, our first 18+ visual novel of forbidden love and family secrets.",
+          "Sweet Sin of Tuscany by Vows & Vices: story, heroines Sofia, Mia, Gloria, Bianca and Emily, and a matchmaker to find yours. For fans of games like Eternum.",
       },
-      { property: "og:title", content: "Games - Vows & Vices Studio" },
+      { property: "og:title", content: "Sweet Sin of Tuscany Game & Characters | Vows & Vices Studio" },
       {
         property: "og:description",
-        content: "Sweet Sin of Tuscany, our first 18+ visual novel from Vows & Vices Studio.",
+        content: "Sweet Sin of Tuscany by Vows & Vices: story, heroines Sofia, Mia, Gloria, Bianca and Emily, and a matchmaker to find yours. For fans of games like Eternum.",
       },
       { property: "og:url", content: "https://vowsandvicesstudio.com/world" },
-      { property: "og:image", content: coverBeach },
-      { name: "twitter:image", content: coverBeach },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://vowsandvicesstudio.com/world" }],
   }),

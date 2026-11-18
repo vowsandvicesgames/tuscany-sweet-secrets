@@ -16,14 +16,15 @@ export const Route = createFileRoute("/characters/$slug")({
   head: ({ params, loaderData }) => {
     const c = loaderData ? getCharacter(loaderData.slug) : undefined;
     if (!c) return { meta: [{ title: "Character not found — Sweet Sin of Tuscany" }, { name: "robots", content: "noindex" }] };
-    const title = `${c.name} — ${c.role} | Sweet Sin of Tuscany Characters`;
+    const title = `${c.name} (${c.role}) — Sweet Sin of Tuscany | Vows & Vices`;
+    const desc = `Meet ${c.name} (${c.role}) from Sweet Sin of Tuscany by Vows & Vices — an 18+ romance visual novel for fans of games like Eternum. Read her story.`;
     const url = `${BASE}/characters/${params.slug}`;
     return {
       meta: [
         { title },
-        { name: "description", content: c.seoDescription },
+        { name: "description", content: desc },
         { property: "og:title", content: title },
-        { property: "og:description", content: c.seoDescription },
+        { property: "og:description", content: desc },
         { property: "og:type", content: "profile" },
         { property: "og:url", content: url },
         { name: "twitter:card", content: "summary_large_image" },

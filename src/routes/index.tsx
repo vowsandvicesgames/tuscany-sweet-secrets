@@ -36,19 +36,21 @@ export const Route = createFileRoute("/")({
   loader: () => listPublishedPosts(),
   head: () => ({
     meta: [
-      { title: "Sweet Sin of Tuscany — A Romantic 18+ Visual Novel" },
+      { title: "Sweet Sin of Tuscany — 18+ Romance Visual Novel by Vows & Vices" },
       {
         name: "description",
         content:
-          "While taking a deserved week off in the Tuscan hills, an unexpected visitor turns your world upside down. A story of forbidden love and family secrets.",
+          "Play Sweet Sin of Tuscany, a free 18+ romance visual novel by Vows & Vices Studio. Meet Sofia, Mia, Gloria, Bianca and Emily — for fans of games like Eternum and Being a DIK.",
       },
-      { property: "og:title", content: "Sweet Sin of Tuscany — A Romantic 18+ Visual Novel" },
+      { property: "og:title", content: "Sweet Sin of Tuscany — 18+ Romance Visual Novel by Vows & Vices" },
       {
         property: "og:description",
-        content: "A romantic 18+ visual novel of forbidden love and family secrets in the Tuscan hills.",
+        content: "Play Sweet Sin of Tuscany, a free 18+ romance visual novel by Vows & Vices Studio. Meet Sofia, Mia, Gloria, Bianca and Emily — for fans of games like Eternum and Being a DIK.",
       },
       { property: "og:url", content: "https://vowsandvicesstudio.com/" },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "keywords", content: "Sweet Sin of Tuscany, Vows and Vices, Vows & Vices Studio, games like Sweet Sin of Tuscany, visual novel, adult romance game, Sofia, Mia, Gloria, Bianca, Emily" },
     ],
     links: [
       { rel: "canonical", href: "https://vowsandvicesstudio.com/" },
@@ -63,6 +65,9 @@ export const Route = createFileRoute("/")({
           name: "Sweet Sin of Tuscany",
           applicationCategory: "Game",
           genre: ["Visual Novel", "Romance"],
+          alternateName: "Sweet Sin of Tuscany by Vows and Vices",
+          character: ["Sofia", "Mia", "Gloria", "Bianca", "Emily", "Luca"].map((name) => ({ "@type": "Person", name })),
+          url: "https://vowsandvicesstudio.com/",
           contentRating: "Mature 18+",
           description:
             "A romantic 18+ visual novel of forbidden love, family secrets, and consequences set in the Tuscan hills.",
