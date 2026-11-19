@@ -2,12 +2,33 @@
 
 > Independent studio crafting moody, character-driven romantic 18+ visual novels. Creators of Sweet Sin of Tuscany.
 
-Vows & Vices Studio is an independent visual novel studio. Our debut title, *Sweet Sin of Tuscany*, is a romantic 18+ story of forbidden love, family secrets, and consequences set in the Tuscan hills.
+Vows & Vices Studio is an independent visual novel studio. Our debut title, *Sweet Sin of Tuscany*, is a romantic 18+ story of forbidden love, family secrets, and consequences set in the Tuscan hills. Episode 1 is free on itch.io, and the story is for fans of romance visual novels like Eternum and Being a DIK.
+
+The player follows Luca, a former soldier who returns to his family estate in Tuscany and meets the women he grew up with again. Six heroines each carry their own storyline: Sofia (the headmistress), Mia (the quiet one), Gloria (the dancer), Bianca (the fitness instructor), Emily (the childhood best friend), and Paola (the older childhood friend). Player choices decide who Luca gets close to and who he loses.
 
 ## Pages
 
 - [Home](/): Sweet Sin of Tuscany overview, prologue, choices, and newsletter.
 - [The Story](/story): Synopsis, themes, and the central choices of Sweet Sin of Tuscany.
-- [Games & Characters](/world): Game details, characters, and screenshots.
-- [The Studio](/studio): About Vows & Vices Studio, Patreon, and tip jar.
+- [Games & Characters](/world): Game details, all characters, and screenshots.
+- [The Studio](/studio): About Vows & Vices Studio, Patreon, and development updates.
+- [FAQ](/faq): Age rating, platforms, Episode 1 availability, and how to support development.
 
+## Characters
+
+- [Sofia](/characters/sofia): The strict yet caring headmistress; forbidden-authority slow-burn romance.
+- [Mia](/characters/mia): The shy girl who only ever spoke to Luca; tender, trust-based romance.
+- [Gloria](/characters/gloria): The smiling dancer who made Luca her partner; warm, playful romance.
+- [Bianca](/characters/bianca): The fiery fitness instructor and Luca's old gym partner; bold, teasing romance.
+- [Emily](/characters/emily): The fearless childhood best friend; friends-to-lovers romance.
+- [Paola](/characters/paola): The older childhood friend who was always by Luca's side.
+
+## Blog
+
+- [Blog](/blog): Development logs, work-in-progress previews, and reader polls for Sweet Sin of Tuscany.
+- [Dev log 28 - Mia's unicorn](/blog/dev-log-28-mias-unicorn): Latest development update on Mia's storyline.
+- [WIP 22 - Gloria's glow awoken (free edition)](/blog/wip-22-glorias-glow-awoken-free-edition): Free work-in-progress preview of Gloria's storyline.
+
+## Optional
+
+- [Adult visual novels](/adult-visual-novels): Guide to the studio's 18+ visual novel and games like it.
