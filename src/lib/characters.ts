@@ -4,6 +4,7 @@ import characterGloria from "@/assets/character-gloria.webp";
 import characterLuca from "@/assets/character-luca.webp";
 import characterBianca from "@/assets/character-bianca.webp";
 import characterMia from "@/assets/character-mia.webp";
+import characterPaola from "@/assets/character-paola.png.asset.json";
 
 
 const sofiaDescription = `She was by far the most beautiful woman you had ever seen. She was also the woman with the most authority you knew, and on top of all that, she was incredibly complex. She could be a strict headmistress during the day with a stern voice and a look that allowed no nonsense, but afterward, she was the most caring and gentle person, someone who loved wholeheartedly and gave her all to the people who meant the world to her.
@@ -122,6 +123,8 @@ So, when your military career ended, you and a few army buddies started a privat
 
 Your story starts on the first day of your vacation, with the sound of a familiar voice...`;
 
+const paolaDescription = `For as long as you could remember, Paola was by your side. She was the only daughter of a couple who lived on the estate and helped your grandparents. She was quite a bit older than you. Before other girls started coming to the villa, you and Paola were the only kids there, making you inseparable during that time...`;
+
 export const characters: {
   slug: string;
   role: string;
@@ -172,6 +175,15 @@ export const characters: {
     description: biancaDescription,
   },
   {
+    img: characterPaola.url,
+    name: "Paola",
+    slug: "paola",
+    role: "Older childhood friend",
+    seoDescription: "Paola, Luca's inseparable older childhood friend from the estate, in Sweet Sin of Tuscany, a romantic 18+ visual novel. Read her story.",
+    alt: "young woman with long curly red hair",
+    description: paolaDescription,
+  },
+  {
     img: characterLuca,
     name: "Luca",
     slug: "luca",
@@ -182,7 +194,7 @@ export const characters: {
   },
 ];
 
-export const heroineSlugs = ["sofia", "mia", "gloria", "bianca", "emily"];
+export const heroineSlugs = ["sofia", "mia", "gloria", "bianca", "emily", "paola"];
 export function getCharacter(slug: string) {
   return characters.find((c) => c.slug === slug && heroineSlugs.includes(c.slug));
 }
