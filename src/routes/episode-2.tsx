@@ -8,11 +8,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ITCH_URL, PATREON_URL, DISCORD_URL } from "@/lib/links";
 import { trackItchClick, trackPatreonClick, trackDiscordClick } from "@/lib/analytics";
-import cover from "@/assets/cover-moon.webp";
+import heroAsset from "@/assets/ep2-hero.webp.asset.json";
 
 export const galleryImages: { src: string; alt: string; width: number; height: number }[] = [];
 
 const URL = "https://vowsandvicesstudio.com/episode-2";
+const HERO_URL = new globalThis.URL(heroAsset.url, URL).href;
 const TITLE = "Episode 2 — Coming in December | Sweet Sin of Tuscany";
 const DESC =
   "Episode 2 of Sweet Sin of Tuscany is coming in December. 11 new scenes, 1,000+ new renders and 8 animations. Follow the progress and be the first to know.";
@@ -28,7 +29,9 @@ export const Route = createFileRoute("/episode-2")({
       { property: "og:description", content: DESC },
       { property: "og:url", content: URL },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: HERO_URL },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: HERO_URL },
     ],
     links: [{ rel: "canonical", href: URL }],
   }),
@@ -41,14 +44,14 @@ function Page() {
       <main>
         <section className="relative pt-40 pb-20 px-6 text-center">
           <img
-            src={cover}
-            alt="Sweet Sin of Tuscany under a Tuscan moon"
+            src={heroAsset.url}
+            alt="Episode 2 gladiator preview — Sweet Sin of Tuscany"
             loading="eager"
             fetchPriority="high"
             decoding="async"
-            width={1920}
-            height={1080}
-            className="absolute inset-0 w-full h-full object-cover opacity-25"
+            width={820}
+            height={461}
+            className="absolute inset-0 w-full h-full object-cover opacity-45"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
           <div className="relative max-w-3xl mx-auto">
