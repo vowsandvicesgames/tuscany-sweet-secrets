@@ -3,7 +3,7 @@ import vvLogo from "@/assets/vows-vices-logo.webp";
 import { ITCH_URL, PATREON_URL } from "@/lib/links";
 import { trackPatreonClick } from "@/lib/analytics";
 
-export function SiteHeader() {
+export function SiteHeader({ showEp2Bar = false }: { showEp2Bar?: boolean }) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/60 border-b border-border/40">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-1 sm:gap-2">
@@ -49,6 +49,14 @@ export function SiteHeader() {
           </a>
         </nav>
       </div>
+      {showEp2Bar && (
+        <Link
+          to="/episode-2"
+          className="block text-center py-2.5 px-4 font-display tracking-[0.25em] uppercase text-xs text-rose-glow bg-romance/40 hover:bg-romance/60 hover:text-foreground transition-colors"
+        >
+          Episode 2 — Coming in December · See the preview →
+        </Link>
+      )}
     </header>
   );
 }
