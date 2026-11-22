@@ -10,9 +10,11 @@ import { ITCH_URL, PATREON_URL, DISCORD_URL } from "@/lib/links";
 import { trackItchClick, trackPatreonClick, trackDiscordClick } from "@/lib/analytics";
 import heroAsset from "@/assets/ep2-hero.webp.asset.json";
 import galleryImage1 from "@/assets/ep2-gallery-1.webp.asset.json";
+import galleryImage2 from "@/assets/ep2-gallery-2.webp.asset.json";
 
 export const galleryImages: { src: string; alt: string; width: number; height: number }[] = [
   { src: galleryImage1.url, alt: "Episode 2 preview", width: 820, height: 461 },
+  { src: galleryImage2.url, alt: "Episode 2 preview", width: 820, height: 461 },
 ];
 
 const URL = "https://vowsandvicesstudio.com/episode-2";
