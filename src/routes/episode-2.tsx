@@ -13,12 +13,14 @@ import galleryImage1 from "@/assets/ep2-gallery-1.webp.asset.json";
 import galleryImage2 from "@/assets/ep2-gallery-2.webp.asset.json";
 import galleryImage3 from "@/assets/ep2-gallery-3.webp.asset.json";
 import galleryImage4 from "@/assets/ep2-gallery-4.webp.asset.json";
+import galleryImage5 from "@/assets/ep2-gallery-5.webp.asset.json";
 
 export const galleryImages: { src: string; alt: string; width: number; height: number }[] = [
   { src: galleryImage1.url, alt: "Episode 2 preview", width: 820, height: 461 },
   { src: galleryImage2.url, alt: "Episode 2 preview", width: 820, height: 461 },
   { src: galleryImage3.url, alt: "Episode 2 preview", width: 820, height: 461 },
   { src: galleryImage4.url, alt: "Episode 2 preview", width: 820, height: 461 },
+  { src: galleryImage5.url, alt: "Episode 2 preview", width: 820, height: 461 },
 ];
 
 const URL = "https://vowsandvicesstudio.com/episode-2";
