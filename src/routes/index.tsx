@@ -92,6 +92,14 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       <SiteHeader />
 
+      {/* EPISODE 2 ANNOUNCEMENT BAR */}
+      <Link
+        to="/episode-2"
+        className="block mt-[73px] text-center py-2.5 px-4 font-display tracking-[0.25em] uppercase text-xs text-rose-glow bg-romance/40 border-b border-crimson/40 hover:bg-romance/60 hover:text-foreground transition-colors"
+      >
+        Episode 2 — Coming in December · See the preview →
+      </Link>
+
       {/* HERO */}
       <section className="relative min-h-[600px] sm:min-h-[calc(73px+42.8125vw)] flex flex-col pt-[73px] pb-12 overflow-hidden">
         <img
@@ -152,6 +160,15 @@ function Index() {
               >
                 Support us on Patreon
               </a>
+            </div>
+
+            <div className="mt-3">
+              <Link
+                to="/episode-2"
+                className="inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
+              >
+                Episode 2 — Coming in December
+              </Link>
             </div>
 
             <p className="mt-6 text-xs uppercase tracking-[0.3em] text-muted-foreground">

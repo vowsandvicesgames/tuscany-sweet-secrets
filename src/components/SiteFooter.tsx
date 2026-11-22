@@ -19,6 +19,7 @@ export function SiteFooter() {
         <nav className="flex flex-col gap-2 text-sm text-muted-foreground">
           <Link to="/story" className="hover:text-rose-glow transition-colors">The Story</Link>
           <Link to="/world" className="hover:text-rose-glow transition-colors">The Games</Link>
+          <Link to="/episode-2" className="hover:text-rose-glow transition-colors">Episode 2 — Coming Soon</Link>
           <Link to="/studio" className="hover:text-rose-glow transition-colors">The Studio</Link>
           <Link to="/faq" className="hover:text-rose-glow transition-colors">About the Game / FAQ</Link>
           <Link to="/adult-visual-novels" className="hover:text-rose-glow transition-colors">Adult Visual Novels Like the Best of the Genre</Link>
