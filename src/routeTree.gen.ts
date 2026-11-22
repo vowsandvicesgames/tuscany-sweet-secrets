@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AdultVisualNovelsRouteImport } from './routes/adult-visual-novels'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as Episode2RouteImport } from './routes/episode-2'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StoryRouteImport } from './routes/story'
@@ -55,6 +56,11 @@ const AdultVisualNovelsRoute = AdultVisualNovelsRouteImport.update({
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Episode2Route = Episode2RouteImport.update({
+  id: '/episode-2',
+  path: '/episode-2',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -192,6 +198,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/adult-visual-novels': typeof AdultVisualNovelsRoute
   '/auth': typeof AuthRoute
+  '/episode-2': typeof Episode2Route
   '/faq': typeof FaqRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
@@ -221,6 +228,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/adult-visual-novels': typeof AdultVisualNovelsRoute
   '/auth': typeof AuthRoute
+  '/episode-2': typeof Episode2Route
   '/faq': typeof FaqRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
@@ -252,6 +260,7 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/adult-visual-novels': typeof AdultVisualNovelsRoute
   '/auth': typeof AuthRoute
+  '/episode-2': typeof Episode2Route
   '/faq': typeof FaqRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
@@ -283,6 +292,7 @@ export interface FileRouteTypes {
     | '/'
     | '/adult-visual-novels'
     | '/auth'
+    | '/episode-2'
     | '/faq'
     | '/sitemap.xml'
     | '/story'
@@ -312,6 +322,7 @@ export interface FileRouteTypes {
     | '/'
     | '/adult-visual-novels'
     | '/auth'
+    | '/episode-2'
     | '/faq'
     | '/sitemap.xml'
     | '/story'
@@ -342,6 +353,7 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/adult-visual-novels'
     | '/auth'
+    | '/episode-2'
     | '/faq'
     | '/sitemap.xml'
     | '/story'
@@ -373,6 +385,7 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AdultVisualNovelsRoute: typeof AdultVisualNovelsRoute
   AuthRoute: typeof AuthRoute
+  Episode2Route: typeof Episode2Route
   FaqRoute: typeof FaqRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StoryRoute: typeof StoryRoute
@@ -423,6 +436,13 @@ declare module '@tanstack/react-router' {
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/episode-2': {
+      id: '/episode-2'
+      path: '/episode-2'
+      fullPath: '/episode-2'
+      preLoaderRoute: typeof Episode2RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -618,6 +638,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AdultVisualNovelsRoute: AdultVisualNovelsRoute,
   AuthRoute: AuthRoute,
+  Episode2Route: Episode2Route,
   FaqRoute: FaqRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StoryRoute: StoryRoute,

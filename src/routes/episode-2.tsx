@@ -5,10 +5,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ITCH_URL, PATREON_URL, DISCORD_URL } from "@/lib/links";
 import { trackItchClick, trackPatreonClick, trackDiscordClick } from "@/lib/analytics";
 import cover from "@/assets/cover-moon.webp";
-import teaser1 from "@/assets/cover-no1-big-moon.webp";
-import teaser2 from "@/assets/cover-beach-1.webp";
-import teaser3 from "@/assets/a08.webp";
-import teaser4 from "@/assets/g09.webp";
 
 const URL = "https://vowsandvicesstudio.com/episode-2";
 const TITLE = "Episode 2 — Coming Soon | Sweet Sin of Tuscany";
@@ -47,13 +43,6 @@ function useCountdown() {
     seconds: Math.floor((diff / 1_000) % 60),
   };
 }
-
-const teasers = [
-  { img: teaser1, alt: "Episode 2 teaser — under the Tuscan moon" },
-  { img: teaser2, alt: "Episode 2 teaser — under the Tuscan sun" },
-  { img: teaser3, alt: "Episode 2 teaser — Tuscan hills" },
-  { img: teaser4, alt: "Episode 2 teaser — inside the villa" },
-];
 
 const highlights = [
   { t: "The story continues", d: "The web of lies tightens. Choices from Episode 1 echo through new scenes and new consequences." },
@@ -134,32 +123,18 @@ function Page() {
         </div>
       </section>
 
-      {/* TEASER GALLERY */}
-      <section className="px-6 py-16 max-w-6xl mx-auto">
+      {/* SNEAK PEEK — real Episode 2 images go here once provided */}
+      <section className="px-6 py-16 max-w-3xl mx-auto text-center">
         <div className="ornament-divider mb-4 text-xs tracking-[0.4em] uppercase">Sneak peek</div>
-        <p className="text-center text-sm text-muted-foreground font-serif-italic mb-8">
-          Some things are better left veiled… for now.
+        <p className="font-serif-italic text-lg text-foreground/80">
+          Some things are better left veiled… for now. First previews are coming — and patrons see them before anyone
+          else.
         </p>
-        <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
-          {teasers.map((t) => (
-            <div key={t.alt} className="relative aspect-[3/4] overflow-hidden rounded-sm border border-border/60">
-              <img
-                src={t.img}
-                alt={t.alt}
-                loading="lazy"
-                decoding="async"
-                className="absolute inset-0 w-full h-full object-cover blur-md scale-110 opacity-60"
-              />
-              <div className="absolute inset-0 bg-ink/40" />
-            </div>
-          ))}
-        </div>
-        <p className="mt-6 text-center text-sm text-muted-foreground font-serif-italic">
-          Patrons see the unblurred previews first —{" "}
+        <p className="mt-4 text-sm text-muted-foreground font-serif-italic">
           <a href={PATREON_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackPatreonClick("/episode-2")} className="text-crimson underline">
-            join on Patreon
-          </a>
-          .
+            Join on Patreon
+          </a>{" "}
+          for the first unblurred previews.
         </p>
       </section>
 
