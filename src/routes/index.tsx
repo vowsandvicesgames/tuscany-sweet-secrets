@@ -297,7 +297,7 @@ function Index() {
             <Link
               to="/characters/$slug"
               params={{ slug: "luca" }}
-              className="font-display text-rose-glow underline decoration-crimson/70 decoration-2 underline-offset-4 hover:text-crimson transition-colors duration-500"
+              className="font-display text-rose-glow hover:text-crimson transition-colors duration-500"
             >
               Luca
             </Link>{" "}
