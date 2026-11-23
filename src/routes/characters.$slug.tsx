@@ -17,7 +17,7 @@ export const Route = createFileRoute("/characters/$slug")({
     const c = loaderData ? getCharacter(loaderData.slug) : undefined;
     if (!c) return { meta: [{ title: "Character not found — Sweet Sin of Tuscany" }, { name: "robots", content: "noindex" }] };
     const title = `${c.name} (${c.role}) — Sweet Sin of Tuscany | Vows & Vices`;
-    const desc = `Meet ${c.name} (${c.role}) from Sweet Sin of Tuscany by Vows & Vices — an 18+ romance visual novel for fans of games like Eternum. Read her story.`;
+    const desc = `Meet ${c.name} (${c.role}) from Sweet Sin of Tuscany by Vows & Vices — an 18+ romance visual novel for fans of games like Eternum. Read ${c.isProtagonist ? "his" : "her"} story.`;
     const url = `${BASE}/characters/${params.slug}`;
     return {
       meta: [
@@ -63,7 +63,9 @@ function CharacterPage() {
             <p className="text-xs uppercase tracking-[0.3em] text-crimson mb-3">{c.role}</p>
             <h1 className="font-display text-4xl sm:text-5xl text-rose-glow glow-text mb-2">{c.name}</h1>
             <p className="font-serif-italic text-muted-foreground mb-8">
-              A heroine of Sweet Sin of Tuscany, told from Luca's perspective.
+              {c.isProtagonist
+                ? "The man who comes home. You choose his name."
+                : "A heroine of Sweet Sin of Tuscany, told from Luca's perspective."}
             </p>
             <div className="font-serif text-lg leading-relaxed text-foreground/85 whitespace-pre-line">{c.description}</div>
             <div className="mt-10 flex flex-wrap gap-3">
@@ -74,7 +76,7 @@ function CharacterPage() {
                 onClick={() => trackItchClick(window.location.pathname)}
                 className="inline-flex px-6 py-3 font-display tracking-[0.2em] uppercase text-sm bg-romance border border-crimson/40 rounded-sm"
               >
-                Meet {c.name} — Play Episode 1 Free
+                {c.isProtagonist ? "Play Episode 1 Free" : `Meet ${c.name} — Play Episode 1 Free`}
               </a>
               <a
                 href={PATREON_URL}
@@ -101,7 +103,9 @@ function CharacterPage() {
           </article>
         </div>
         <nav className="mt-16">
-          <div className="ornament-divider mb-6 text-xs tracking-[0.4em] uppercase">Other heroines</div>
+          <div className="ornament-divider mb-6 text-xs tracking-[0.4em] uppercase">
+            {c.isProtagonist ? "The heroines" : "Other heroines"}
+          </div>
           <div className="flex flex-wrap justify-center gap-3">
             {others.map((o) => (
               <Link

@@ -22,6 +22,7 @@ The player follows Luca, a former soldier who returns to his family estate in Tu
 - [Bianca](/characters/bianca): The fiery fitness instructor and Luca's old gym partner; bold, teasing romance.
 - [Emily](/characters/emily): The fearless childhood best friend; friends-to-lovers romance.
 - [Paola](/characters/paola): The older childhood friend who was always by Luca's side.
+- [Luca](/characters/luca): The protagonist — a former soldier coming home to the Tuscan hills. You choose his name.
 
 ## Blog
 

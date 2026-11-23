@@ -133,6 +133,7 @@ export const characters: {
   name: string;
   alt: string;
   description?: string;
+  isProtagonist?: boolean;
 }[] = [
   {
     img: characterSofia,
@@ -188,6 +189,7 @@ export const characters: {
     name: "Luca",
     slug: "luca",
     role: "Protagonist",
+    isProtagonist: true,
     seoDescription: 'Luca, the protagonist of Sweet Sin of Tuscany, a romantic 18+ visual novel set in the Tuscan hills.',
     alt: "handsome, young, classy Italian guy",
     description: lucaDescription,
@@ -195,6 +197,7 @@ export const characters: {
 ];
 
 export const heroineSlugs = ["sofia", "mia", "gloria", "bianca", "emily", "paola"];
+export const characterSlugs = [...heroineSlugs, "luca"];
 export function getCharacter(slug: string) {
-  return characters.find((c) => c.slug === slug && heroineSlugs.includes(c.slug));
+  return characters.find((c) => c.slug === slug && characterSlugs.includes(c.slug));
 }

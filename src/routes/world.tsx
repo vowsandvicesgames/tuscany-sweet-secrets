@@ -10,7 +10,7 @@ import coverBeach from "@/assets/cover-beach-1.webp";
 import tuscanHills from "@/assets/a08.webp";
 import villa from "@/assets/g09.webp";
 import sofiaSwing from "@/assets/cover-no1-big-moon.webp";
-import { characters, heroineSlugs } from "@/lib/characters";
+import { characterSlugs, characters } from "@/lib/characters";
 
 export const Route = createFileRoute("/world")({
   head: () => ({
@@ -175,7 +175,7 @@ function GamesPage() {
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {characters
-              .filter((c) => heroineSlugs.includes(c.slug))
+              .filter((c) => characterSlugs.includes(c.slug))
               .map((c) => (
                 <Link
                   key={c.slug}

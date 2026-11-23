@@ -293,7 +293,14 @@ function Index() {
 
         <div className="max-w-4xl mx-auto mt-14 text-center">
           <p className="font-serif text-lg sm:text-xl leading-relaxed text-foreground/80 text-balance">
-            You play <span className="font-display text-rose-glow">Luca</span>{" "}
+            You play{" "}
+            <Link
+              to="/characters/$slug"
+              params={{ slug: "luca" }}
+              className="font-display text-rose-glow underline decoration-crimson/70 decoration-2 underline-offset-4 hover:text-crimson transition-colors duration-500"
+            >
+              Luca
+            </Link>{" "}
             <span className="font-serif-italic text-muted-foreground">(you choose his name)</span> — a former soldier
             coming home to the Tuscan hills after five years of exile, straight back into the lives of the women who
             shaped his childhood.
