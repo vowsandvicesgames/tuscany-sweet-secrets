@@ -34,7 +34,7 @@ export function SiteHeader({ showEp2Bar = false }: { showEp2Bar?: boolean }) {
             href={ITCH_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-1 sm:ml-3 px-2 sm:px-4 py-1.5 sm:py-2 font-display tracking-[0.15em] sm:tracking-widest uppercase text-[10px] sm:text-xs text-foreground bg-romance border border-crimson/40 rounded-sm hover:shadow-[0_0_30px_oklch(0.52_0.20_18/0.5)] transition-all"
+            className="ml-1 sm:ml-3 px-2 sm:px-4 py-1.5 sm:py-2 font-display tracking-[0.15em] sm:tracking-widest uppercase text-[10px] sm:text-xs text-rose-glow border border-crimson/40 rounded-sm hover:bg-romance hover:shadow-[0_0_30px_oklch(0.52_0.20_18/0.5)] transition-all"
           >
             Play Free
           </a>
@@ -43,7 +43,7 @@ export function SiteHeader({ showEp2Bar = false }: { showEp2Bar?: boolean }) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackPatreonClick(window.location.pathname)}
-            className="ml-1 sm:ml-3 px-2 sm:px-4 py-1.5 sm:py-2 font-display tracking-[0.15em] sm:tracking-widest uppercase text-[10px] sm:text-xs text-rose-glow border border-crimson/40 rounded-sm hover:bg-romance hover:shadow-[0_0_30px_oklch(0.52_0.20_18/0.5)] transition-all"
+            className="ml-1 sm:ml-3 px-2 sm:px-4 py-1.5 sm:py-2 font-display tracking-[0.15em] sm:tracking-widest uppercase text-[10px] sm:text-xs text-foreground bg-romance border border-crimson/40 rounded-sm hover:shadow-[0_0_30px_oklch(0.52_0.20_18/0.5)] transition-all"
           >
             Patreon
           </a>
