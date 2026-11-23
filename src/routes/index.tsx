@@ -21,6 +21,15 @@ import { z } from "zod";
 
 const emailSchema = z.string().trim().email({ message: "Please enter a valid email address" }).max(255);
 
+const STORY_HEROINES = [
+  { emoji: "💗", name: "Emily", slug: "emily", line: "his best friend, a med student with a hidden sorrow" },
+  { emoji: "🥊", name: "Bianca", slug: "bianca", line: "muay thai fighter, never beat him, never stopped trying" },
+  { emoji: "💃", name: "Gloria", slug: "gloria", line: "a dancer who keeps the peace" },
+  { emoji: "🌸", name: "Mia", slug: "mia", line: 'the shy one, who calls him "big guy"' },
+  { emoji: "📚", name: "Sofia", slug: "sofia", line: "the strict headmistress who once was his whole world" },
+  { emoji: "🏡", name: "Paola", slug: "paola", line: "his oldest friend, waiting at the estate" },
+];
+
 type BlogPost = {
   id: string;
   slug: string;
@@ -263,22 +272,79 @@ function Index() {
         </div>
       </section>
 
-      {/* PROLOGUE */}
+      {/* THE STORY */}
       <section className="relative py-32 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="ornament-divider mb-10 text-xs tracking-[0.4em] uppercase">Prologue</div>
-          <h2 className="font-display text-4xl sm:text-6xl text-balance text-rose-glow mb-12 glow-text">
-            One week. One villa. <span className="font-serif-italic text-crimson">One unforgettable visitor.</span>
+          <div className="ornament-divider mb-10 text-xs tracking-[0.4em] uppercase">The Story</div>
+          <h2 className="font-display text-4xl sm:text-6xl text-balance text-rose-glow glow-text">
+            One bottle of wine. One summer night.{" "}
+            <span className="font-serif-italic text-crimson">Five years of exile.</span>
           </h2>
-          <div className="space-y-7 text-lg sm:text-xl leading-relaxed text-foreground/80 font-serif">
-            <p>
-              While enjoying a well-deserved week off in the Tuscan paradise, an unexpected visitor turns your world
-              upside down.
-            </p>
-            <p>
-              What follows is a story of long lost, forbidden love and the consequences of years of forced separation.
-            </p>
-            <p>Due to these events, your family’s web of lies will unravel, revealing a dark secret.</p>
+          <p className="mt-8 font-serif-italic text-lg sm:text-xl text-rose-glow/90 text-balance">
+            Now he's back in the Tuscan hills, the girls he grew up with are under the same roof again, and sparks are
+            flying, literally.
+          </p>
+          <p className="mt-6 font-serif text-lg sm:text-xl leading-relaxed text-foreground/80 text-balance">
+            An adult visual novel about love, desire and a family secret that doesn't want to stay buried.
+          </p>
+        </div>
+
+        <div className="max-w-3xl mx-auto mt-14 h-px bg-gradient-to-r from-transparent via-crimson/45 to-transparent" />
+
+        <div className="max-w-4xl mx-auto mt-14 text-center">
+          <p className="font-serif text-lg sm:text-xl leading-relaxed text-foreground/80 text-balance">
+            You play <span className="font-display text-rose-glow">Luca</span>{" "}
+            <span className="font-serif-italic text-muted-foreground">(you choose his name)</span> — a former soldier
+            coming home to the Tuscan hills after five years of exile, straight back into the lives of the women who
+            shaped his childhood.
+          </p>
+        </div>
+
+        <div className="max-w-5xl mx-auto mt-12 grid gap-x-12 gap-y-6 sm:grid-cols-2 text-left">
+          {STORY_HEROINES.map((h) => (
+            <Link
+              key={h.slug}
+              to="/characters/$slug"
+              params={{ slug: h.slug }}
+              className="group flex items-baseline gap-3 border-b border-crimson/20 pb-4 hover:border-crimson/60 transition-colors duration-500"
+            >
+              <span className="text-xl shrink-0" aria-hidden="true">
+                {h.emoji}
+              </span>
+              <span className="font-serif text-base sm:text-lg leading-relaxed text-foreground/80">
+                <span className="font-display text-rose-glow tracking-wider group-hover:text-crimson transition-colors duration-500">
+                  {h.name}
+                </span>
+                : {h.line}
+              </span>
+            </Link>
+          ))}
+        </div>
+
+        <div className="max-w-3xl mx-auto mt-14 text-center">
+          <p className="font-serif text-lg sm:text-xl leading-relaxed text-foreground/80 text-balance">
+            Romance, drama, humour and mystery. Love or dominance, it's your choice. Multiple endings.
+          </p>
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href={ITCH_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackItchClick(window.location.pathname)}
+              className="inline-flex items-center gap-2 px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
+            >
+              <span aria-hidden="true">🆓</span> Free for everyone
+            </a>
+            <a
+              href={PATREON_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackPatreonClick(window.location.pathname)}
+              className="inline-flex items-center gap-2 px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-foreground bg-romance border border-crimson/40 hover:shadow-[0_0_60px_oklch(0.52_0.20_18/0.5)] transition-all duration-500 rounded-sm"
+            >
+              <span aria-hidden="true">🔥</span> Early access and voting on Patreon
+            </a>
           </div>
         </div>
       </section>
