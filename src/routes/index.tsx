@@ -193,20 +193,6 @@ function Index() {
         </a>
       </section>
 
-      {/* ITCH.IO WIDGET */}
-      <section
-        className="relative z-10 w-full flex justify-center px-6 -mt-4 mb-8"
-        onClick={() => trackItchClick(window.location.pathname)}
-      >
-        <iframe
-          frameBorder="0"
-          src="https://itch.io/embed/4640956?linkback=true"
-          width="552"
-          height="167"
-          title="Sweet Sin of Tuscany by VowsandVices"
-        />
-      </section>
-
       {/* DISCORD CTA */}
       <section className="relative px-6 mt-4 mb-4">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3">
@@ -377,6 +363,20 @@ function Index() {
             </a>
           </div>
         </div>
+      </section>
+
+      {/* ITCH.IO WIDGET */}
+      <section
+        className="relative z-10 w-full flex justify-center px-6 py-10"
+        onClick={() => trackItchClick(window.location.pathname)}
+      >
+        <iframe
+          frameBorder="0"
+          src="https://itch.io/embed/4640956?linkback=true"
+          width="552"
+          height="167"
+          title="Sweet Sin of Tuscany by VowsandVices"
+        />
       </section>
 
       {/* CHOICES */}
