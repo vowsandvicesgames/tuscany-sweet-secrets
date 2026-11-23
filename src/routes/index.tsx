@@ -9,6 +9,7 @@ import gloria from "@/assets/character-gloria-home.webp";
 import cover from "@/assets/cover-moon.webp";
 import emili from "@/assets/character-emily-home.webp";
 import sofia from "@/assets/character-sofia-home.webp";
+import patreonBanner from "@/assets/patreon-support-banner.png.asset.json";
 
 import { PATREON_URL, DISCORD_URL, REDDIT_URL, TWITTER_URL, ITCH_URL } from "@/lib/links";
 import { trackRedditClick, trackPatreonClick, trackItchClick, trackDiscordClick, trackTwitterClick } from "@/lib/analytics";
@@ -168,6 +169,28 @@ function Index() {
             </p>
           </div>
         </div>
+      </section>
+
+      {/* PATREON BANNER */}
+      <section className="relative z-10 w-full flex justify-center px-6 mt-6 mb-2">
+        <a
+          href={PATREON_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => trackPatreonClick(window.location.pathname)}
+          aria-label="Support us on Patreon — early access, extra scenes, wallpapers, previews"
+          className="group block w-full max-w-[564px] rounded-sm transition-all duration-500 hover:scale-[1.02]"
+        >
+          <img
+            src={patreonBanner.url}
+            alt="Support us on Patreon — early access, extra scenes, wallpapers, previews"
+            width={564}
+            height={245}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-auto rounded-sm"
+          />
+        </a>
       </section>
 
       {/* ITCH.IO WIDGET */}
