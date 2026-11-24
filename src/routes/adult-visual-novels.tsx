@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ITCH_URL, PATREON_URL, DISCORD_URL } from "@/lib/links";
 import { trackItchClick, trackPatreonClick, trackDiscordClick } from "@/lib/analytics";
-import cover from "@/assets/cover-moon.webp";
+import cover from "@/assets/main-wallpaper-ssot-censored.webp.asset.json";
 import emily from "@/assets/character-emily-home.webp";
 import sofia from "@/assets/character-sofia-home.webp";
 import gloria from "@/assets/character-gloria-home.webp";
@@ -72,10 +72,9 @@ function Page() {
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       <SiteHeader />
 
-      <section className="relative pt-40 pb-24 px-6 text-center">
-        <img src={cover} alt="Sweet Sin of Tuscany cast under a Tuscan moon" loading="eager" fetchPriority="high" decoding="async" width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
-        <div className="relative max-w-3xl mx-auto">
+      <section className="relative pt-[76px] sm:pt-[88px] pb-16 text-center">
+        <img src={cover.url} alt="Sweet Sin of Tuscany cast under a Tuscan moon" loading="eager" fetchPriority="high" decoding="async" width={1920} height={1080} className="w-full h-auto opacity-95" />
+        <div className="relative max-w-3xl mx-auto px-6 mt-10">
           <p className="font-display tracking-[0.4em] uppercase text-xs text-rose-glow/80 mb-4">Adult Visual Novel · 18+</p>
           <h1 className="font-display text-4xl sm:text-6xl text-rose-glow glow-text text-balance">
             Adult visual novels <span className="font-serif-italic text-crimson">like the best of the genre</span>
