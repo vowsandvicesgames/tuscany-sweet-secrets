@@ -103,7 +103,7 @@ function Index() {
       <SiteHeader showEp2Bar />
 
       {/* HERO */}
-      <section className="relative min-h-[600px] sm:min-h-[calc(109px+56.25vw)] flex flex-col pt-[109px] pb-6 overflow-hidden">
+      <section className="relative min-h-[487px] sm:min-h-[calc(109px+56.25vw)] flex flex-col pt-[128px] sm:pt-[109px] pb-4 overflow-hidden">
         <img
           src={cover.url}
           alt="Sweet Sin of Tuscany, cast under a Tuscan moon"
@@ -120,36 +120,36 @@ function Index() {
 
         <div className="relative z-10 mt-auto w-full max-w-7xl mx-auto px-6 animate-fade-up">
           <div className="text-left max-w-4xl">
-            <p className="font-display tracking-[0.4em] uppercase text-xs sm:text-sm text-rose-glow/80 mb-4">
+            <p className="font-display tracking-[0.4em] uppercase text-xs sm:text-sm text-rose-glow/80 mb-2">
               Vows &amp; Vices Studio Proudly Presents
             </p>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-rose-glow glow-text text-balance">
+            <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl text-rose-glow glow-text text-balance">
               <span className="font-serif-italic text-crimson">Sweet Sin</span> of Tuscany
             </h1>
-            <p className="mt-5 font-serif-italic text-lg sm:text-xl text-rose-glow/90 text-balance">
+            <p className="mt-3 font-serif-italic text-base sm:text-xl text-rose-glow/90 text-balance">
               A story of long lost, forbidden love and the consequences of years of forced separation.
             </p>
 
-            <div className="mt-6 flex flex-wrap items-center justify-start gap-3">
+            <div className="mt-4 flex flex-wrap items-center justify-start gap-2">
               <a
                 href={ITCH_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackItchClick(window.location.pathname)}
-                className="inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
+                className="inline-flex items-center justify-center px-4 py-2.5 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
               >
                 Play Episode 1 Free
               </a>
               <Link
                 to="/story"
-                className="inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
+                className="inline-flex items-center justify-center px-4 py-2.5 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
               >
                 <span>Enter the Story</span>
                 <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
               </Link>
               <Link
                 to="/world"
-                className="inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-rose-glow/30 hover:border-rose-glow/70 hover:bg-rose-glow/5 transition-all duration-500 rounded-sm"
+                className="inline-flex items-center justify-center px-4 py-2.5 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-rose-glow/30 hover:border-rose-glow/70 hover:bg-rose-glow/5 transition-all duration-500 rounded-sm"
               >
                 Explore the Game<span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
               </Link>
@@ -158,13 +158,13 @@ function Index() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackPatreonClick(window.location.pathname)}
-                className="group relative inline-flex items-center justify-center px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-foreground bg-romance rounded-sm shadow-[0_0_60px_oklch(0.52_0.20_18/0.35)] hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 border border-crimson/40"
+                className="group relative inline-flex items-center justify-center px-4 py-2.5 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-foreground bg-romance rounded-sm shadow-[0_0_60px_oklch(0.52_0.20_18/0.35)] hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 border border-crimson/40"
               >
                 Support us on Patreon
               </a>
             </div>
 
-            <p className="mt-6 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            <p className="mt-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
               Visual Novel * Romance * 18+
             </p>
           </div>
@@ -348,7 +348,7 @@ function Index() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackItchClick(window.location.pathname)}
-              className="inline-flex items-center gap-2 px-6 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
+              className="inline-flex items-center gap-2 px-4 py-2.5 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
             >
               <span aria-hidden="true">🆓</span> Free for everyone
             </a>
