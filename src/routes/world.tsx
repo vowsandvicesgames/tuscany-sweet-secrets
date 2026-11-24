@@ -2,7 +2,6 @@ import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { HeroineMatcher } from "@/components/HeroineMatcher";
 import { ITCH_URL, PATREON_URL } from "@/lib/links";
 import { trackPatreonClick } from "@/lib/analytics";
 import sweetSinLogo from "@/assets/sweet-sin-logo.png";
@@ -19,12 +18,12 @@ export const Route = createFileRoute("/world")({
       {
         name: "description",
         content:
-          "Sweet Sin of Tuscany by Vows & Vices: story, heroines Sofia, Mia, Gloria, Bianca and Emily, and a matchmaker to find yours. For fans of games like Eternum.",
+          "Sweet Sin of Tuscany by Vows & Vices: story and heroines Sofia, Mia, Gloria, Bianca and Emily. For fans of games like Eternum.",
       },
       { property: "og:title", content: "Sweet Sin of Tuscany Game & Characters | Vows & Vices Studio" },
       {
         property: "og:description",
-        content: "Sweet Sin of Tuscany by Vows & Vices: story, heroines Sofia, Mia, Gloria, Bianca and Emily, and a matchmaker to find yours. For fans of games like Eternum.",
+        content: "Sweet Sin of Tuscany by Vows & Vices: story and heroines Sofia, Mia, Gloria, Bianca and Emily. For fans of games like Eternum.",
       },
       { property: "og:url", content: "https://vowsandvicesstudio.com/world" },
       { property: "og:type", content: "website" },
@@ -244,8 +243,6 @@ function GamesPage() {
           </p>
         </div>
       </section>
-
-      <HeroineMatcher />
 
       <SiteFooter />
     </div>
