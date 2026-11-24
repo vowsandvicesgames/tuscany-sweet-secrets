@@ -300,7 +300,7 @@ function Index() {
 
         <div className="max-w-3xl mx-auto mt-7 h-px bg-gradient-to-r from-transparent via-crimson/45 to-transparent" />
 
-        <div className="max-w-4xl mx-auto mt-7 text-center">
+        <div className="max-w-4xl mx-auto mt-[104px] text-center">
           <p className="font-serif text-lg sm:text-xl leading-relaxed text-foreground/80 text-balance">
             You play{" "}
             <Link
