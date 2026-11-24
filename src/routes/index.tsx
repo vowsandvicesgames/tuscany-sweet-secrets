@@ -337,7 +337,7 @@ function Index() {
           ))}
         </div>
 
-        <div className="max-w-3xl mx-auto mt-7 text-center">
+        <div className="max-w-3xl mx-auto mt-[104px] text-center">
           <p className="font-serif text-lg sm:text-xl leading-relaxed text-foreground/80 text-balance">
             Romance, drama, humour and mystery. Love or dominance, it's your choice. Multiple endings.
           </p>
