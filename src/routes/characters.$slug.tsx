@@ -54,7 +54,7 @@ function CharacterPage() {
         <div className="mt-8 grid gap-10 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] items-start">
           <img
             src={c.img}
-            alt={`${c.name}, ${c.alt}`}
+            alt={c.alt}
             width={600}
             height={1000}
             className="w-full rounded-sm border border-border/60 bg-card object-contain md:sticky md:top-28"
