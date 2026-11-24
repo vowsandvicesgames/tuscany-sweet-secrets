@@ -103,7 +103,7 @@ function Index() {
       <SiteHeader showEp2Bar />
 
       {/* HERO */}
-      <section className="relative min-h-[487px] sm:min-h-[calc(109px+56.25vw)] flex flex-col pt-[128px] sm:pt-[109px] pb-4 overflow-hidden">
+      <section className="relative pt-[128px] sm:pt-[109px] pb-4 overflow-hidden sm:min-h-[calc(109px+56.25vw)] sm:flex sm:flex-col">
         <img
           src={cover.url}
           alt="Sweet Sin of Tuscany, cast under a Tuscan moon"
@@ -112,13 +112,13 @@ function Index() {
           loading="eager"
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 sm:top-[109px] sm:inset-x-0 sm:bottom-auto w-full h-full sm:h-auto object-cover sm:object-contain object-top opacity-95"
+          className="w-full h-auto opacity-95 sm:absolute sm:top-[109px] sm:inset-x-0 sm:object-contain"
         />
-        <div className="absolute inset-0 sm:top-[109px] sm:h-[56.25vw] bg-gradient-to-t from-background via-background/60 sm:via-background/30 to-background/40 sm:to-transparent" />
-        <div className="absolute inset-0 sm:top-[109px] sm:h-[56.25vw] bg-vignette" />
+        <div className="hidden sm:block absolute top-[109px] inset-x-0 h-[56.25vw] bg-gradient-to-t from-background via-background/30 to-transparent" />
+        <div className="hidden sm:block absolute top-[109px] inset-x-0 h-[56.25vw] bg-vignette" />
         <Embers />
 
-        <div className="relative z-10 mt-auto w-full max-w-7xl mx-auto px-6 animate-fade-up">
+        <div className="relative z-10 mt-6 sm:mt-auto w-full max-w-7xl mx-auto px-6 animate-fade-up">
           <div className="text-left max-w-4xl">
             <p className="font-display tracking-[0.4em] uppercase text-xs sm:text-sm text-rose-glow/80 mb-2">
               Vows &amp; Vices Studio Proudly Presents
