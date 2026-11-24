@@ -103,7 +103,7 @@ function Index() {
       <SiteHeader showEp2Bar />
 
       {/* HERO */}
-      <section className="relative min-h-[600px] sm:min-h-[calc(109px+42.8125vw)] flex flex-col pt-[109px] pb-12 overflow-hidden">
+      <section className="relative min-h-[600px] sm:min-h-[calc(109px+42.8125vw)] flex flex-col pt-[109px] pb-6 overflow-hidden">
         <img
           src={cover}
           alt="Sweet Sin of Tuscany, cast under a Tuscan moon"
@@ -172,7 +172,7 @@ function Index() {
       </section>
 
       {/* PATREON BANNER */}
-      <section className="relative z-10 w-full flex justify-center px-6 mt-6 mb-2">
+      <section className="relative z-10 w-full flex justify-center px-6 mt-3 mb-1">
         <a
           href={PATREON_URL}
           target="_blank"
@@ -194,7 +194,7 @@ function Index() {
       </section>
 
       {/* DISCORD CTA */}
-      <section className="relative px-6 mt-4 mb-4">
+      <section className="relative px-6 mt-2 mb-2">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3">
           <a
             href={DISCORD_URL}
@@ -239,9 +239,9 @@ function Index() {
 
       {/* DEV LOGS */}
 
-      <section className="relative py-20 px-6">
+      <section className="relative py-10 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="ornament-divider mb-10 text-xs tracking-[0.4em] uppercase">Dev Logs</div>
+          <div className="ornament-divider mb-5 text-xs tracking-[0.4em] uppercase">Dev Logs</div>
 
           <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
             {latestLogs.map((log) => (
@@ -270,7 +270,7 @@ function Index() {
               </Link>
             ))}
           </div>
-          <div className="mt-10 text-center">
+          <div className="mt-5 text-center">
             <Link
               to="/blog"
               className="inline-flex items-center px-6 py-3 font-display tracking-[0.25em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
@@ -282,25 +282,25 @@ function Index() {
       </section>
 
       {/* THE STORY */}
-      <section className="relative py-32 px-6">
+      <section className="relative py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="ornament-divider mb-10 text-xs tracking-[0.4em] uppercase">The Story</div>
+          <div className="ornament-divider mb-5 text-xs tracking-[0.4em] uppercase">The Story</div>
           <h2 className="font-display text-4xl sm:text-6xl text-balance text-rose-glow glow-text">
             One bottle of wine. One summer night.{" "}
             <span className="font-serif-italic text-crimson">Five years of exile.</span>
           </h2>
-          <p className="mt-8 font-serif-italic text-lg sm:text-xl text-rose-glow/90 text-balance">
+          <p className="mt-4 font-serif-italic text-lg sm:text-xl text-rose-glow/90 text-balance">
             Now he's back in the Tuscan hills, the girls he grew up with are under the same roof again, and sparks are
             flying, literally.
           </p>
-          <p className="mt-6 font-serif text-lg sm:text-xl leading-relaxed text-foreground/80 text-balance">
+          <p className="mt-3 font-serif text-lg sm:text-xl leading-relaxed text-foreground/80 text-balance">
             An adult visual novel about love, desire and a family secret that doesn't want to stay buried.
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto mt-14 h-px bg-gradient-to-r from-transparent via-crimson/45 to-transparent" />
+        <div className="max-w-3xl mx-auto mt-7 h-px bg-gradient-to-r from-transparent via-crimson/45 to-transparent" />
 
-        <div className="max-w-4xl mx-auto mt-14 text-center">
+        <div className="max-w-4xl mx-auto mt-7 text-center">
           <p className="font-serif text-lg sm:text-xl leading-relaxed text-foreground/80 text-balance">
             You play{" "}
             <Link
@@ -316,7 +316,7 @@ function Index() {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto mt-12 grid gap-x-12 gap-y-6 sm:grid-cols-2 text-left">
+        <div className="max-w-5xl mx-auto mt-6 grid gap-x-12 gap-y-3 sm:grid-cols-2 text-left">
           {STORY_HEROINES.map((h) => (
             <Link
               key={h.slug}
@@ -337,12 +337,12 @@ function Index() {
           ))}
         </div>
 
-        <div className="max-w-3xl mx-auto mt-14 text-center">
+        <div className="max-w-3xl mx-auto mt-7 text-center">
           <p className="font-serif text-lg sm:text-xl leading-relaxed text-foreground/80 text-balance">
             Romance, drama, humour and mystery. Love or dominance, it's your choice. Multiple endings.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
             <a
               href={ITCH_URL}
               target="_blank"
@@ -367,7 +367,7 @@ function Index() {
 
       {/* ITCH.IO WIDGET */}
       <section
-        className="relative z-10 w-full flex justify-center px-6 py-10"
+        className="relative z-10 w-full flex justify-center px-6 py-5"
         onClick={() => trackItchClick(window.location.pathname)}
       >
         <iframe
@@ -380,9 +380,9 @@ function Index() {
       </section>
 
       {/* CHOICES */}
-      <section className="relative py-24 px-6">
+      <section className="relative py-12 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="ornament-divider mb-12 text-xs tracking-[0.4em] uppercase">Your Choices</div>
+          <div className="ornament-divider mb-6 text-xs tracking-[0.4em] uppercase">Your Choices</div>
           <div className="grid gap-px bg-border/40 grid-cols-1 md:grid-cols-3 rounded-sm overflow-hidden">
             {[
               {
@@ -423,7 +423,7 @@ function Index() {
       </section>
 
       {/* CALL */}
-      <section className="relative py-32 px-6">
+      <section className="relative py-16 px-6">
         <div className="absolute inset-0 bg-ember opacity-50" />
         <div className="relative max-w-3xl mx-auto text-center">
           <h2 className="font-display text-5xl sm:text-7xl text-balance glow-text">
@@ -431,7 +431,7 @@ function Index() {
             <span className="block font-serif-italic text-crimson mt-2">Sweet Sin of Tuscany?</span>
           </h2>
 
-          <div className="mt-12 relative overflow-hidden rounded-sm border border-crimson/40 bg-card/60 p-8 sm:p-10 backdrop-blur text-center">
+          <div className="mt-6 relative overflow-hidden rounded-sm border border-crimson/40 bg-card/60 p-8 sm:p-10 backdrop-blur text-center">
             <div className="absolute inset-0 bg-ember opacity-40 pointer-events-none" />
             <div className="relative">
               <p className="text-muted-foreground max-w-xl mx-auto">
@@ -441,12 +441,12 @@ function Index() {
 
               <Link
                 to="/studio"
-                className="mt-8 inline-flex items-center px-10 py-4 font-display tracking-[0.25em] uppercase text-sm bg-romance border border-crimson/40 hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 rounded-sm"
+                className="mt-4 inline-flex items-center px-10 py-4 font-display tracking-[0.25em] uppercase text-sm bg-romance border border-crimson/40 hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 rounded-sm"
               >
                 Meet the Studio
               </Link>
 
-              <div className="ornament-divider text-xs tracking-[0.3em] uppercase my-10">And Join the Letters</div>
+              <div className="ornament-divider text-xs tracking-[0.3em] uppercase my-5">And Join the Letters</div>
 
               <h3 className="font-display text-2xl sm:text-3xl text-rose-glow glow-text">
                 Whispers from the Sweet sin of Tuscany, straight to your inbox.
