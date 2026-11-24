@@ -7,6 +7,7 @@ import { listPublishedPosts } from "@/lib/blog.functions";
 import logo from "@/assets/sweet-sin-logo.png";
 import gloria from "@/assets/character-gloria-home.webp";
 import cover from "@/assets/main-wallpaper-ssot-censored.webp.asset.json";
+import socialCover from "@/assets/tuscany-social-cover.jpg.asset.json";
 import emili from "@/assets/character-emily-home.webp";
 import sofia from "@/assets/character-sofia-home.webp";
 import patreonBanner from "@/assets/patreon-support-banner.png.asset.json";
@@ -46,17 +47,21 @@ export const Route = createFileRoute("/")({
   loader: () => listPublishedPosts(),
   head: () => ({
     meta: [
-      { title: "Sweet Sin of Tuscany — 18+ Romance Visual Novel by Vows & Vices" },
+      { title: "Sweet Sin of Tuscany — Adult Romance Visual Novel by Vows & Vices" },
       {
         name: "description",
         content:
-          "Play Sweet Sin of Tuscany, a free 18+ romance visual novel by Vows & Vices Studio. Meet Sofia, Mia, Gloria, Bianca and Emily — for fans of games like Eternum and Being a DIK.",
+          "Play Sweet Sin of Tuscany, a free Adult romance visual novel by Vows & Vices Studio. Meet Sofia, Mia, Gloria, Bianca and Emily — for fans of games like Eternum and Being a DIK.",
       },
-      { property: "og:title", content: "Sweet Sin of Tuscany — 18+ Romance Visual Novel by Vows & Vices" },
+      { property: "og:title", content: "Sweet Sin of Tuscany — Adult Romance Visual Novel by Vows & Vices" },
       {
         property: "og:description",
-        content: "Play Sweet Sin of Tuscany, a free 18+ romance visual novel by Vows & Vices Studio. Meet Sofia, Mia, Gloria, Bianca and Emily — for fans of games like Eternum and Being a DIK.",
+        content: "Play Sweet Sin of Tuscany, a free Adult romance visual novel by Vows & Vices Studio. Meet Sofia, Mia, Gloria, Bianca and Emily — for fans of games like Eternum and Being a DIK.",
       },
+      { name: "twitter:title", content: "Sweet Sin of Tuscany — Adult Romance Visual Novel by Vows & Vices" },
+      { name: "twitter:description", content: "Play Sweet Sin of Tuscany, a free Adult romance visual novel by Vows & Vices Studio. Meet Sofia, Mia, Gloria, Bianca and Emily — for fans of games like Eternum and Being a DIK." },
+      { property: "og:image", content: `https://vowsandvicesstudio.com${socialCover.url}` },
+      { name: "twitter:image", content: `https://vowsandvicesstudio.com${socialCover.url}` },
       { property: "og:url", content: "https://vowsandvicesstudio.com/" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
