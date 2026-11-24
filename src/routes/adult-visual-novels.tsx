@@ -77,10 +77,10 @@ function Page() {
         <div className="relative max-w-3xl mx-auto px-6 mt-10">
           <p className="font-display tracking-[0.4em] uppercase text-xs text-rose-glow/80 mb-4">Adult Visual Novel · 18+</p>
           <h1 className="font-display text-4xl sm:text-6xl text-rose-glow glow-text text-balance">
-            Adult visual novels <span className="font-serif-italic text-crimson">like the best of the genre</span>
+            Sweet Sin of Tuscany <span className="font-serif-italic text-crimson">— A Free Adult Visual Novel with Choices</span>
           </h1>
           <p className="mt-6 font-serif text-lg sm:text-xl text-foreground/80 text-balance">
-            Sweet Sin of Tuscany is a story-driven 18+ visual novel about long lost, forbidden love, family secrets and the choices you make in one unforgettable week.
+            Play Episode 1 free on Windows, macOS, Linux or Android. Sweet Sin of Tuscany is an ongoing 18+ romance visual novel about forbidden love, family secrets and choices that shape your relationships. Follow development and previews of Episode 2.
           </p>
           <div className="mt-8"><PlayButton /></div>
         </div>
