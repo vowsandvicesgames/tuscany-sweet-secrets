@@ -6,7 +6,7 @@ import { Embers } from "@/components/Embers";
 import { listPublishedPosts } from "@/lib/blog.functions";
 import logo from "@/assets/sweet-sin-logo.png";
 import gloria from "@/assets/character-gloria-home.webp";
-import cover from "@/assets/cover-moon.webp";
+import cover from "@/assets/main-wallpaper-ssot-censored.webp.asset.json";
 import emili from "@/assets/character-emily-home.webp";
 import sofia from "@/assets/character-sofia-home.webp";
 import patreonBanner from "@/assets/patreon-support-banner.png.asset.json";
@@ -64,7 +64,7 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: "https://vowsandvicesstudio.com/" },
-      { rel: "preload", as: "image", href: cover, fetchPriority: "high" },
+      { rel: "preload", as: "image", href: cover.url, fetchPriority: "high" },
     ],
     scripts: [
       {
@@ -105,7 +105,7 @@ function Index() {
       {/* HERO */}
       <section className="relative min-h-[600px] sm:min-h-[calc(109px+42.8125vw)] flex flex-col pt-[109px] pb-6 overflow-hidden">
         <img
-          src={cover}
+          src={cover.url}
           alt="Sweet Sin of Tuscany, cast under a Tuscan moon"
           width={1920}
           height={900}
