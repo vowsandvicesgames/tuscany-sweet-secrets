@@ -158,7 +158,7 @@ function Page() {
             <div className="mt-8 flex flex-col sm:flex-row flex-wrap justify-center gap-3">
               <Button asChild className="h-auto whitespace-normal px-8 py-4 font-display uppercase text-sm text-foreground bg-romance rounded-sm border border-crimson/40 hover:bg-romance hover:border-crimson">
                 <a href={ITCH_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackItchClick("/episode-2")}>
-                  Play Episode 1 Free
+                  Play in Browser or Download
                 </a>
               </Button>
               <Button asChild className="h-auto whitespace-normal px-6 py-4 font-display uppercase text-sm text-foreground bg-discord hover:bg-discord-hover rounded-sm">

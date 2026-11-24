@@ -74,9 +74,11 @@ function CharacterPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackItchClick(window.location.pathname)}
-                className="inline-flex px-6 py-3 font-display tracking-[0.2em] uppercase text-sm bg-romance border border-crimson/40 rounded-sm"
+                className="inline-flex justify-center text-center px-6 py-3 font-display tracking-[0.2em] uppercase text-sm bg-romance border border-crimson/40 rounded-sm"
               >
-                {c.isProtagonist ? "Play Episode 1 Free" : `Meet ${c.name} — Play Episode 1 Free`}
+                {c.isProtagonist
+                  ? "Play in Browser or Download"
+                  : `Meet ${c.name} — Play in Browser or Download`}
               </a>
               <a
                 href={PATREON_URL}

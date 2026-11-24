@@ -143,7 +143,7 @@ function Index() {
                 onClick={() => trackItchClick(window.location.pathname)}
                 className="inline-flex items-center justify-center px-4 py-2.5 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
               >
-                Play Episode 1 Free
+                Play in Browser or Download
               </a>
               <Link
                 to="/story"

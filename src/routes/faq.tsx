@@ -189,7 +189,7 @@ function FaqPage() {
             onClick={() => trackItchClick(window.location.pathname)}
             className="inline-flex items-center justify-center px-8 py-3 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-foreground bg-romance rounded-sm shadow-[0_0_60px_oklch(0.52_0.20_18/0.35)] hover:shadow-[0_0_80px_oklch(0.52_0.20_18/0.6)] transition-all duration-500 border border-crimson/40"
           >
-            Play Episode 1 Free
+            Play in Browser or Download
           </a>
         </div>
       </section>
