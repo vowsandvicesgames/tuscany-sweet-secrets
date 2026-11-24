@@ -47,7 +47,7 @@ function CharacterPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
-      <main className="pt-28 pb-20 px-6 max-w-6xl mx-auto">
+      <main className="pt-32 pb-20 px-6 max-w-6xl mx-auto">
         <Link to="/world" className="text-xs uppercase tracking-[0.3em] text-muted-foreground hover:text-rose-glow">
           ← All characters
         </Link>

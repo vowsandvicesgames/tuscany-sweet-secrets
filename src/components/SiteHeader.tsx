@@ -14,7 +14,7 @@ const NAV_LINKS = [
   { to: "/studio", label: "Studio" },
 ] as const;
 
-export function SiteHeader({ showEp2Bar = false }: { showEp2Bar?: boolean }) {
+export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
@@ -106,14 +106,12 @@ export function SiteHeader({ showEp2Bar = false }: { showEp2Bar?: boolean }) {
         </nav>
       )}
 
-      {showEp2Bar && (
-        <Link
-          to="/episode-2"
-          className="block text-center py-2.5 px-4 font-display tracking-[0.25em] uppercase text-xs text-rose-glow bg-romance/40 hover:bg-romance/60 hover:text-foreground transition-colors"
-        >
-          Episode 2 — Coming in December · See the preview →
-        </Link>
-      )}
+      <Link
+        to="/episode-2"
+        className="block text-center py-2.5 px-4 font-display tracking-[0.25em] uppercase text-xs text-rose-glow bg-romance/40 hover:bg-romance/60 hover:text-foreground transition-colors"
+      >
+        Episode 2 — Coming in December · See the preview →
+      </Link>
     </header>
   );
 }

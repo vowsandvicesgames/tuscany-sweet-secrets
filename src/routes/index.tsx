@@ -100,7 +100,7 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
-      <SiteHeader showEp2Bar />
+      <SiteHeader />
 
       {/* HERO */}
       <section className="relative pt-[128px] sm:pt-[109px] pb-4 overflow-hidden sm:min-h-[calc(109px+56.25vw)] sm:flex sm:flex-col">

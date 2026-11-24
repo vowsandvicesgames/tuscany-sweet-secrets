@@ -72,7 +72,7 @@ function Page() {
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       <SiteHeader />
 
-      <section className="relative pt-[76px] sm:pt-[88px] pb-16 text-center">
+      <section className="relative pt-[125px] sm:pt-[117px] pb-16 text-center">
         <img src={cover.url} alt="Sweet Sin of Tuscany cast under a Tuscan moon" loading="eager" fetchPriority="high" decoding="async" width={1920} height={1080} className="w-full h-auto opacity-95" />
         <div className="relative max-w-3xl mx-auto px-6 mt-10">
           <p className="font-display tracking-[0.4em] uppercase text-xs text-rose-glow/80 mb-4">Adult Visual Novel · 18+</p>
