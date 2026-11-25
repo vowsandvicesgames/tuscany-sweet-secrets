@@ -24,7 +24,8 @@ export const Route = createFileRoute("/world")({
       { property: "og:title", content: "Sweet Sin of Tuscany Game & Characters | Vows & Vices Studio" },
       {
         property: "og:description",
-        content: "Sweet Sin of Tuscany by Vows & Vices: story and heroines Sofia, Mia, Gloria, Bianca and Emily. For fans of games like Eternum.",
+        content:
+          "Sweet Sin of Tuscany by Vows & Vices: story and heroines Sofia, Mia, Gloria, Bianca and Emily. For fans of games like Eternum.",
       },
       { property: "og:url", content: "https://vowsandvicesstudio.com/world" },
       { property: "og:type", content: "website" },
@@ -111,11 +112,12 @@ function GamesPage() {
         <div className="mt-6 flex justify-center">
           <iframe
             frameBorder="0"
-            src="https://itch.io/embed/4640956?linkback=true&link_color=C1133A"
-            width="552"
-            height="167"
-            title="Sweet Sin of Tuscany by VowsandVices"
-          />
+            src="https://itch.io/embed/4640956?border_width=1&amp;bg_color=110304&amp;fg_color=F4B0AF&amp;link_color=C1133A&amp;border_color=F4B0AF"
+            width="560"
+            height="175"
+          >
+            <a href="https://vowsandvices.itch.io/sweet-sin-of-tuscany">Sweet Sin of Tuscany by Vows and Vices</a>
+          </iframe>
         </div>
       </section>
 
