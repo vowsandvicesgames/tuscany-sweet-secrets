@@ -383,7 +383,7 @@ function Index() {
       >
         <iframe
           frameBorder="0"
-          src="https://itch.io/embed/4640956?border_width=3&amp;bg_color=330308&amp;fg_color=F4B0AF&amp;link_color=C1133A&amp;border_color=F4B0AF"
+          src="https://itch.io/embed/4640956?border_width=3&amp;bg_color=110304&amp;fg_color=F4B0AF&amp;link_color=C1133A&amp;border_color=F4B0AF"
           width="560"
           height="175"
         >
