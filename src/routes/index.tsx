@@ -145,14 +145,6 @@ function Index() {
               >
                 Play in Browser or Download
               </a>
-              <a
-                href="https://www.newgrounds.com/portal/view/1064269"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-4 py-2.5 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow/80 border border-border/60 hover:border-crimson/60 hover:text-rose-glow transition-all duration-500 rounded-sm"
-              >
-                Play in Browser
-              </a>
               <Link
                 to="/story"
                 className="inline-flex items-center justify-center px-4 py-2.5 font-display tracking-[0.2em] uppercase text-xs sm:text-sm text-rose-glow border border-crimson/40 hover:border-crimson hover:bg-romance/40 transition-all duration-500 rounded-sm"
