@@ -13,13 +13,16 @@ import sofia from "@/assets/character-sofia-home.webp";
 import patreonBanner from "@/assets/patreon-support-banner.png.asset.json";
 
 import { PATREON_URL, DISCORD_URL, REDDIT_URL, TWITTER_URL, ITCH_URL } from "@/lib/links";
-import { trackRedditClick, trackPatreonClick, trackItchClick, trackDiscordClick, trackTwitterClick } from "@/lib/analytics";
-
+import {
+  trackRedditClick,
+  trackPatreonClick,
+  trackItchClick,
+  trackDiscordClick,
+  trackTwitterClick,
+} from "@/lib/analytics";
 
 import { toast } from "sonner";
 import { z } from "zod";
-
-
 
 const emailSchema = z.string().trim().email({ message: "Please enter a valid email address" }).max(255);
 
@@ -42,7 +45,6 @@ type BlogPost = {
   published_at: string | null;
 };
 
-
 export const Route = createFileRoute("/")({
   loader: () => listPublishedPosts(),
   head: () => ({
@@ -56,16 +58,25 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Sweet Sin of Tuscany — Adult Romance Visual Novel by Vows & Vices" },
       {
         property: "og:description",
-        content: "Play Sweet Sin of Tuscany, a free Adult romance visual novel by Vows & Vices Studio. Meet Sofia, Mia, Gloria, Bianca and Emily — for fans of games like Eternum and Being a DIK.",
+        content:
+          "Play Sweet Sin of Tuscany, a free Adult romance visual novel by Vows & Vices Studio. Meet Sofia, Mia, Gloria, Bianca and Emily — for fans of games like Eternum and Being a DIK.",
       },
       { name: "twitter:title", content: "Sweet Sin of Tuscany — Adult Romance Visual Novel by Vows & Vices" },
-      { name: "twitter:description", content: "Play Sweet Sin of Tuscany, a free Adult romance visual novel by Vows & Vices Studio. Meet Sofia, Mia, Gloria, Bianca and Emily — for fans of games like Eternum and Being a DIK." },
+      {
+        name: "twitter:description",
+        content:
+          "Play Sweet Sin of Tuscany, a free Adult romance visual novel by Vows & Vices Studio. Meet Sofia, Mia, Gloria, Bianca and Emily — for fans of games like Eternum and Being a DIK.",
+      },
       { property: "og:image", content: `https://vowsandvicesstudio.com${socialCover.url}` },
       { name: "twitter:image", content: `https://vowsandvicesstudio.com${socialCover.url}` },
       { property: "og:url", content: "https://vowsandvicesstudio.com/" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "keywords", content: "Sweet Sin of Tuscany, Vows and Vices, Vows & Vices Studio, games like Sweet Sin of Tuscany, visual novel, adult romance game, Sofia, Mia, Gloria, Bianca, Emily" },
+      {
+        name: "keywords",
+        content:
+          "Sweet Sin of Tuscany, Vows and Vices, Vows & Vices Studio, games like Sweet Sin of Tuscany, visual novel, adult romance game, Sofia, Mia, Gloria, Bianca, Emily",
+      },
     ],
     links: [
       { rel: "canonical", href: "https://vowsandvicesstudio.com/" },
@@ -101,7 +112,6 @@ export const Route = createFileRoute("/")({
 function Index() {
   const { posts } = Route.useLoaderData() as { posts: BlogPost[] };
   const latestLogs = posts.slice(0, 5);
-
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
@@ -240,8 +250,6 @@ function Index() {
         </div>
       </section>
 
-
-
       {/* DEV LOGS */}
 
       <section className="relative py-10 px-6">
@@ -268,9 +276,7 @@ function Index() {
                   />
                 </div>
                 <div className="p-4 text-center">
-                  <h2 className="font-display text-sm sm:text-base text-rose-glow tracking-wider">
-                    {log.title}
-                  </h2>
+                  <h2 className="font-display text-sm sm:text-base text-rose-glow tracking-wider">{log.title}</h2>
                 </div>
               </Link>
             ))}
@@ -376,12 +382,13 @@ function Index() {
         onClick={() => trackItchClick(window.location.pathname)}
       >
         <iframe
-          frameBorder="0"
-          src="https://itch.io/embed/4640956?linkback=true"
-          width="552"
-          height="167"
-          title="Sweet Sin of Tuscany by VowsandVices"
-        />
+          frameborder="0"
+          src="https://itch.io/embed/4640956?border_width=5&amp;bg_color=330308&amp;fg_color=F4B0AF&amp;link_color=C1133A&amp;border_color=F4B0AF"
+          width="560"
+          height="175"
+        >
+          <a href="https://vowsandvices.itch.io/sweet-sin-of-tuscany">Sweet Sin of Tuscany by Vows and Vices</a>
+        </iframe>
       </section>
 
       {/* CHOICES */}
@@ -440,8 +447,8 @@ function Index() {
             <div className="absolute inset-0 bg-ember opacity-40 pointer-events-none" />
             <div className="relative">
               <p className="text-muted-foreground max-w-xl mx-auto">
-                Episode 1 is free to play now. Subscribe for episode previews, release news, and announcements from
-                Vows &amp; Vices Studio.
+                Episode 1 is free to play now. Subscribe for episode previews, release news, and announcements from Vows
+                &amp; Vices Studio.
               </p>
 
               <Link
