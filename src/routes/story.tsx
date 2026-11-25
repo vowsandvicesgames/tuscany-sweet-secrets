@@ -6,17 +6,19 @@ import villa from "@/assets/villa-interior.jpg";
 export const Route = createFileRoute("/story")({
   head: () => ({
     meta: [
-      { title: "The Story - Sweet Sin of Tuscany" },
+      { title: "Sweet Sin of Tuscany Story — Forbidden Romance & Choices (18+)" },
       {
         name: "description",
         content:
-          "Forbidden love, a family's web of lies, and a secret that won't stay buried. Discover the story of Sweet Sin of Tuscany.",
+          "A former soldier returns to a Tuscan villa after five years of exile. Forbidden love, a buried family secret, and choices that shape every relationship. Episode 1 free.",
       },
-      { property: "og:title", content: "The Story — Sweet Sin of Tuscany" },
+      { property: "og:title", content: "Sweet Sin of Tuscany Story — Forbidden Romance & Choices (18+)" },
       {
         property: "og:description",
-        content: "Forbidden love, a family's web of lies, and a secret that won't stay buried.",
+        content: "A former soldier returns to a Tuscan villa. Forbidden love, a buried family secret, and choices that shape every relationship.",
       },
+      { property: "og:type", content: "article" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "https://vowsandvicesstudio.com/story" },
     ],
     links: [{ rel: "canonical", href: "https://vowsandvicesstudio.com/story" }],
