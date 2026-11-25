@@ -382,7 +382,7 @@ function Index() {
         onClick={() => trackItchClick(window.location.pathname)}
       >
         <iframe
-          frameborder="0"
+          frameBorder="0"
           src="https://itch.io/embed/4640956?border_width=5&amp;bg_color=330308&amp;fg_color=F4B0AF&amp;link_color=C1133A&amp;border_color=F4B0AF"
           width="560"
           height="175"
