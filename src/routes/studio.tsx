@@ -3,6 +3,7 @@ import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import vvLogo from "@/assets/vows-vices-logo.webp";
+import socialCover from "@/assets/tuscany-social-cover.jpg.asset.json";
 import { PATREON_URL } from "@/lib/links";
 import { trackPatreonClick } from "@/lib/analytics";
 import { supabase } from "@/integrations/supabase/client";
@@ -24,6 +25,9 @@ export const Route = createFileRoute("/studio")({
         content: "An independent studio crafting moody, character-driven romantic visual novels.",
       },
       { property: "og:url", content: "https://vowsandvicesstudio.com/studio" },
+      { property: "og:image", content: `https://vowsandvicesstudio.com${socialCover.url}` },
+      { name: "twitter:image", content: `https://vowsandvicesstudio.com${socialCover.url}` },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://vowsandvicesstudio.com/studio" }],
     scripts: [

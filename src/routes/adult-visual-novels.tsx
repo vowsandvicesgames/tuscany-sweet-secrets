@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ITCH_URL, PATREON_URL, DISCORD_URL } from "@/lib/links";
 import { trackItchClick, trackPatreonClick, trackDiscordClick } from "@/lib/analytics";
 import cover from "@/assets/main-wallpaper-ssot-censored.webp.asset.json";
+import socialCover from "@/assets/tuscany-social-cover.jpg.asset.json";
 import emily from "@/assets/character-emily-home.webp";
 import sofia from "@/assets/character-sofia-home.webp";
 import gloria from "@/assets/character-gloria-home.webp";
@@ -26,6 +27,8 @@ export const Route = createFileRoute("/adult-visual-novels")({
       { property: "og:description", content: DESC },
       { property: "og:url", content: URL },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: `https://vowsandvicesstudio.com${socialCover.url}` },
+      { name: "twitter:image", content: `https://vowsandvicesstudio.com${socialCover.url}` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: URL }],

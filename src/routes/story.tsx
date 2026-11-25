@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import villa from "@/assets/villa-interior.jpg";
+import socialCover from "@/assets/tuscany-social-cover.jpg.asset.json";
 
 export const Route = createFileRoute("/story")({
   head: () => ({
@@ -20,6 +21,8 @@ export const Route = createFileRoute("/story")({
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "https://vowsandvicesstudio.com/story" },
+      { property: "og:image", content: `https://vowsandvicesstudio.com${socialCover.url}` },
+      { name: "twitter:image", content: `https://vowsandvicesstudio.com${socialCover.url}` },
     ],
     links: [{ rel: "canonical", href: "https://vowsandvicesstudio.com/story" }],
   }),

@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ITCH_URL, PATREON_URL, DISCORD_URL } from "@/lib/links";
 import { trackItchClick, trackPatreonClick, trackDiscordClick } from "@/lib/analytics";
+import socialCover from "@/assets/tuscany-social-cover.jpg.asset.json";
 
 export const Route = createFileRoute("/faq")({
   component: FaqPage,
@@ -22,6 +23,9 @@ export const Route = createFileRoute("/faq")({
       },
       { property: "og:url", content: "https://vowsandvicesstudio.com/faq" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: `https://vowsandvicesstudio.com${socialCover.url}` },
+      { name: "twitter:image", content: `https://vowsandvicesstudio.com${socialCover.url}` },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://vowsandvicesstudio.com/faq" }],
   }),

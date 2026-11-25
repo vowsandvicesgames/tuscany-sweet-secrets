@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { listPublishedPosts } from "@/lib/blog.functions";
+import socialCover from "@/assets/tuscany-social-cover.jpg.asset.json";
 
 const URL = "https://vowsandvicesstudio.com/blog";
 const TITLE = "Blog — Vows & Vices Studio";
@@ -17,6 +18,9 @@ export const Route = createFileRoute("/blog/")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:url", content: URL },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: `https://vowsandvicesstudio.com${socialCover.url}` },
+      { name: "twitter:image", content: `https://vowsandvicesstudio.com${socialCover.url}` },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: URL }],
   }),

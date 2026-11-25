@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { characters, getCharacter, heroineSlugs } from "@/lib/characters";
 import { ITCH_URL, PATREON_URL, DISCORD_URL } from "@/lib/links";
 import { trackItchClick, trackPatreonClick, trackDiscordClick } from "@/lib/analytics";
+import socialCover from "@/assets/tuscany-social-cover.jpg.asset.json";
 
 const BASE = "https://vowsandvicesstudio.com";
 
@@ -27,6 +28,8 @@ export const Route = createFileRoute("/characters/$slug")({
         { property: "og:description", content: desc },
         { property: "og:type", content: "profile" },
         { property: "og:url", content: url },
+        { property: "og:image", content: `${BASE}${socialCover.url}` },
+        { name: "twitter:image", content: `${BASE}${socialCover.url}` },
         { name: "twitter:card", content: "summary_large_image" },
       ],
       links: [{ rel: "canonical", href: url }],

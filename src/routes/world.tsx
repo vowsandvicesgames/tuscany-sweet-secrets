@@ -10,6 +10,7 @@ import tuscanHills from "@/assets/a08.webp";
 import villa from "@/assets/g09.webp";
 import sofiaSwing from "@/assets/cover-no1-big-moon.webp";
 import { characterSlugs, characters } from "@/lib/characters";
+import socialCover from "@/assets/tuscany-social-cover.jpg.asset.json";
 
 export const Route = createFileRoute("/world")({
   head: () => ({
@@ -27,6 +28,8 @@ export const Route = createFileRoute("/world")({
       },
       { property: "og:url", content: "https://vowsandvicesstudio.com/world" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: `https://vowsandvicesstudio.com${socialCover.url}` },
+      { name: "twitter:image", content: `https://vowsandvicesstudio.com${socialCover.url}` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://vowsandvicesstudio.com/world" }],

@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { getPublishedPost } from "@/lib/blog.functions";
+import socialCover from "@/assets/tuscany-social-cover.jpg.asset.json";
 
 const BASE = "https://vowsandvicesstudio.com";
 
@@ -24,12 +25,8 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:description", content: desc },
         { property: "og:url", content: url },
         { property: "og:type", content: "article" },
-        ...(post.cover_image_url
-          ? [
-              { property: "og:image", content: post.cover_image_url },
-              { name: "twitter:image", content: post.cover_image_url },
-            ]
-          : []),
+        { property: "og:image", content: post.cover_image_url ?? `${BASE}${socialCover.url}` },
+        { name: "twitter:image", content: post.cover_image_url ?? `${BASE}${socialCover.url}` },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [

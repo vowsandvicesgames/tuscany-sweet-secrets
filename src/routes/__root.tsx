@@ -43,8 +43,6 @@ export const Route = createRootRoute({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Sweet Sin of Tuscany — A 18+ Visual Novel by Vows & Vices" },
       { name: "twitter:description", content: "A story of forbidden love, family secrets, and consequences in the Tuscan hills. From Vows & Vices Studio." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/fau8yhC67SYgCEotzDd8RwGoHYj2/social-images/social-1777651915234-Main_cover.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/fau8yhC67SYgCEotzDd8RwGoHYj2/social-images/social-1777651915234-Main_cover.webp" },
     ],
     links: [
       { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon.png" },
